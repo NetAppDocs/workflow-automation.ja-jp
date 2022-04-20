@@ -1,0 +1,40 @@
+---
+permalink: help/reference-about-dialog-box.html 
+sidebar: sidebar 
+keywords: about, dialog, box, display, details, current, version, install, application 
+summary: バージョン情報ダイアログボックスには、インストールされている WFA アプリケーションの現在のバージョンに関する詳細が表示されます。 
+---
+= [ バージョン情報 ] ダイアログボックス
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+バージョン情報ダイアログボックスには、インストールされている WFA アプリケーションの現在のバージョンに関する詳細が表示されます。
+
+
+
+== WFA のバージョン情報
+
+* * バージョン *
++
+インストールされている WFA アプリケーションの現在のバージョン番号が表示されます。
+
++
+バージョン番号の形式は、「 A.B.C.` です
+
++
+'A.B.C.' はメジャー・マイナー・メンテナンス・リリース番号を反映します
+
++
+たとえば、「 2.0.0` 」のようになります。
+
+* * システム ID *
++
+追跡および AutoSupport 目的でインストールする WFA システムを指定します。
+
++
+システムによって生成された一意の識別子です。
+
+

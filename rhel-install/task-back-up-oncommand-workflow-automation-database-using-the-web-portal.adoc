@@ -1,0 +1,25 @@
+---
+permalink: rhel-install/task-back-up-oncommand-workflow-automation-database-using-the-web-portal.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, back up, wfa database, web portal 
+summary: Web ポータルから OnCommand Workflow Automation （ WFA ）データベースをバックアップし、データのリカバリに使用することができます。Web ポータルからフルバックアップを実行することはできません。 
+---
+= Web ポータルから WFA データベースをバックアップします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Web ポータルから OnCommand Workflow Automation （ WFA ）データベースをバックアップし、データのリカバリに使用することができます。Web ポータルからフルバックアップを実行することはできません。
+
+このタスクを実行するには、管理者またはアーキテクトのクレデンシャルが必要です。
+
+バックアップロールを持つ WFA ユーザは、 Web ポータルにログインしてバックアップを実行することはできません。バックアップロールの WFA ユーザは、リモートバックアップまたはスクリプトバックアップのみを実行できます。
+
+.手順
+. WFA Web GUI に admin としてログインします。
+. [ * 設定 * ] をクリックし、 [ * メンテナンス * ] で [ * バックアップと復元 * ] をクリックします。
+. [ バックアップ ] をクリックします。
+. 表示されたダイアログボックスで場所を選択し、ファイルを保存します。
+

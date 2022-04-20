@@ -1,0 +1,27 @@
+---
+permalink: windows-install/task-configure-the-timeout-value-for-windows.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, configure, timeout value 
+summary: デフォルトのタイムアウト値を使用する代わりに、 Workflow Automation （ WFA ） Web GUI のタイムアウト値を設定できます。 
+---
+= Workflow Automation のタイムアウト値を設定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+デフォルトのタイムアウト値を使用する代わりに、 Workflow Automation （ WFA ） Web GUI のタイムアウト値を設定できます。
+
+WFA Web GUI のデフォルトのタイムアウト値は 180 分です。CLI を使用して、要件に合わせてタイムアウト値を設定できます。WFA の Web GUI からタイムアウト値を設定することはできません。
+
+
+NOTE: 設定するタイムアウト値は、非アクティブ時のタイムアウトではなく、絶対タイムアウトです。たとえば、この値を 30 分に設定すると、この時間の終わりにアクティブな場合でも、 30 分後にログアウトされます。
+
+.手順
+. WFA ホストマシンに管理者としてログインします。
+. タイムアウト値を設定します。
++
+`installdir bin/wfa -S = タイムアウト値 ( 分
+
+

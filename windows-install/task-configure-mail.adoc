@@ -1,0 +1,30 @@
+---
+permalink: windows-install/task-configure-mail.html 
+sidebar: sidebar 
+keywords: configure, email, notifications 
+summary: OnCommand Workflow Automation （ WFA ）を設定して、ワークフローの開始やワークフローの失敗など、ワークフローの処理に関する E メール通知を送信することができます。 
+---
+= E メール通知を設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ワークフローの処理に関する E メール通知を送信するように OnCommand Workflow Automation （ WFA ）を設定できます。たとえば、ワークフローが開始された場合やワークフローが失敗した場合などです。
+
+環境でメールホストを設定しておく必要があります。
+
+.手順
+. Web ブラウザから admin として WFA にログインします。
+. [ * 設定 * ] をクリックし、 [ * 設定 * ] で [ * メール * ] をクリックします。
+. 各フィールドに必要な情報を入力します。
+. 次の手順を実行してメール設定をテストします。
++
+.. [ テストメールの送信 ] をクリックします。
+.. [ 接続のテスト ] ダイアログボックスで、電子メールの送信先の電子メールアドレスを入力します。
+.. [ * テスト * ] をクリックします。
+
+
+. [ 保存（ Save ） ] をクリックします。
+

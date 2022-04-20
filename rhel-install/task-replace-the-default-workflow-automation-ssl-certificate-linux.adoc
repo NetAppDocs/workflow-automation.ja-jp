@@ -1,0 +1,58 @@
+---
+permalink: rhel-install/task-replace-the-default-workflow-automation-ssl-certificate-linux.html 
+sidebar: sidebar 
+keywords: replace, default, workflow, automation, ssl, certificate 
+summary: 証明書の有効期限が切れている場合や証明書の有効期間を延長する場合は、 Workflow Automation （ WFA ）のデフォルトの SSL 証明書を置き換えることができます。 
+---
+= Workflow Automation のデフォルトの SSL 証明書を置き換えます
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+証明書の有効期限が切れている場合や証明書の有効期間を延長する場合は、 Workflow Automation （ WFA ）のデフォルトの SSL 証明書を置き換えることができます。
+
+WFA をインストールした Linux システムに対する root 権限が必要です。
+
+WFA のデフォルトのインストールパスは、この手順 で使用されます。インストール時にデフォルトの場所を変更した場合は、カスタムの WFA インストールパスを使用する必要があります。
+
+.手順
+. WFA ホストマシンに root ユーザとしてログインします。
+. シェルプロンプトで、 WFA サーバの次のディレクトリに移動します。 wfa_install_location /wfa/bin
+. WFA データベースと WFA サーバのサービスを停止します。
++
+`./wfa --stop=wfa`
+
++
+`./wfa -- stop=DB`
+
+. wfa_install_location /wfa/jboss/standalone/configuration/keystore にある wfa_keystore ファイルを削除します。
+. WFA サーバでシェルプロンプトを開き、 <OpenJDK のインストール先 >/bin にディレクトリを変更します
+. データベースキーを取得します。
++
+keytool -keysize 2048 -genkey -alias "ssl keystore" -keyalg RSA -keystore "wfa_install_location /wfa/standalone/configuration /keystore.keystore" -dValidity xxxx`
+
++
+xxxx は、新しい証明書の有効期間を示す日数です。
+
+. プロンプトが表示されたら、パスワードを入力します（デフォルトまたは新規）。
++
+changeit はデフォルトのパスワードです。デフォルトのパスワードを使用しない場合は、 standalone-full.xml ファイル内の SSL 要素のパスワード属性を wfa_install_location /wfa/jboss/standalone/configuration から変更する必要があります
+
++
+[listing]
+----
+<ssl name="ssl" password="new_password" certificate-key-file="${jboss.server.config.dir}/keystore/wfa.keystore"
+----
+. 証明書に必要な詳細情報を入力します。
+. 表示された情報を確認し、「 Yes 」と入力します。
+. 次のメッセージが表示されたら、 * Enter * を押します。 Enter key password for <SSL keystore><return if same as keystore password>
+. WFA のサービスを再起動します。
++
+`./wfa -- start=db`
+
++
+`./wfa -- start=wfa
+
+

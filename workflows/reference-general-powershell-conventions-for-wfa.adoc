@@ -1,0 +1,34 @@
+---
+permalink: workflows/reference-general-powershell-conventions-for-wfa.html 
+sidebar: sidebar 
+keywords: must, understand, certain, powershell, perl, conventions, use, create, scripts, consistent, existing, script 
+summary: 既存のスクリプトと整合性のあるスクリプトを作成するために、 WFA で使用される PowerShell と Perl の特定の規則を理解しておく必要があります。 
+---
+= WFA での PowerShell と Perl の一般的な規則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+既存のスクリプトと整合性のあるスクリプトを作成するために、 WFA で使用される PowerShell と Perl の特定の規則を理解しておく必要があります。
+
+* スクリプトで何を実行するかを明確にするために役立つ変数を使用します。
+* コメントなしで理解できる読み取り可能なコードを記述してください。
+* スクリプトとコマンドはできるだけシンプルにしてください。
+* PowerShell スクリプトの場合：
++
+** 可能なかぎりコマンドレットを使用してください。
+** 使用可能なコマンドレットがない場合は、 .NET コードを呼び出します。
+
+
+* Perl スクリプトの場合：
++
+** 改行文字を含む "die `" ステートメントは必ず終了してください。
++
+改行文字が含まれていない場合は、スクリプトの行番号が出力されます。これは、 WFA で実行する Perl コマンドのデバッグには役立ちません。
+
+** 「 getopt 」モジュールで、文字列引数をコマンドに必須にします。
+
+
+

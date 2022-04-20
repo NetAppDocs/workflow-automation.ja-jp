@@ -1,0 +1,14 @@
+---
+permalink: workflows/concept-coding-guidelines-for-wfa.html 
+sidebar: sidebar 
+keywords: understand, general, oncommand, workflow, automation, coding, guidelines, naming, conventions, recommendations, creating, various, building, blocks, filters, functions, commands 
+summary: フィルタ、機能、コマンド、ワークフローなど、さまざまなビルディングブロックの作成に関する OnCommand Workflow Automation （ WFA ）のコーディングに関する一般的なガイドライン、命名規則、および推奨事項を理解しておく必要があります。 
+---
+= WFA のコーディングガイドライン
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+フィルタ、機能、コマンド、ワークフローなど、さまざまなビルディングブロックの作成に関する OnCommand Workflow Automation （ WFA ）のコーディングに関する一般的なガイドライン、命名規則、および推奨事項を理解しておく必要があります。

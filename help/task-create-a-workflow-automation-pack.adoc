@@ -1,0 +1,23 @@
+---
+permalink: help/task-create-a-workflow-automation-pack.html 
+sidebar: sidebar 
+keywords: create, workflow, packs, oncommand, workflow, automation, storage, integration, requirements 
+summary: ストレージの自動化と統合の要件に対応するワークフローパックを OnCommand Workflow Automation （ WFA ）で作成できます。 
+---
+= WFA ワークフローパックを作成します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ストレージの自動化と統合の要件に対応するワークフローパックを OnCommand Workflow Automation （ WFA ）で作成できます。
+
+.手順
+. Web ブラウザから * WFA * ウィンドウにログインします。
+. [* コンテンツ管理 * （ Content Management * ） ] > [* パック（ * Packs ） ]
+. [ 新しいパック * （ New Pack * ） ] アイコンをクリックします。
+. [ 新しいパック * （ * New Pack * ） ] ダイアログボックスで、 [ * 名前 * （ * Name * ） ] 、 [ * 作成者 * （ * Author * ） ] 、 [ * バージョン * （ * Version * ） ] 、および [ * 概要 * （ * * ） ] フィールド
+. [ 保存（ Save ） ] をクリックします。
+. 新しいパックが [*Packs] ウィンドウに作成されていることを確認します。
+

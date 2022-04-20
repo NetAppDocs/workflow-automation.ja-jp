@@ -1,0 +1,49 @@
+---
+permalink: rhel-install/task-configure-a-database-user-by-running-ocsetup-on-windows.html 
+sidebar: sidebar 
+keywords: configure, database, user, run, ocsetup, windows 
+summary: DataFabric Manager 5.x サーバで ocsetup ファイルを実行して、 DataFabric Manager 5.x データベースの OnCommand Workflow Automation への読み取り専用アクセスを設定することができます。 
+---
+= Windows で ocsetup を実行して、データベースユーザを設定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+DataFabric Manager 5.x サーバで ocsetup ファイルを実行して、 DataFabric Manager 5.x データベースの OnCommand Workflow Automation への読み取り専用アクセスを設定することができます。
+
+.手順
+. 次のサイトから、 DataFabric Manager 5.x サーバのディレクトリに wfa_ocsetup.exe ファイルをダウンロードします。
++
++ https://WFA_Server_IP/download/wfa_ocsetup.exe.+
+
++
+_wfa_Server_IP_is は、 WFA サーバの IP アドレス（ IPv4 または IPv6 アドレス）です。
+
++
+WFA にデフォルト以外のポートを指定した場合は、次のようにポート番号を含める必要があります。
+
++
++ https://wfa_server_ip:port/download/wfa_ocsetup.exe.+
+
++
+_port_は 、インストール時に WFA サーバに使用した TCP ポート番号です。
+
++
+IPv6 アドレスを指定する場合は、角かっこで囲む必要があります。
+
+. wfa_ocsetup.exe ファイルをダブルクリックします。
+. セットアップ・ウィザードの情報を読み、 * 次へ * をクリックします。
+. OpenJDK の場所を参照するか入力し、 * Next * をクリックします。
+. ユーザ名とパスワードを入力して、デフォルトクレデンシャルを上書きします。
++
+DataFabric Manager 5.x データベースへのアクセス用に新しいデータベースユーザアカウントが作成されます。
+
++
+
+NOTE: ユーザアカウントを作成しない場合は、デフォルトクレデンシャルが使用されます。セキュリティ上の理由からユーザアカウントを作成する必要があります。
+
+. 「 * 次へ * 」をクリックして結果を確認します。
+. [ 次へ * ] をクリックし、 [ * 完了 * ] をクリックしてウィザードを完了します。
+

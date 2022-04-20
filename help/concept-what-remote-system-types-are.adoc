@@ -1,0 +1,26 @@
+---
+permalink: help/concept-what-remote-system-types-are.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, communicate, remote, system, types, remote, specify, configure, example, data, ontap, system 
+summary: OnCommand Workflow Automation （ WFA ）はリモートシステムタイプと通信します。WFA が通信できるリモートシステムのタイプはリモートシステムです。WFA ではリモートシステムタイプを設定できます。たとえば、 Data ONTAP システムをリモートシステムタイプとして設定できます。 
+---
+= リモートシステムの種類
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）はリモートシステムタイプと通信します。WFA が通信できるリモートシステムのタイプはリモートシステムです。WFA ではリモートシステムタイプを設定できます。たとえば、 Data ONTAP システムをリモートシステムタイプとして設定できます。
+
+リモートシステムタイプには、次の属性があります。
+
+* 名前
+* 説明
+* バージョン
+* プロトコル
+* ポート
+* タイムアウト
+
+
+リモートシステムのクレデンシャルを検証するには、リモートシステムタイプごとに Perl スクリプトを使用します。WFA で設定されているリモートシステムのクレデンシャルを保存できます。新しいカスタムリモートシステムタイプを追加または編集できます。既存のリモートシステムタイプをクローニングすることもできます。リモートシステムタイプは、関連付けられているシステムがない場合にのみ削除できます。

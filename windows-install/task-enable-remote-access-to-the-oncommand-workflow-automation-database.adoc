@@ -1,0 +1,44 @@
+---
+permalink: windows-install/task-enable-remote-access-to-the-oncommand-workflow-automation-database.html 
+sidebar: sidebar 
+keywords: enable, remote access, oncommand, workflow, automation, database, windows 
+summary: デフォルトでは、 OnCommand Workflow Automation （ WFA ）データベースには、 WFA ホストシステムで実行されているクライアントからのみアクセスできます。リモートシステムから WFA データベースにアクセスする場合は、デフォルトの設定を変更できます。 
+---
+= Windows で OnCommand Workflow Automation データベースへのリモートアクセスを有効にします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+デフォルトでは、 OnCommand Workflow Automation （ WFA ）データベースには、 WFA ホストシステムで実行されているクライアントからのみアクセスできます。リモートシステムから WFA データベースにアクセスする場合は、デフォルトの設定を変更できます。
+
+* WFA ホストシステムに admin ユーザとしてログインしておく必要があります。
+* WFA ホストシステムにファイアウォールがインストールされている場合は、リモートシステムからのアクセスを許可するようにファイアウォールを設定しておく必要があります。
+
+
+WFA のデフォルトのインストールパスは、この手順 で使用されます。インストール時にデフォルトの場所を変更した場合は、カスタムの WFA インストールパスを使用する必要があります。
+
+.手順
+. エクスプローラを開き、 wfa_install_location WFA\bin ディレクトリに移動します
+. 次のいずれかを実行します。
++
+[cols="2*"]
+|===
+| 目的 | 入力するコマンド 
+
+
+ a| 
+リモートアクセスを有効にします
+ a| 
+`..\wfa --db-access = public -- restart`
+
+
+
+ a| 
+リモートアクセスを無効にします
+ a| 
+`..\wfa --db-access=default -- restart`
+
+|===
+

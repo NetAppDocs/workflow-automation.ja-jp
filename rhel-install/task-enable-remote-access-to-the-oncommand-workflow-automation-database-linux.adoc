@@ -1,0 +1,44 @@
+---
+permalink: rhel-install/task-enable-remote-access-to-the-oncommand-workflow-automation-database-linux.html 
+sidebar: sidebar 
+keywords: enable, disable, remote access, oncommand, workflow, automation, database 
+summary: デフォルトでは、 OnCommand Workflow Automation （ WFA ）データベースには、 WFA ホストシステムで実行中のクライアントからのみアクセスできます。リモートシステムから WFA データベースへのアクセスを有効にする場合は、デフォルトの設定を変更できます。 
+---
+= OnCommand Workflow Automation データベースへのリモートアクセスを有効または無効にします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+デフォルトでは、 OnCommand Workflow Automation （ WFA ）データベースには、 WFA ホストシステムで実行中のクライアントからのみアクセスできます。リモートシステムから WFA データベースへのアクセスを有効にする場合は、デフォルトの設定を変更できます。
+
+* WFA ホストシステムに root ユーザとしてログインしておく必要があります。
+* WFA ホストシステムにファイアウォールがインストールされている場合は、リモートシステムから MySQL ポート（ 3306 ）にアクセスできるようにファイアウォールを設定しておく必要があります。
+
+
+WFA のデフォルトのインストールパスは、この手順 で使用されます。インストール時にデフォルトの場所を変更した場合は、変更した WFA のインストールパスを使用する必要があります。
+
+.手順
+. WFA サーバの次のディレクトリに移動します。 wfa_install_location /wfa/bin/
+. 次のいずれかを実行します。
++
+[cols="2*"]
+|===
+| 目的 | 入力するコマンド 
+
+
+ a| 
+リモートアクセスを有効にします
+ a| 
+`./wfa --db-access = public -- restart`
+
+
+
+ a| 
+リモートアクセスを無効にします
+ a| 
+`./wfa --db-access=default -- restart`
+
+|===
+

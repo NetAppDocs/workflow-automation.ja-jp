@@ -1,0 +1,63 @@
+---
+permalink: workflows/task-create-a-function.html 
+sidebar: sidebar 
+keywords: create, wfa, function, use, utility, predefined, suitable, task 
+summary: タスクに適した WFA の事前定義された機能がない場合は、ユーティリティとして使用できる WFA の機能を作成できます。 
+---
+= 関数を作成します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+タスクに適した WFA の事前定義された機能がない場合は、ユーティリティとして使用できる WFA の機能を作成できます。
+
+関数を作成するには、 MVEL 構文を知っている必要があります。
+
+関数の定義には、次のものを含める必要があります。
+
+* name ：機能の名前
++
+MVEL 構文では予約語を使用しないでください。各関数には一意の名前を付ける必要があります。
+
+* MVEL 定義 : 関数定義の MVEL 構文を指定する文字列
+
+
+.手順
+. [* ワークフローデザイン *>* 関数 *] をクリックします。
+. をクリックします image:../media/new_wfa_icon.gif["新しいアイコン"] をクリックします。
+. [ 関数 * （ New Function * ） ] ダイアログボックスの [ 関数の定義 * （概要 * ） ] および [ 関数の定義 * （ * Function definition * ） ] フィールドに必要な詳細を入力または選択します。
++
+[listing]
+----
+def actualVolumeSize(data_size, snap_pct)
+{
+   if (snap_pct < 0 ) {
+        snap_pct = 0;
+   } else if (snap_pct > 99) {
+        snap_pct = 99;
+   }
+
+   div = 1 - (snap_pct/100);
+   return (int)(data_size/div);
+}
+----
++
+関数名 * フィールドには、 MVEL 構文で使用されるデータが入力されます。
+
+. * オプション： * Test * をクリックして、機能をテストします。
++
+.. [ * テスト * ] ダイアログボックスの [ 式 * ] セクションで、必要な関数式を入力します。
++
+'actualVolumeSize(600,1)
+
+.. [ * テスト * ] をクリックします。
++
+テスト結果が表示されます。
+
+.. ダイアログボックスを閉じます。
+
+
+. [ 保存（ Save ） ] をクリックします。
+

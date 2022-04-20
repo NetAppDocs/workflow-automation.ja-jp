@@ -1,0 +1,54 @@
+---
+permalink: workflows/reference-guidelines-for-wfa-functions.html 
+sidebar: sidebar 
+keywords: create, functions, encapsulate, common, complex, logic, name, function, reuse, command, parameter, value, oncommand, workflow, automation 
+summary: よく使用されるより複雑なロジックを名前付き関数にカプセル化する関数を作成し、その関数をコマンドパラメータ値として再利用したり、 OnCommand Workflow Automation （ WFA ）でパラメータ値をフィルタリングしたりすることができます。 
+---
+= WFA の機能に関するガイドラインを参照してください
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+よく使用されるより複雑なロジックを名前付き関数にカプセル化する関数を作成し、その関数をコマンドパラメータ値として再利用したり、 OnCommand Workflow Automation （ WFA ）でパラメータ値をフィルタリングしたりすることができます。
+
+[cols="2*"]
+|===
+| ガイドライン | 例 
+
+
+ a| 
+関数名には Camel case を使用します。
+ a| 
+計算ボリュームサイズ
+
+
+
+ a| 
+変数名は、標準的な英語で、関数の機能に関連している必要があります。
+ a| 
+splitByDelimiter
+
+
+
+ a| 
+省略形は使用しないでください。
+ a| 
+calculateVolumeSize 、 _not_calcVolSize
+
+
+
+ a| 
+関数は、 MVEL （ MVEL ）を使用して定義します。
+ a| 
+なし
+
+
+
+ a| 
+関数定義は、公式の Java プログラミング言語のガイドラインに従って指定する必要があります。
+ a| 
+なし
+
+|===

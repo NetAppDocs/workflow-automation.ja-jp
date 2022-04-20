@@ -1,0 +1,14 @@
+---
+permalink: workflows/reference-guidelines-for-wfa-building-blocks.html 
+sidebar: sidebar 
+keywords: aware, guidelines, workflow, automation, building, blocks 
+summary: Workflow Automation ビルディングブロックの使用に関するガイドラインを確認しておく必要があります。 
+---
+= WFA のビルディングブロックに関するガイドライン
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Workflow Automation ビルディングブロックの使用に関するガイドラインを確認しておく必要があります。

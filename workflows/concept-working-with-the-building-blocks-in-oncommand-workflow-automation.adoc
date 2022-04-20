@@ -1,0 +1,28 @@
+---
+permalink: workflows/concept-working-with-the-building-blocks-in-oncommand-workflow-automation.html 
+sidebar: sidebar 
+keywords: workflow, automation, consist, several, building, blocks, include, library, predefined, provide, create, requirements, organization 
+summary: Workflow Automation （ WFA ）のワークフローは複数のビルディングブロックで構成されており、 WFA には定義済みのビルディングブロックのライブラリが含まれています。WFA のビルディングブロックを使用して、組織の要件に合ったワークフローを作成できます。 
+---
+= OnCommand Workflow Automation でのビルディングブロックの操作
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Workflow Automation （ WFA ）のワークフローは複数のビルディングブロックで構成されており、 WFA には定義済みのビルディングブロックのライブラリが含まれています。WFA のビルディングブロックを使用して、組織の要件に合ったワークフローを作成できます。
+
+WFA は、ストレージ自動化プロセスの構造を提供します。WFA の柔軟性は、ワークフロービルディングブロックを使用してワークフローをどのように構築するかによって決まります。
+
+WFA のビルディングブロックは次のとおりです。
+
+* 辞書エントリ
+* コマンド
+* フィルタ
+* ファインダ
+* 機能
+* テンプレート
+
+
+WFA でビルディングブロックがどのように使用されるかを理解しておくと、ワークフローの作成に役立ちます。

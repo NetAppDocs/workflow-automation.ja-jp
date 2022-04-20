@@ -1,0 +1,48 @@
+---
+permalink: workflows/task-remove-entities-from-a-pack.html 
+sidebar: sidebar 
+keywords: remove, pack, entities, oncommand, workflow, automation, check, updated, source, control, management, server 
+summary: OnCommand Workflow Automation （ WFA ）のエンティティからパックを削除し、更新されたパックをソース管理（ SCM ）サーバにチェックインできます。 
+---
+= WFA ワークフローパックをエンティティから削除します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）のエンティティからパックを削除し、更新されたパックをソース管理（ SCM ）サーバにチェックインできます。
+
+SCM をセットアップする必要があり、管理者またはアーキテクトのクレデンシャルが必要です。
+
+次のエンティティからパックを削除できます。
+
+* ワークフロー
+* ファインダ
+* フィルタ
+* コマンド
+* 機能
+* テンプレート
+* スキーム
+* 辞書
+* データソースの種類
+* リモートシステムタイプ
+* キャッシュクエリ
+* カテゴリ
+
+
+.手順
+. Web ブラウザから * WFA * ウィンドウにログインします。
+. * ワークフローデザインポータルで、削除するエンティティに移動し、 * < エンティティ >* をクリックします。
+. [ パックから削除（ Remove from Pack ） ] アイコンをクリックします。
+. パックから削除（ * Remove from Pack ） < エンティティ >* （ Entity > * ）ダイアログボックスで、そのエンティティから削除するパックを選択します。
+. [OK] をクリックします。
+. [*Packs] タブをクリックします。
+. [ サーバーにエクスポート（ Export to Server ） ] アイコンをクリックします。
+. サーバーフォルダへのエクスポート * （ * Export to Server Folder * ）ダイアログボックスのサーバーシステムでのフォルダの場所 * （ * Folder location at server system * ）フィールドに、サーバーにパックが保存されているサーバーフォルダの場所を入力します。
++
+これにより、 SCM クライアントが作成されるファイルシステム内に展開形式でパックがエクスポートされます。
+
+. SCM クライアントの場所で、パックの内容を SCM サーバにチェックインします。
+. SCM で提供される diff ツールを使用して、 SCM 版と比較して変更内容を確認します。
+

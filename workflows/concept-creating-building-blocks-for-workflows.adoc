@@ -1,0 +1,14 @@
+---
+permalink: workflows/concept-creating-building-blocks-for-workflows.html 
+sidebar: sidebar 
+keywords: workflow, automation, include, several, building, blocks, use, construct, workflow, create, require 
+summary: Workflow Automation （ WFA ）には、ワークフローの構築に使用するビルディングブロックが複数含まれています。ワークフローに必要な WFA Buildings ブロックを作成できます。 
+---
+= ワークフローのビルディングブロックの作成
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Workflow Automation （ WFA ）には、ワークフローの構築に使用するビルディングブロックが複数含まれています。ワークフローに必要な WFA Buildings ブロックを作成できます。

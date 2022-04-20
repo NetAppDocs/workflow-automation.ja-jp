@@ -1,0 +1,303 @@
+---
+permalink: workflows/reference-guidelines-for-variables.html 
+sidebar: sidebar 
+keywords: aware, guidelines, powershell, perl, variables, oncommand, automation, create, command, data, source, type 
+summary: コマンドまたはデータソースの種類を作成するときは、 OnCommand Workflow Automation （ WFA ）で PowerShell 変数と Perl 変数のガイドラインに注意する必要があります。 
+---
+= 変数のガイドライン
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+コマンドまたはデータソースの種類を作成するときは、 OnCommand Workflow Automation （ WFA ）で PowerShell 変数と Perl 変数のガイドラインに注意する必要があります。
+
+
+
+== PowerShell の変数
+
+[cols="2*"]
+|===
+| ガイドライン | 例 
+
+
+ a| 
+スクリプト入力パラメータの場合：
+
+* Pascal の事例を使用してください。
+* アンダースコアは使用しないでください。
+* 省略形は使用しないでください。
+
+ a| 
+「 $VolumeName 」
+
+$AutoDeleteOptions'
+
+「 $Size 」
+
+
+
+ a| 
+スクリプト内部変数の場合：
+
+* Camel case を使用します。
+* アンダースコアは使用しないでください。
+* 省略形は使用しないでください。
+
+ a| 
+「 $newVolume 」
+
+「 $qtreeName 」
+
+「 $TIME 」
+
+
+
+ a| 
+関数の場合：
+
+* Pascal の事例を使用してください。
+* アンダースコアは使用しないでください。
+* 省略形は使用しないでください。
+
+ a| 
+「 GetVolumeSize 」
+
+
+
+ a| 
+変数名では大文字と小文字は区別されません。ただし、読みやすくするために、同じ名前に異なる大文字と小文字を使用しないでください。
+ a| 
+「 $VARIABLE 」は「 $VARIABLE 」と同じです
+
+
+
+ a| 
+変数名は、プレーン英語で記述され、スクリプトの機能に関連した名前にする必要があります。
+ a| 
+「 $a`. 」ではなく「 $name` 」を使用してください
+
+
+
+ a| 
+各変数のデータ型を明示的に宣言します。
+ a| 
+[string] name
+
+[int] サイズ
+
+
+
+ a| 
+特殊文字 (! @ # & % 、 . ）とスペース。
+ a| 
+なし
+
+
+
+ a| 
+PowerShell の予約キーワードは使用しないでください。
+ a| 
+なし
+
+
+
+ a| 
+入力パラメータをグループ化するには、まず必須パラメータを配置し、続けてオプションパラメータを配置します。
+ a| 
+[listing]
+----
+param(
+[parameter(Mandatory=$true)]
+[string]$Type,
+
+[parameter(Mandatory=$true)]
+[string]$Ip,
+
+[parameter(Mandatory=$false)]
+[string]$VolumeName
+)
+----
+
+
+ a| 
+すべての入力変数には '_HelpMessage_' 注釈と意味のあるヘルプ・メッセージを使用してコメントを付けます
+ a| 
+[listing]
+----
+[parameter(Mandatory=$false,HelpMessage="LUN to map")]
+[string]$LUNName
+----
+
+
+ a| 
+変数名として「ファイラー」を使用しないでください。代わりに「アレイ」を使用してください。
+ a| 
+なし
+
+
+
+ a| 
+引数が列挙値を取得する場合は '_ValidateSet_' 注釈を使用しますこれにより、パラメータの Enum データ型に自動的に変換されます。
+ a| 
+[listing]
+----
+[parameter(Mandatory=$false,HelpMessage="Volume state")]
+[ValidateSet("online","offline","restricted")]
+[string]$State
+----
+
+
+ a| 
+パラメータの末尾に「 _Capacity 」が付いたエイリアスを追加して、パラメータが容量タイプであることを示します。
+ a| 
+「 Create Volume 」コマンドでは、次のようにエイリアスを使用します。
+
+[listing]
+----
+[parameter(Mandatory=$false,HelpMessage="Volume increment size in MB")]
+[Alias("AutosizeIncrementSize_Capacity")]
+[int]$AutosizeIncrementSize
+----
+
+
+ a| 
+パラメータがパスワードタイプであることを示すために、エイリアスを "_Password" で終わるパラメータに追加します。
+ a| 
+[listing]
+----
+param (
+  [parameter(Mandatory=$false, HelpMessage="In order to create an Active Directory machine account for the CIFS server or setup CIFS service for Storage Virtual Machine, you must supply the password of a Windows account with sufficient privileges")]  [Alias("Pwd_Password")]  [string]$ADAdminPassword
+)
+----
+|===
+
+
+== Perl 変数
+
+[cols="2*"]
+|===
+| ガイドライン | 例 
+
+
+ a| 
+スクリプト入力パラメータの場合：
+
+* Pascal の事例を使用してください。
+* アンダースコアは使用しないでください。
+* 省略形は使用しないでください。
+
+ a| 
+「 $VolumeName 」
+
+$AutoDeleteOptions'
+
+「 $Size 」
+
+
+
+ a| 
+スクリプトの内部変数には省略形を使用しないでください。
+ a| 
+$new_volume
+
+「 $qtree_name 」のようになります
+
+「 $TIME 」
+
+
+
+ a| 
+関数には省略形を使用しないでください。
+ a| 
+'get_volume_size
+
+
+
+ a| 
+変数名では大文字と小文字が区別されます。読みやすくするために、同じ名前に異なる大文字と小文字を使用しないでください。
+ a| 
+「 $VARIABLE 」は「 $VARIABLE 」と同じではありません
+
+
+
+ a| 
+変数名は、プレーン英語で記述され、スクリプトの機能に関連した名前にする必要があります。
+ a| 
+「 $a`. 」ではなく「 $name` 」を使用してください
+
+
+
+ a| 
+入力パラメータをグループ化するには、まず必須パラメータを配置し、続けてオプションパラメータを配置します。
+ a| 
+なし
+
+
+
+ a| 
+GetOptions 関数で、入力パラメータの各変数のデータ型を明示的に宣言します。
+ a| 
+[listing]
+----
+GetOptions(
+	"Name=s"=>\$Name,
+	"Size=i"=>\$Size
+)
+----
+
+
+ a| 
+変数名として「ファイラー」を使用しないでください。代わりに「アレイ」を使用してください。
+ a| 
+なし
+
+
+
+ a| 
+Perl には ' 列挙値の '_ValidateSet_' 注釈は含まれません引数が列挙値を取得する場合は ' 明示的な if 文を使用します
+ a| 
+[listing]
+----
+if
+(defined$SpaceGuarantee&&!($SpaceGuaranteeeq'none'||$SpaceGuaranteeeq'volume'||$SpaceGuaranteeeq'file'))
+{
+	die'Illegal SpaceGuarantee argument: \''.$SpaceGuarantee.'\'';
+}
+----
+
+
+ a| 
+すべての Perl WFA コマンドでは、変数、参照、サブルーチンに安全でない構成要素を使用しないようにするために、 "strict" プラグマを使用する必要があります。
+ a| 
+[listing]
+----
+use strict;
+# the above is equivalent to
+use strictvars;
+use strictsubs;
+use strictrefs;
+----
+
+
+ a| 
+すべての Perl WFA コマンドでは、次の Perl モジュールを使用する必要があります。
+
+* getopt
++
+これは、入力パラメータの指定に使用されます。
+
+* WFAUtil のようになります
++
+コマンドロギング、コマンドの進捗状況の報告、アレイコントローラへの接続などに使用されるユーティリティ機能に使用されます。
+
+
+ a| 
+[listing]
+----
+use Getopt::Long;
+use NaServer;
+use WFAUtil;
+----
+|===

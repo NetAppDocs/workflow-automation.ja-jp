@@ -1,0 +1,39 @@
+---
+permalink: workflows/reference-related-documentation-for-oncommand-workflow-automation.html 
+sidebar: sidebar 
+keywords: additional, documents, tools, help, learn, perform, advanced, configuration, oncommand, workflow, automation, server 
+summary: ここでは、 OnCommand Workflow Automation （ WFA ）サーバをより高度に設定する方法を学ぶのに役立つ、その他のドキュメントとツールを示します。 
+---
+= OnCommand Workflow Automation の関連ドキュメント
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ここでは、 OnCommand Workflow Automation （ WFA ）サーバをより高度に設定する方法を学ぶのに役立つ、その他のドキュメントとツールを示します。
+
+
+
+== その他の参照
+
+ネットアップコミュニティの Workflow Automation のスペースでは、次のような追加のラーニングリソースを提供しています。
+
+* * ネットアップコミュニティ *
++
+http://community.netapp.com/t5/OnCommand-Storage-Management-Software-Articles-and-Resources/tkb-p/oncommand-storage-management-software-articles-and-resources/label-name/workflow%20automation%20%28wfa%29?labels=workflow+automation+%28wfa%29["ネットアップコミュニティ： Workflow Automation （ WFA ）"^]
+
+
+
+
+
+== ツール参照
+
+* * Interoperability Matrix *
++
+に、ハードウェアコンポーネントとソフトウェアバージョンのサポートされる組み合わせを示します。
+
++
+http://mysupport.netapp.com/matrix/["互換性マトリックス"^]
+
+

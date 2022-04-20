@@ -1,0 +1,29 @@
+---
+permalink: rhel-install/task-modify-the-transaction-timeout-setting-of-oncommand-workflow-automation-linux.html 
+sidebar: sidebar 
+keywords: modify, transaction, timeout, setting, oncommand, workflow, automation 
+summary: OnCommand Workflow Automation （ WFA ）データベースのトランザクションは、デフォルトで 300 秒以内にタイムアウトします。大容量の WFA データベースをバックアップからリストアする際には、データベースのリストアが失敗する可能性を回避するために、デフォルトのタイムアウト期間を延長できます。 
+---
+= OnCommand Workflow Automation のトランザクションタイムアウト設定を変更します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）データベースのトランザクションは、デフォルトで 300 秒以内にタイムアウトします。大容量の WFA データベースをバックアップからリストアする際には、データベースのリストアが失敗する可能性を回避するために、デフォルトのタイムアウト期間を延長できます。
+
+WFA ホストシステムに root ユーザとしてログインしておく必要があります。
+
+WFA のデフォルトのインストールパスは、この手順 で使用されます。インストール時にデフォルトの場所を変更した場合は、変更した WFA のインストールパスを使用する必要があります。
+
+.手順
+. シェルプロンプトで、 WFA サーバの次のディレクトリに移動します。 wfa_install_location /wfa/bin/
+. 次のコマンドを入力します。
++
+`./wfa --txn-timeout[=timeout] -- -restart=wfa
+
++
+`./wfa --txn-timeout=1000 --restart=wfa
+
+

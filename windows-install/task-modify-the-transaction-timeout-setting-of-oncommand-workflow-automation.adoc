@@ -1,0 +1,37 @@
+---
+permalink: windows-install/task-modify-the-transaction-timeout-setting-of-oncommand-workflow-automation.html 
+sidebar: sidebar 
+keywords: modify, transaction, timeout, set, oncommand, workflow, automation 
+summary: OnCommand Workflow Automation （ WFA ）データベースのトランザクションは、デフォルトで 300 秒以内にタイムアウトします。大容量の WFA データベースをバックアップからリストアする際には、データベースのリストアが失敗する可能性を回避するために、デフォルトのタイムアウト期間を延長できます。 
+---
+= OnCommand Workflow Automation のトランザクションタイムアウト設定を変更します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）データベースのトランザクションは、デフォルトで 300 秒以内にタイムアウトします。大容量の WFA データベースをバックアップからリストアする際には、データベースのリストアが失敗する可能性を回避するために、デフォルトのタイムアウト期間を延長できます。
+
+WFA ホストシステムに admin としてログインしておく必要があります。
+
+WFA のデフォルトのインストールパスは、この手順 で使用されます。インストール時にデフォルトの場所を変更した場合は、変更した WFA のインストールパスを使用する必要があります。
+
+.手順
+. エクスプローラを開き、次のディレクトリに移動します。
++
+wfa_install_location WFA\bin
+
+. ps.cmd ファイルをダブルクリックします。
++
+PowerShell コマンドラインインターフェイス（ CLI ）のプロンプトが開き、 ONTAP モジュールと WFA モジュールがロードされます。
+
+. プロンプトで、次のように入力します。
++
+'Set-WfaConfig - 名前 TransactionTimeOut - 秒数値
+
++
+'Set-WfaConfig - 名前 TransactionTimeOut - 秒 1000
+
+. プロンプトが表示されたら、 WFA サービスを再起動します。
+

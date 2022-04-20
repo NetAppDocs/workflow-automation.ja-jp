@@ -1,0 +1,57 @@
+---
+permalink: rhel-install/task-upgrade-mysql-on-linux.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, upgrade, mysql, linux 
+summary: OnCommand Workflow Automation がインストールされている Linux サーバで MySQL を新しいバージョンにアップグレードすることで、セキュリティの脆弱性に対する修正を入手できます。 
+---
+= Linux で MySQL をアップグレードします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation がインストールされている Linux サーバで MySQL を新しいバージョンにアップグレードすることで、セキュリティの脆弱性に対する修正を入手できます。
+
+WFA がインストールされている Linux システムに対する root 権限が必要です。
+
+
+NOTE: MySQL をアンインストールした場合は、 WFA 4.2 を再インストールする前に、 MySQL のデータディレクトリを削除しておく必要があります。
+
+MySQL 5.7 のマイナーアップデートにアップグレードできるのは、たとえば 5.7.22 から 5.7.26 にアップグレードする場合のみです。バージョン 5.8 などの MySQL をメジャーバージョンにアップグレードすることはできません。
+
+.手順
+. WFA ホストマシンに root ユーザとしてログインします。
+. MySQL Community Server.rpm の最新のバンドルをターゲットシステムにダウンロードします。
+. バンドルをターゲットシステム上のディレクトリに展開します。
+. 展開したバンドルには複数の .rpm パッケージが含まれていますが、 WFA で必要とされるのは次の rpm パッケージのみです。
++
+** mysql-community-client-5.7.x
+** mysql-community-libs-5.7.x
+** mysql-community-server-5.7.x
+** mysql-community-common-5.7.x
+** mysql-community-libs-compat-5.7.x その他すべての .rpm パッケージを削除します。rpm バンドル内のすべてのパッケージをインストールしても、原因 に問題はありません。
+
+
+. シェルプロンプトで、 WFA データベースと WFA サーバのサービスを停止します。
++
+「 service wfa -db stop 」を参照してください
+
++
+「 service wfa -server stop 」を入力します
+
+. 次のコマンドを使用して、 MySQL のアップグレードを実行します。
++
+「 rpm - Uvh * 。 rpm 」
+
++
+'*.rpm' は ' 新しいバージョンの MySQL をダウンロードしたディレクトリ内の .rpm パッケージを表します
+
+. WFA のサービスを開始します。
++
+「 service wfa -db start 」を入力します
+
++
+「 service wfa -server start 」を入力します
+
+

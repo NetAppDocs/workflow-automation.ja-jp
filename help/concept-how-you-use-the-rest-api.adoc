@@ -1,0 +1,31 @@
+---
+permalink: help/concept-how-you-use-the-rest-api.html 
+sidebar: sidebar 
+keywords: rest api, workflow, automation, invoke, provide, external, portal, data, center, orchestration, software, support, xml, json, content, type 
+summary: Workflow Automation （ WFA ）の REST API を使用して、外部ポータルやデータセンターオーケストレーションソフトウェアからワークフローを呼び出すことができます。WFA では、すべての REST API について XML および JSON コンテンツタイプがサポートされます。 
+---
+= REST API の使用方法
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Workflow Automation （ WFA ）の REST API を使用して、外部ポータルやデータセンターオーケストレーションソフトウェアからワークフローを呼び出すことができます。WFA では、すべての REST API について XML および JSON コンテンツタイプがサポートされます。
+
+WFA を使用すると、外部サービスからワークフロー、ユーザ、フィルタ、ファインダなどのさまざまなリソース収集にアクセスできます。 URI パスを使用する。外部サービスでは、 GET 、 PUT 、 POST 、 DELETE などの HTTP メソッドを使用できます。 これらの URI を使用してリソースに対して CRUD 操作を実行します。
+
+WFA REST API を使用して、次のような操作を実行できます。
+
+* ワークフローの定義とメタデータにアクセスします。
+* ワークフローを実行し、その実行を監視します。
+* ユーザとロールを表示し、パスワードを変更する。
+* リソース選択フィルタの実行とテスト
+* リソースファインダの実行とテスト
+* ストレージやその他のデータセンターオブジェクトのクレデンシャルを管理する。
+* データソースとデータソースのタイプを表示します。
+
+
+REST API の詳細については、 _REST ドキュメントを参照してください。
+
+_https_ ： //`wfa_server_ip: port /rest/docs_wfa_server_ip_address は WFA サーバの IP アドレスです。「 port 」はインストール時に WFA サーバに使用した TCP ポート番号です。

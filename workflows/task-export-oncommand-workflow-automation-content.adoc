@@ -1,0 +1,70 @@
+---
+permalink: workflows/task-export-oncommand-workflow-automation-content.html 
+sidebar: sidebar 
+keywords: save, user-created, oncommand, workflow, automation, content, file, share, users, include, entire, specific, items, finders, commands, dictionary, terms 
+summary: ユーザが作成した OnCommand Workflow Automation （ WFA ）のコンテンツを .dar ファイルとして保存し、他のユーザと共有することができます。WFA のコンテンツには、ユーザが作成したコンテンツ全体、またはワークフロー、ファインダ、コマンド、ディクショナリなどの特定の項目を含めることができます。 
+---
+= OnCommand Workflow Automation コンテンツをエクスポートします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ユーザが作成した OnCommand Workflow Automation （ WFA ）のコンテンツを「 .dar 」ファイルとして保存し、他のユーザと内容を共有できます。WFA のコンテンツには、ユーザが作成したコンテンツ全体、またはワークフロー、ファインダ、コマンド、ディクショナリなどの特定の項目を含めることができます。
+
+.必要なもの
+* エクスポートする WFA コンテンツへのアクセス権が必要です。
+* エクスポートするコンテンツに認定コンテンツへの参照が含まれている場合、コンテンツのインポート時に、対応する認定コンテンツパックをシステムで使用できるようにする必要があります。
++
+これらのパックは Storage Automation Store からダウンロードできます。
+
+
+
+.このタスクについて
+* 次の種類の認定コンテンツはエクスポートできません。
++
+** image:../media/netapp_certified.gif[""] - ネットアップ認定コンテンツ
+** image:../media/ps_certified_icon_wfa.gif[""] - Professional Services （ PS ；プロフェッショナルサービス）が開発したコンテンツ。 PS によるカスタムインストールでのみ利用可能です
+** image:../media/community_certification.gif[""] - ユーザが開発したパック
+
+
+* エクスポートされたオブジェクトに依存するすべてのオブジェクトもエクスポートされます。
++
+たとえば、ワークフローをエクスポートすると、ワークフローの依存コマンド、フィルタ、ファインダもエクスポートされます。
+
+* ロックされたオブジェクトをエクスポートできます。
++
+オブジェクトは、他のユーザーによってインポートされるとロック状態のままになります。
+
+
+
+.手順
+. Web ブラウザを使用して WFA にログインします。
+. 必要なコンテンツをエクスポートします。
++
+[cols="2*"]
+|===
+| 状況 | 手順 
+
+
+ a| 
+ユーザーが作成したすべてのコンテンツを 1 つの .dar ファイルとしてエクスポートします
+ a| 
+.. [* 設定 * ] をクリックし、 [* メンテナンス *] の下にある [* すべてのワークフローをエクスポート *] をクリックします。
+.. 「 .dar 」ファイルのファイル名を指定し、「 * Export * 」をクリックします。
+
+
+
+
+ a| 
+特定のコンテンツをエクスポートします
+ a| 
+.. コンテンツをエクスポートするウィンドウに移動します。
+.. ウィンドウで 1 つ以上の項目を選択し、をクリックします image:../media/export_wfa_icon.gif["エクスポートアイコン"]。
+.. [ 名前を付けてエクスポート ] ダイアログボックスで '.dar ファイルのファイル名を指定し '[*Export*] をクリックします
+
+
+|===
+. [ 名前を付けて保存 *] ダイアログボックスで '.dar ファイルを保存する場所を指定し '[ 保存 *] をクリックします
+

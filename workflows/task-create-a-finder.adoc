@@ -1,0 +1,39 @@
+---
+permalink: workflows/task-create-a-finder.html 
+sidebar: sidebar 
+keywords: create, wfa, finder, search, resources, predefined, suitable, required 
+summary: WFA Finder を作成し、必要なリソースの検索に適した定義済みの WFA Finder がない場合にリソースを検索することができます。 
+---
+= Finder を作成します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+WFA Finder を作成し、必要なリソースの検索に適した定義済みの WFA Finder がない場合にリソースを検索することができます。
+
+Finder で使用する必要なフィルタを作成しておく必要があります。
+
+.手順
+. [* ワークフローデザイン *>* ファインダ *] をクリックします。
+. をクリックします image:../media/new_wfa_icon.gif["新しいアイコン"] をクリックします。
+. 「新規 Finder * 」ダイアログボックスの「 * プロパティ * 」タブで、「 * 名前 * 」、「 * タイプ * 」、および「 * 概要 * 」フィールドに必要な詳細を入力または選択します。
+. [ * フィルタ * （ * Filters * ） ] タブで、 [ 使用可能なフィルタ * （ * Available Filters * ） ] リストから必要なフィルタを選択し、をクリックする image:../media/right_arrow_button.gif["右矢印ボタン"]。
++
+要件に応じてフィルタを追加または削除できます。
+
+. [ 返された属性（ Returned Attributes ） ] タブで、 [ 使用可能な属性（ *Available * ） ] リストからフィルタに必要な属性を選択し、をクリックする image:../media/right_arrow_button.gif["右矢印ボタン"]。
+. * オプション： * Test * をクリックして、 Finder をテストします。
++
+.. [ * テストファインダ < 検索名 >*] ダイアログボックスで、必要なテストパラメータを入力します。
+.. Finder のテストに予約データを使用しない場合は、 [ テストで予約データを使用する *] チェックボックスをオフにします。
+.. [ * テスト * ] をクリックします。
++
+テストの結果が表示されます。
+
+.. ダイアログボックスを閉じます。
+
+
+. [ 保存（ Save ） ] をクリックします。
+

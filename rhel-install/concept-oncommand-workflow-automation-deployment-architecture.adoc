@@ -1,0 +1,20 @@
+---
+permalink: rhel-install/concept-oncommand-workflow-automation-deployment-architecture.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, deployment, architecture 
+summary: OnCommand Workflow Automation （ WFA ）サーバは、複数のデータセンター間でワークフローの処理をオーケストレーションするためにインストールされます。 
+---
+= OnCommand Workflow Automation の導入アーキテクチャ
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）サーバは、複数のデータセンター間でワークフローの処理をオーケストレーションするためにインストールされます。
+
+WFA サーバを複数の Active IQ Unified Manager 環境と VMware vCenter に接続することで、自動化環境を一元管理できます。
+
+次の図は、導入例を示しています。
+
+image::../media/wfa_arch_isg.gif[WFA ARCH ISG]

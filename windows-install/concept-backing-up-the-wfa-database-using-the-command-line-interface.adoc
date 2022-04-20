@@ -1,0 +1,20 @@
+---
+permalink: windows-install/concept-backing-up-the-wfa-database-using-the-command-line-interface.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, back up, wfa, database, cli 
+summary: OnCommand Workflow Automation （ WFA ）データベースを頻繁にバックアップする場合は、 WFA インストールパッケージに付属の WFA コマンドラインインターフェイス（ CLI ）を使用します。 
+---
+= CLI を使用した WFA データベースのバックアップ
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）データベースを頻繁にバックアップする場合は、 WFA インストールパッケージに付属の WFA コマンドラインインターフェイス（ CLI ）を使用します。
+
+2 つのバックアップタイプを次に示します。
+
+* フルバックアップ
+* 定期的なバックアップ
+

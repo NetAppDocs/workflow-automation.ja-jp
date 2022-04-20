@@ -1,0 +1,62 @@
+---
+permalink: windows-install/task-create-a-certificate-signing-request-for-workflow-automation-windows.html 
+sidebar: sidebar 
+keywords: workflow, automation, wfa, windows, create, certificate, sign, request 
+summary: Windows で証明書署名要求（ CSR ）を作成すると、 Workflow Automation （ WFA ）のデフォルトの SSL 証明書ではなく、認証局（ CA ）が署名した SSL 証明書を使用できるようになります。 
+---
+= Workflow Automation の証明書署名要求を作成します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Windows で証明書署名要求（ CSR ）を作成すると、 Workflow Automation （ WFA ）のデフォルトの SSL 証明書ではなく、認証局（ CA ）が署名した SSL 証明書を使用できるようになります。
+
+* WFA サーバに対する Windows の admin 権限が必要です。
+* WFA のデフォルトの SSL 証明書を置き換えておく必要があります。
+
+
+WFA のデフォルトのインストールパスは、この手順 で使用されます。インストール時にデフォルトパスを変更した場合は、カスタムの WFA インストールパスを使用する必要があります。
+
+.手順
+. WFA ホストマシンに admin ユーザとしてログインします。
+. WFA サーバでコマンドプロンプトを開き、 +<OpenJDK インストールの場所 >\bin にディレクトリを変更します
+. CSR を作成します。
++
+keytool -certreq -keystore wfa_install_location \ wfa \jboss\standalone\configuration\keystore\wfa_keystore -alias "ssl keystore" -file C ： \file_name .csr`
+
++
+file_name は CSR ファイル名です。
+
+. プロンプトが表示されたら、パスワードを入力します（デフォルトまたは新規）。
++
+changeit はデフォルトのパスワードです。デフォルトのパスワードを使用しない場合は、 standalone-full.xml ファイル内の SSL 要素のパスワード属性を wfa_install_location \WFA\JBoss\server\standalone\configuration にある変更する必要があります。
+
++
+[listing]
+----
+<ssl name="ssl" password="new_password" certificate-key-file="${jboss.server.config.dir}/keystore/wfa.keystore"
+----
+. file_name .CSR ファイルを CA に送信して署名済み証明書を取得します。
++
+詳細については、 CA の Web サイトを参照してください。
+
+. CA からチェーン証明書をダウンロードし、キーストアにチェーン証明書をインポートします。 keytool -import -alias "SSL keystore CA certificate" -keystore "wfa_install_location \WFA\jboss\standalone\configuration\keystore\wfa.keystore" -trustcacerts-file C ： \chain_cert.cer
++
+C:\chain_cert.cer は、 CA から受信したチェーン証明書ファイルです。ファイルは X.509 形式である必要があります。
+
+. CA から受け取った署名済み証明書をインポートします。
++
+keytool -import -alias "ssl keystore" -keystore "wfa_install_location \wfa_standalone\configuration\keystore\wfa.keystore" -file C ： \certificate.cer
+
++
+C ： \certificate.cer は、 CA から受信したチェーン証明書ファイルです。
+
+. 次の WFA サービスを開始します。
++
+** NetApp WFA データベース
+** NetApp WFA サーバ
+
+
+

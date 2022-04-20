@@ -1,0 +1,46 @@
+---
+permalink: windows-install/task-configure-an-earlier-version-of-wfa-foir-high-availability-windows.html 
+sidebar: sidebar 
+keywords: configure, earlier versions, oncommand, workflow, automation, high availability 
+summary: ハイアベイラビリティを実現するために、 3.1 より前のバージョンの OnCommand Workflow Automation （ WFA ）を設定することができます。 
+---
+= 以前のバージョンの OnCommand Workflow Automation をハイアベイラビリティ構成に設定する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ハイアベイラビリティを実現するために、 3.1 より前のバージョンの OnCommand Workflow Automation （ WFA ）を設定することができます。
+
+.手順
+. 既存のバージョンの WFA を最新バージョンの WFA にアップグレードします。
++
+xref:task-upgrade-oncommand-workflow-automation.adoc[WFA をアップグレードします]
+
++
+アップグレード後のバージョンの WFA が、クラスタのプライマリノードになります。
+
+. WFA データベースのバックアップを作成します。
++
+link:reference-backing-up-of-the-oncommand-workflow-automation-database.html["WFA データベースをバックアップします"]
+
++
+パラメータを手動で変更した場合は、 WFA データベースのバックアップを作成し、既存の WFA インストールをアンインストールしてから、使用可能な最新バージョンの WFA をインストールし、バックアップをリストアして、 Microsoft Cluster Service （ MSCS ）の設定に進む必要があります。
+
+. プライマリノードに WFA をインストールするように MSCS を設定します。
++
+link:task-configure-mscs-to-install-wfa.html["WFA をインストールするように MSCS を設定します"]
+
+. セカンダリノードに最新バージョンの WFA をインストールします。
++
+link:task-install-workflow-automation-on-windows.html["WFA をインストールします"]
+
+. MSCS で WFA を設定します。
++
+link:task-configure-mscs-to-install-wfa.html["MSCS で WFA を設定します"]
+
++
+WFA サーバはハイアベイラビリティ用に設定されています。
+
+

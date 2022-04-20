@@ -1,0 +1,53 @@
+---
+permalink: windows-install/task-replace-the-default-workflow-automation-ssl-certificate.html 
+sidebar: sidebar 
+keywords: replace, default, workflow, automation, ssl certificate 
+summary: 証明書の有効期限が切れている場合や証明書の有効期間を延長する場合は、 Workflow Automation （ WFA ）のデフォルトの SSL 証明書を置き換えることができます。 
+---
+= Workflow Automation のデフォルトの SSL 証明書を置き換えます
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+証明書の有効期限が切れている場合や証明書の有効期間を延長する場合は、 Workflow Automation （ WFA ）のデフォルトの SSL 証明書を置き換えることができます。
+
+WFA サーバに対する Windows の admin 権限が必要です。
+
+WFA のデフォルトのインストールパスは、この手順 で使用されます。インストール時にデフォルトの場所を変更した場合は、カスタムの WFA インストールパスを使用する必要があります。
+
+.手順
+. WFA ホストマシンに admin ユーザとしてログインします。
+. Windows サービスコンソールを使用して、次の WFA サービスを停止します。
++
+** NetApp WFA データベース
+** NetApp WFA サーバ
+
+
+. wfa_keystore ファイルを次の場所から削除します。
++
+「 <wfa_install_location >\WFA\JBoss\standalone\configuration\keystore 」というエラーが表示されます
+
+. WFA サーバでコマンドプロンプトを開き、 <OpenJDK のインストール先 >\bin にディレクトリを変更します
+. データベースキーを取得します。
++
+keytool -keysize 2048 -genkey -alias "ssl keystore" -keyalg RSA -keystore "<wfa_install_location >\WFA\jboss\standalone\configuration\keystore\wfserver.keystore" -dValidity xxxx`
+
++
+xxxx は、新しい証明書の有効期間を示す日数です。
+
+. プロンプトが表示されたら、パスワードを入力します（デフォルトまたは新規）。
++
+changeit はデフォルトのパスワードです。デフォルトのパスワードを使用しない場合は、 standalone-full.xml ファイル内の SSL 要素のパスワード属性を <wfa_install_location >\WFA\JBoss\server\standalone\configuration\ から変更する必要があります
+
++
+[listing]
+----
+<ssl name="ssl" password="new_password" certificate-key-file="${jboss.server.config.dir}/keystore/wfa.keystore"
+----
+. 証明書に必要な詳細情報を入力します。
+. 表示された情報を確認し、「 Yes 」と入力します。
+. 次のメッセージが表示されたら、 * Enter * を押します。 Enter key password for <SSL keystore><return if same as keystore password>
+. Windows サービスコンソールを使用して WFA サービスを再起動します。
+

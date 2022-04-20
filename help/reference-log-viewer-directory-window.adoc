@@ -1,0 +1,19 @@
+---
+permalink: help/reference-log-viewer-directory-window.html 
+sidebar: sidebar 
+keywords: log, viewer, window, list, available, oncommand, workflow, automation, access, select, maintenance, click, log viewer 
+summary: 'Log Viewer ウィンドウには、 OnCommand Workflow Automation で使用可能なすべてのログが表示されます。このウィンドウにアクセスするには、 [ 設定 ] を選択し、 [ メンテナンス ] の [ ログビューア ] をクリックします。' 
+---
+= ログビューアウィンドウ
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Log Viewer ウィンドウには、 OnCommand Workflow Automation で使用可能なすべてのログが表示されます。このウィンドウにアクセスするには、 * Settings * を選択し、 * Maintenance * （メンテナンス）で * Log Viewer （ログビューア） * をクリックします。
+
+Log Viewer ウィンドウには、ログファイル（アルファベット順）がリストされ、各ファイルが生成された時点のファイルサイズと日付が表示されます。
+
+
+NOTE: この機能は、 Microsoft Windows Server 2003 ではサポートされていません。

@@ -1,0 +1,16 @@
+---
+permalink: help/reference-mvel-learning-material-reference.html 
+sidebar: sidebar 
+keywords: use, language, guide, learn, expression 
+summary: MVEL 言語ガイドを使用して、 MVEL 表現言語（ MVEL ）の詳細を確認できます。 
+---
+= MVEL に関する情報の参照先
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MVEL 言語ガイド _ を使用して、 MVFLEX 表現言語（ MVEL ）の詳細を確認できます。
+
+MVEL は、 Java 構文に基づく式言語です。MVEL 式の構文は、 OnCommand Workflow Automation （ WFA ）ワークフローの関数や変数などで使用できます。

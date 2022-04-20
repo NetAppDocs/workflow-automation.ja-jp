@@ -1,0 +1,48 @@
+---
+permalink: help/concept-what-schemes-are.html 
+sidebar: sidebar 
+keywords: scheme, represent, data, model, system, collection, dictionary, entries, define, source, type, acquire, populate, example, virtual, environment, machines, hosts, datastores 
+summary: スキームはシステムのデータモデルを表します。データモデルは、ディクショナリエントリのコレクションです。スキームを定義してから、データソースタイプを定義できます。データソースは、データの取得方法とスキームの設定方法を定義します。たとえば、 VC スキームは、仮想マシン、ホスト、データストアなどの仮想環境に関するデータを取得します。 
+---
+= 方式は何ですか
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+スキームはシステムのデータモデルを表します。データモデルは、ディクショナリエントリのコレクションです。スキームを定義してから、データソースタイプを定義できます。データソースは、データの取得方法とスキームの設定方法を定義します。たとえば、 VC スキームは、仮想マシン、ホスト、データストアなどの仮想環境に関するデータを取得します。
+
+スキーマには、特定の問題を解決するようにカスタマイズされたワークフローを通じて、データを直接入力することもできます。
+
+ディクショナリエントリは、ディクショナリエントリが作成されるときに、既存のスキームに関連付けられます。ディクショナリエントリはキャッシュクエリーにも関連付けられ、キャッシュクエリーには SQL クエリーが含まれます。
+
+スキームでは、スクリプトベースのデータソースタイプまたは SQL データソースタイプのいずれかを使用してデータを取得できます。スクリプトはデータソースタイプの作成時に定義され、 SQL クエリはキャッシュクエリで定義されます。
+
+WFA には次のスキームが含まれています。
+
+* * 7-Mode （ストレージ） *
++
+Active IQ Unified Manager を介して Data ONTAP 7-Mode からデータを取得するスキーム。
+
+* * clustered Data ONTAP （ cm_storage ） *
++
+clustered Data ONTAP から Active IQ Unified Manager 経由でデータを取得するスキーム。
+
+* * 7-Mode のパフォーマンス（パフォーマンス） *
++
+Performance Advisor から Data ONTAP 7-Mode のパフォーマンスデータを取得するスキーム。
+
+* * clustered Data ONTAP のパフォーマンス（ cm_performance ） *
++
+Performance Advisor から clustered Data ONTAP のパフォーマンスデータを取得するスキーム。
+
+* * VMware vCenter （ VC ） *
++
+VMware vCenter からデータを取得するスキーム。
+
+* * プレイグラウンド（プレイグラウンド） *
++
+データを直接取り込むことができるスキーム。
+
+

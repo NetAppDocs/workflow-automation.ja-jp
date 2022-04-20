@@ -1,0 +1,36 @@
+---
+permalink: rhel-install/task-restore-regular-the-oncommand-workflow-automation-database-using-rest-apis.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, restore, regular, wfa, database, rest apis 
+summary: REST API を使用して、 OnCommand Workflow Automation （ WFA ）データベースを定期的にリストアすることができます。通常のリストアでは、 WFA データベースのみをリストアできます。 
+---
+= REST API を使用して WFA データベースを（通常の）リストアします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+REST API を使用して、 OnCommand Workflow Automation （ WFA ）データベースを定期的にリストアすることができます。通常のリストアでは、 WFA データベースのみをリストアできます。
+
+* WFA データベースの .zip バックアップを作成しておく必要があります。
+* 管理者またはアーキテクトのクレデンシャルが必要です。
+* 手順 移行の一環としてデータベースをリストアする場合は、フルリストアを実行する必要があります。
+
+
+.手順
+. REST クライアントブラウザに次の URL を入力します :+WFA サーバの https://IP アドレス /rest/backups+'
+. [ バックアップ ] ウィンドウで、 *POST* メソッドを選択します。
+. [* Part*] ドロップダウンリストで、 [* Multipart Body] を選択します。
+. ［ * ファイル * ］ フィールドに、次の情報を入力します。
++
+.. [ コンテンツタイプ * （ Content type * ） ] ドロップダウンリストで、 [ * 複数パーツ / フォームデータ * （ * multi-ppart/form-data* ） ] を選択します。
+.. [* Charset * （文字セット * ） ] ドロップダウンリストで、 [* ISO-8859-1 * ] を選択します。
+.. [** ファイル名 **] フィールドに、バックアップファイルの名前を backupfile として入力します。
+.. [* 参照 ] をクリックします。
+.. .zip バックアップファイルの場所を選択します。
+
+
+. /opt/netapp/wfa/bin ディレクトリに移動し、 WFA サービスを再起動します。
+. リストア処理が成功し、 WFA にアクセスできることを確認してください。
+

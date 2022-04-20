@@ -1,0 +1,252 @@
+---
+permalink: windows-install/task-install-workflow-automation-on-windows.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, install, windows 
+summary: OnCommand Workflow Automation （ WFA ）をインストールすると、環境で実行されるストレージタスクを自動化するためのストレージワークフローを作成およびカスタマイズできます。 
+---
+= Windows に OnCommand Workflow Automation をインストールします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）をインストールすると、環境で実行されるストレージタスクを自動化するためのストレージワークフローを作成およびカスタマイズできます。
+
+* インストールの前提条件を確認しておく必要があります。
++
+xref:reference-prerequisites-for-installing-workflow-automation.adoc[Workflow Automation をインストールするための前提条件]
+
+* WFA を以前にインストールしたシステムからアンインストールしたあとに WFA をインストールする場合は、そのシステムに WFA サービスがないことを確認する必要があります。
+* ネットアップサポートサイトから WFA インストーラをダウンロードしておく必要があります。
+* WFA を仮想マシン（ VM ）にインストールする場合、 VM の名前にアンダースコア（ _ ）文字を含めることはできません。
+* ActiveState ActivePerl は、 WFA をインストールする前にインストールされます。
++
+このインストールは、 WFA サーバにインストールした ActivePerl の他のインスタンスには影響しません。
+
+* MySQL をアンインストールした場合は、 WFA 4.2 以降を再インストールする前に、 MySQL のデータディレクトリを削除しておく必要があります。
+
+
+.手順
+. 管理者権限を持つアカウントで Windows にログインします。
+. エクスプローラを開き、インストールファイルが保存されているディレクトリに移動します。
+. WFA をインストールします。
++
+** 対話型インストール
++
+... WFA インストーラの実行ファイル（ .exe ファイル）を右クリックし、 admin ユーザとして実行します。
+... 「 * 次へ * 」をクリックします。
+... デフォルトの admin ユーザのクレデンシャルを入力し、 * 次へ * をクリックします。
++
+デフォルトの admin パスワードは次の条件を満たしている必要があります。
+
++
+**** 8 文字以上にする必要があります
+**** 大文字の 1 文字
+**** 小文字を 1 文字使用します
+**** 1 つの数字
+**** 1 つの特殊文字
+**** 次の特殊文字は、パスワードの使用や原因 のインストールエラーではサポートされません。
++
+`";<> 、 = & ｛ キャレット ｝ |
+
++
+[NOTE]
+====
+admin ユーザのクレデンシャルをメモしておく必要があります。
+
+====
+
+
+... WFA サービスログオンのユーザ名とパスワードを入力します。ドメイン・ユーザの場合は、 domain\user の形式でユーザ名を指定します。ローカルシステムユーザの場合は、ユーザ名の形式にすぎません。デフォルトのユーザ名は「 wfa 」です。
++
+ローカルユーザが存在しない場合は、 WFA インストーラによって作成されます。ローカルユーザが存在し、入力したパスワードが既存のパスワードと異なる場合、 WFA はパスワードを更新します。
+
++
+[NOTE]
+====
+パスワードが、システムのローカルユーザ用に設定されたパスワードポリシーに準拠していることを確認します。パスワードがパスワードポリシーに準拠していない場合、インストールは失敗します。
+
+====
+... WFA 設定のポートを選択し、 * Next * をクリックします。
+... サイト名と会社名を入力し、 [ 次へ * ] をクリックします。
++
+サイト名には、たとえばピッツバーグの WFA インストール場所を含めることができます。
+
+... デフォルトのインストール場所を変更する場合は、 WFA をインストールする場所を選択し、 * Next * をクリックします。
+... サードパーティ製品のデフォルトのインストール場所を変更する場合は、サードパーティ製品をインストールする場所を選択し、 [ 次へ ] をクリックします。
+... WFA データベースのデフォルトの場所を変更しない場合は、 * Next * をクリックします。
+... インストールを続行するには、 * Install * をクリックします。
+... [ 完了 ] をクリックしてインストールを完了します。
+... 次のいずれかを実行して、 WFA が正常にインストールされたことを確認します。
++
+**** Web ブラウザを使用して WFA にアクセスします。
+**** Windows サービスコンソールを使用して、 NetApp WFA Server サービスと NetApp WFA Database サービスが実行されていることを確認します。
+
+
+
+
+** サイレントインストール（コマンドプロンプトから）：
++
+ WFA-version_number-build_number.exe /s /v"WFA_ADMIN_USERNAME=wfa_username WFA_ADMIN_PASSWORD=password WFA_ADMIN_CONFIRM_PASSWORD=confirm admin password / WFA_MYSQL_PASS=password CONFIRM_WFA_MYSQL_PASS=confirm MySQL password WFA_INSTALL_SITE=site WFA_INSTALL_ORGANIZATION=organization_name WFA_HTTP_PORT=port WFA_HTTPS_PORT=port INSTALLDIR=install_directory JDKINSTALLDIR=jdk_directory PerlDir=perl_directory MySqlInstallDir=mysql_directory WFA_SERVICE_LOGON_USERNAME=wfa service logon username WFA_SERVICE_LOGON_PASSWORD=wfa service logon user password MYSQL_DATA_DIR= mysql data directory /qr /l*v C:\install.log"
++
+* 例 *
+
++
+WFA-x64-V5.1.0.0.1-B5355278.exe /s /v "wfa_admin_username=admin wfa_admin_admin_password=Company * 123 wfa_admin_confirm_password=Company * 123 wfa_mysql_pass=mysql * 123 confirm_wfa_install_site=nb WFA_install_site=nb wfa_install_organization = nb wfa_install_install_organization = netapp WFA_install_install_organization = WFA ディレクトリ \WFA_install_log\NetApp ¥ WFA ディレクトリ \WFA_install\NetApp ¥ \ Program \qldr Program \NetApp ¥ \ Program \qldr ¥ \ g\g_ ディレクトリ \g_ ディレクトリ > NetApp ¥ \ Program \g_ ディレクトリ \qldr ¥ \ Program \g_ ディレクトリ \g_ ディレクトリ \g_ ディレクトリ \g_ ディレクトリ \qldr ¥ \ ディレクトリ \g\g\g\g\g\g_ ディレクトリ \g_ ディレクトリ \g_ ディレクトリ \netapp ¥ \ netapp ¥ \ ディレクトリ \netapp ¥ \ ディレクトリ \WFA\g_ ディレクトリ \qldr ¥ \ ディレクトリ \g_ ディレクトリ \g_ ディレクトリ \g_ ディレクトリ \g_ ディレクトリ \g\
+
++
+[NOTE]
+====
+/qn オプションは、 WFA ではサポートされません。
+
+====
++
+コマンドパラメータは次のとおりです。
+
++
+[cols="2*"]
+|===
+| パラメータ | 説明 
+
+
+ a| 
+wfa_admin_username を入力します
+ a| 
+管理ユーザ名オプションパラメータ。値を指定しない場合、デフォルト値は admin です。
+
+
+
+ a| 
+wfa_ADMIN_NETWORK_PASSWORD
+ a| 
+admin ユーザパスワード必須パラメータ。デフォルトの admin パスワードは次の条件を満たしている必要があります。
+
+*** 8 文字以上にする必要があります
+*** 大文字の 1 文字
+*** 小文字を 1 文字使用します
+*** 1 つの数字
+*** 1 つの特殊文字
+*** 次の文字は使用できず、原因 パスワードの入力は失敗します。
++
+`";<> 、 = & ｛ キャレット ｝ |
+
+
+
+
+
+ a| 
+wfa_ADMIN_NETWORK_CONFIRM_PASSWORD
+ a| 
+admin ユーザパスワード必須パラメータ
+
+
+
+ a| 
+wfa_mysql_pass 」のコマンドを実行します
+ a| 
+MySQL ユーザパスワード必須パラメータ
+
+
+
+ a| 
+確認 wfa_mysql_pass
+ a| 
+MySQL ユーザパスワード必須パラメータ
+
+
+
+ a| 
+wfa_install_site
+ a| 
+WFA をインストールしている組織単位必須パラメータ
+
+
+
+ a| 
+wfa_install_organization 」を参照してください
+ a| 
+WFA をインストールする組織または会社の名前。必須パラメータ
+
+
+
+ a| 
+wfa_HTTP ポート
+ a| 
+HTTP ポートオプションパラメータ。値を指定しない場合、デフォルト値は 80 です。
+
+
+
+ a| 
+wfa_HTTPS_PORT
+ a| 
+HTTPS ポートオプションパラメータ。値を指定しない場合、デフォルト値は 443 です。
+
+
+
+ a| 
+INSTALLDIR
+ a| 
+インストールディレクトリパスオプションパラメータ。値を指定しない場合、パスはデフォルトで「 C ： \Program Files\NetApp\WFA\ 」になります。
+
+
+
+ a| 
+JDKINSTALLDIR
+ a| 
+JDK のインストールディレクトリパスオプションパラメータ値を指定しない場合、パスはデフォルトで「 C ： \Program Files\ NetApp 」になります。
+
+
+
+ a| 
+パーラ方向（ PerlDir ）
+ a| 
+Perl インストールディレクトリパスオプションパラメータ。値を指定しない場合、パスはデフォルトで「 C ： \Perl64\ 」になります。
+
+
+
+ a| 
+MySqlInstallDir の部分
+ a| 
+MySQL のインストールディレクトリパスオプションのパラメータ。値を指定しない場合、パスはデフォルトで「 C ： \Program Files\MySQL\ 」になります。
+
+
+
+ a| 
+wfa_service_logon_username を参照してください
+ a| 
+WFA サービスログオンのユーザ名オプションパラメータ。値を指定しない場合、デフォルトのユーザ名は「 wfa 」です。
+
+ドメイン・ユーザの場合は、 domain\user の形式でユーザ名を指定します。ローカルシステムユーザの場合は、ユーザ名の形式にすぎません。
+
+ローカルユーザが存在しない場合は、 WFA インストーラによって作成されます。ローカルユーザが存在し、入力したパスワードが既存のパスワードと異なる場合、 WFA はパスワードを更新します。
+
+[NOTE]
+====
+パスワードが、システムのローカルユーザ用に設定されたパスワードポリシーに準拠していることを確認します。パスワードがパスワードポリシーに準拠していない場合、インストールは失敗します。
+
+====
+
+
+ a| 
+wfa_service_logon_password
+ a| 
+WFA サービスログオンの必須パラメータのパスワード
+
+
+
+ a| 
+mysql_data_DIR に移動します
+ a| 
+MySQL データのディレクトリオプションパラメータ値を指定しない場合、パスはデフォルトで「 C ： \ProgramData\MySQL\MySQLServerData 」になります。
+
+新規インストールにのみ使用できます。
+
+|===
+
+
+
+
+* 関連情報 *
+
+https://mysupport.netapp.com/site/["ネットアップサポート"^]

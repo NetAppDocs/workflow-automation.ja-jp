@@ -1,0 +1,36 @@
+---
+permalink: rhel-install/concept-enabling-ciphers-and-adding-new-ciphers.html 
+sidebar: sidebar 
+keywords: enable ciphers, add new ciphers, ciphers 
+summary: OnCommand Workflow Automation 5.1 では、標準で用意されている多数の暗号がサポートされています。必要に応じて暗号を追加することもできます。 
+---
+= 暗号を有効にして新しい暗号を追加する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation 5.1 では、標準で用意されている多数の暗号がサポートされています。必要に応じて暗号を追加することもできます。
+
+事前に有効にできる暗号は次のとおりです。
+
+[listing]
+----
+enabled-cipher-suites=
+"TLS_DHE_DSS_WITH_AES_128_GCM_SHA256,TLS_DHE_DSS_WITH_AES_256_GCM_SHA384,TLS_DHE_RSA_WITH_AES_128_GCM_SHA256,
+TLS_DHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
+TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256,
+TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384,
+TLS_RSA_WITH_AES_128_GCM_SHA256,TLS_RSA_WITH_AES_256_GCM_SHA384"
+----
+この構成には ' standalone-full.xml' ファイルに暗号を追加できますこのファイルは、「 <installdir>/jboss/standalone/configuration/standalone-full.xml 」にあります。
+
+このファイルは、次のように追加の暗号をサポートするように変更できます。
+
+[listing]
+----
+<https-listener name="https" socket-binding="https" max-post-size="1073741824" security-realm="SSLRealm"
+enabled-cipher-suites="**< --- add additional ciphers here ---\>**
+enabled-protocols="TLSv1.1,TLSv1.2"/>
+----

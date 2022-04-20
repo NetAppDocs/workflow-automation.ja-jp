@@ -1,0 +1,188 @@
+---
+permalink: rhel-install/task-install-oncommand-workflow-automation.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, install, linux 
+summary: OnCommand Workflow Automation （ WFA ）は、コマンドラインインターフェイス（ CLI ）を使用してインストールできます。 
+---
+= Linux に OnCommand Workflow Automation をインストールします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）は、コマンドラインインターフェイス（ CLI ）を使用してインストールできます。
+
+* インストールの前提条件を確認しておく必要があります。
++
+xref:reference-prerequisites-for-installing-workflow-automation.adoc[インストールの前提条件]
+
+* ネットアップサポートサイトから WFA インストーラをダウンロードしておく必要があります。
+
+
+WFA を仮想マシン（ VM ）にインストールする場合、 VM の名前にアンダースコア（ _ ）文字を含めることはできません。
+
+デフォルトのインストール場所は、シェルプロンプトで変更できます。 `./WFA-version_number.bin [-i wfa_install_directory][-d mysql_data_directory]]
+
+デフォルトのインストール場所を変更した場合、 WFA をアンインストールしても MySQL のデータディレクトリは削除されません。ディレクトリを手動で削除する必要があります。
+
+
+NOTE: MySQL をアンインストールした場合は、 WFA 4.2 以降を再インストールする前に、 MySQL のデータディレクトリを削除しておく必要があります。
+
+.手順
+. Linux サーバに root ユーザとしてログインします
+. 実行可能ファイルが置かれているディレクトリに移動します。
+. 次のいずれかの方法を選択して WFA をインストールします。
++
+** 対話型インストール
++
+... 対話型セッションを開始します
+... デフォルトの admin ユーザのクレデンシャルを入力し、 Enter キーを押します。
++
+admin ユーザのクレデンシャルをメモして、パスワードが次の基準を満たしていることを確認する必要があります。
+
++
+**** 8 文字以上にする必要があります
+**** 大文字の 1 文字
+**** 小文字を 1 文字使用します
+**** 1 つの数字
+**** 1 つの特殊文字
+**** 次の特殊文字は、パスワードの使用や原因 のインストールエラーではサポートされません。
++
+`";<> 、 = & ｛ キャレット ｝ |
+
+
+
+... WFA 設定のデフォルトポートをそのまま使用するか、カスタムポートを指定して Enter キーを押します。
+... 会社名とサイト名を指定し、 Enter キーを押します。
++
+サイト名には、たとえばピッツバーグの WFA インストール場所を含めることができます。
+
+... 次のいずれかを実行して、 WFA が正常にインストールされていることを確認します。
++
+**** Web ブラウザを使用して WFA にアクセスします。
+**** NetApp WFA Server サービスと NetApp WFA Database サービスが実行されていることを確認します。
++
+....
+service wfa-server status
+service wfa-db status
+....
+
+
+
+
+** サイレントインストール
++
+シェルプロンプトで、次のように入力します
+
++
+WFA-version_number.bin [-u admin_user_name [-p admin_user_name] [-m https_port] [-n http_port] [-c company_name] [-s site_name [-i install_directory] [-d mysql_data_directory] [-y ] [-b]
+
++
+サイレントインストールを実行する場合は、すべてのコマンドオプションに値を指定する必要があります。コマンドオプションは次のとおりです。
+
++
+[cols="2*"]
+|===
+| オプション | 説明 
+
+
+ a| 
+- y
+ a| 
+スキップするオプションを指定すると、インストールの確認がスキップされます
+
+
+
+ a| 
+-b
+ a| 
+スキップするオプションを指定すると、アップグレード時に WFA データベースのバックアップの作成がスキップされます
+
+
+
+ a| 
+-u
+ a| 
+管理ユーザ名
+
+
+
+ a| 
+-p
+ a| 
+admin ユーザのパスワード admin ユーザのパスワードは次の条件を満たしている必要があります。
+
+*** 8 文字以上にする必要があります
+*** 大文字の 1 文字
+*** 小文字を 1 文字使用します
+*** 1 つの数字
+*** 1 つの特殊文字
+*** 次の文字は使用できず、原因 パスワードの入力は失敗します。
++
+`";<> 、 = & ｛ キャレット ｝ |
+
+
+
+
+
+ a| 
+- m
+ a| 
+HTTPS ポート
+
+
+
+ a| 
+-n
+ a| 
+HTTP ポート
+
+
+
+ a| 
+ a| 
+
+
+
+ a| 
+-s
+ a| 
+サイト名
+
+
+
+ a| 
+-c
+ a| 
+会社名
+
+
+
+ a| 
+- i
+ a| 
+インストールディレクトリのパス
+
+
+
+ a| 
+-d
+ a| 
+MySQL データディレクトリ
+
+
+
+ a| 
+-h
+ a| 
+表示するオプションヘルプを表示します
+
+|===
+
+
+
+
+* 関連情報 *
+
+https://mysupport.netapp.com/site/["ネットアップサポート"^]

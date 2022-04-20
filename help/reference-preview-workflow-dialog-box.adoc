@@ -1,0 +1,34 @@
+---
+permalink: help/reference-preview-workflow-dialog-box.html 
+sidebar: sidebar 
+keywords: preview, workflow, dialog box, enable, specify, value, user input, associated 
+summary: '[ ワークフローのプレビュー ] ダイアログボックスでは、ワークフローに関連付けられたユーザー入力の値を指定し、指定した値を使用してワークフローの実行をプレビューできます。' 
+---
+= ワークフローのプレビューダイアログボックス
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+[ ワークフローのプレビュー ] ダイアログボックスでは、ワークフローに関連付けられたユーザー入力の値を指定し、指定した値を使用してワークフローの実行をプレビューできます。
+
+
+
+== ユーザ入力値
+
+[ ワークフローのプレビュー ] ダイアログボックスには、選択したワークフローに関連付けられたユーザー入力が表示され、ユーザー入力の値を設定できます。
+
+
+
+== コマンドボタン
+
+* * プレビュー *
++
+関連するワークフローの Monitoring ウィンドウを開きます。
+
+* * キャンセル *
++
+ダイアログボックスを閉じます。
+
+

@@ -1,0 +1,12 @@
+---
+permalink: windows-install/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= 『 Installation and Setup Guide for Windows ® 』を参照してください
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+

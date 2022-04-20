@@ -1,0 +1,16 @@
+---
+permalink: help/reference-oncommand-workflow-automation-designer-features.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, include, various, feature, help, design, storage 
+summary: OnCommand Workflow Automation には、ストレージワークフローの設計に役立つさまざまな機能が用意されています。 
+---
+= OnCommand Workflow Automation デザイナの機能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation には、ストレージワークフローの設計に役立つさまざまな機能が用意されています。
+
+機能の詳細については、次のトピックを参照してください。

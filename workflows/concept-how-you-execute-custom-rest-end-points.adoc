@@ -1,0 +1,29 @@
+---
+permalink: workflows/concept-how-you-execute-custom-rest-end-points.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, provide, mechanism, configure, custom, end points, execute, help, architect, configure, easy, understand, intuitive, uniform, resource, identifiers, follow, conventions, post, put, delete, based, semantics, client, code, developers 
+summary: OnCommand Workflow Automation （ WFA ）には、ワークフローを実行するためのカスタム REST エンドポイントを設定するためのメカニズムが用意されています。カスタム REST のエンドポイントは、アーキテクトがわかりやすく、わかりやすい Uniform Resource Identifier （ URI ）を設定してワークフローを実行するのに役立ちます。 URI は、ワークフローのセマンティクスに基づいて、 POST 、 PUT 、 DELETE の REST の規則に準拠します。これらの URI を使用すると、クライアント開発者はクライアントコードを簡単に開発できます。 
+---
+= カスタム REST エンドポイントの実行方法
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）には、ワークフローを実行するためのカスタム REST エンドポイントを設定するためのメカニズムが用意されています。カスタム REST のエンドポイントは、アーキテクトがわかりやすく、わかりやすい Uniform Resource Identifier （ URI ）を設定してワークフローを実行するのに役立ちます。 URI は、ワークフローのセマンティクスに基づいて、 POST 、 PUT 、 DELETE の REST の規則に準拠します。これらの URI を使用すると、クライアント開発者はクライアントコードを簡単に開発できます。
+
+WFA では、 API 呼び出しを介してワークフローを実行するためのカスタム URI パスを設定できます。URI パス内の各セグメントは、文字列、または括弧内のワークフローのユーザー入力の有効な名前にすることができます。たとえば、「 /Dev/\{ProjectName}/clone. 」のようになります ワークフローは '_https_://WFAServer:HTTPS_port/rest/Devation/Project1/clone/jobs.' の呼び出しとして呼び出すことができます
+
+URI パスの検証は次のとおりです。
+
+* REST パスは「 / 」で始まる必要があります。
+* 使用できる文字は、アルファベット、数字、アンダースコアです。
+* ユーザー入力名は "`{}`") で囲む必要があります
++
+
+NOTE: "{}" で囲まれた値が有効なユーザー入力名であることを確認する必要があります。
+
+* 空のパスセグメントがないようにしてください。たとえば、 / 、 / ｛ ｝ / のように指定します。
+* HTTP メソッドの設定とカスタム URI パスの設定の両方を行うか、どちらも設定しないでください。
+

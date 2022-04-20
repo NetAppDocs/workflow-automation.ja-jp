@@ -1,0 +1,45 @@
+---
+permalink: rhel-install/task-migrate-the-oncommand-workflow-automation-installation-linux.html 
+sidebar: sidebar 
+keywords: migrate, oncommand, workflow, automation, installation 
+summary: OnCommand Workflow Automation （ WFA ）インストールを移行することで、 WFA のインストール時にインストールされる一意の WFA データベースキーを維持できます。 
+---
+= OnCommand Workflow Automation インストールを移行します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）インストールを移行することで、 WFA のインストール時にインストールされる一意の WFA データベースキーを維持できます。
+
+* この手順 は、 WFA データベースキーが含まれている WFA インストールを別のサーバに移行する場合にのみ実行する必要があります。
+* WFA のデータベースリストアでは WFA キーは移行されません。
+* WFA のインストールを移行しても SSL 証明書は移行されません。
+* WFA のデフォルトのインストールパスは、この手順 で使用されます。
++
+インストール時にデフォルトの場所を変更した場合は、変更した WFA のインストールパスを使用する必要があります。
+
+
+
+.手順
+. 管理者として Web ブラウザを使用して WFA にアクセスします。
+. WFA データベースをバックアップします。
+. WFA サーバでシェルプロンプトを開き、 wfa_install_location /wfa/bin/ にディレクトリを変更します
+. シェルプロンプトで次のコマンドを入力し、データベースキーを取得します。
++
+「 ./wfa -key 」と入力します
+
+. 表示されたデータベース・キーをメモします。
+. WFA をアンインストールします。
+. 必要なシステムに WFA をインストールします。
+. WFA サーバでシェルプロンプトを開き、 wfa_install_location /wfa/bin/ にディレクトリを変更します
+. シェル・プロンプトで次のコマンドを入力して、データベース・キーをインストールします。
++
+`./wfa -key=yourdatabasekey`
+
++
+yourdatabasekey は、以前の WFA インストールからメモしたキーです。
+
+. 作成したバックアップから WFA データベースをリストアします。
+

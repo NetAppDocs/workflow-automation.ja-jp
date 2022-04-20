@@ -1,0 +1,39 @@
+---
+permalink: help/task-import-oncommand-workflow-automation-content.html 
+sidebar: sidebar 
+keywords: import, user-created, oncommand, workflow, automation, content, finders, commands, installation, downloaded, storage, community, packs, include, data, ontap, powershell, toolkits, perl, nmsdk 
+summary: ワークフロー、ファインダ、コマンドなど、ユーザが作成した OnCommand Workflow Automation （ WFA ）のコンテンツをインポートできます。また、別の WFA インストールからエクスポートしたコンテンツ、 Storage Automation Store または WFA コミュニティからダウンロードしたコンテンツ、および Data ONTAP PowerShell ツールキットや Perl NMSDK ツールキットなどのパックをインポートすることもできます。 
+---
+= OnCommand Workflow Automation コンテンツをインポートします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ワークフロー、ファインダ、コマンドなど、ユーザが作成した OnCommand Workflow Automation （ WFA ）のコンテンツをインポートできます。また、別の WFA インストールからエクスポートしたコンテンツ、 Storage Automation Store または WFA コミュニティからダウンロードしたコンテンツ、および Data ONTAP PowerShell ツールキットや Perl NMSDK ツールキットなどのパックをインポートすることもできます。
+
+* 必要なもの *
+
+* インポートする WFA コンテンツへのアクセス権が必要です。
+* インポートするコンテンツが、同じバージョンかそれ以前のバージョンの WFA を実行しているシステムに作成されている必要があります。
++
+たとえば、 WFA 2.2 を実行している場合、 WFA 3.0 を使用して作成されたコンテンツをインポートすることはできません。
+
+* N-2 バージョンの WFA で開発されたコンテンツは、 WFA 5.1 にのみインポートできます。
+* 「 .dar 」ファイルが NetApp 認定コンテンツを参照している場合は、 NetApp 認定コンテンツ・パックをインポートする必要があります。
++
+ネットアップ認定コンテンツパックは、 Storage Automation Store からダウンロードできます。パックのドキュメントを参照して、すべての要件が満たされていることを確認する必要があります。
+
+
+
+.手順
+. Web ブラウザを使用して WFA にログインします。
+. [* 設定 * ] をクリックし、 [* メンテナンス * ] の [ * ワークフローのインポート * ] をクリックします。
+. [ ファイルの選択 *] をクリックして ' インポートする .dar ファイルを選択し '[ インポート *] をクリックします
+. [ インポート成功 ] ダイアログボックスで、 [OK] をクリックします。
+
+
+* 関連情報 *
+
+http://community.netapp.com/t5/OnCommand-Storage-Management-Software-Articles-and-Resources/tkb-p/oncommand-storage-management-software-articles-and-resources/label-name/workflow%20automation%20%28wfa%29?labels=workflow+automation+%28wfa%29["ネットアップコミュニティ： OnCommand Workflow Automation"^]

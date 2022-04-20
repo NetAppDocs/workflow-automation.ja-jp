@@ -1,0 +1,37 @@
+---
+permalink: windows-install/task-configure-your-preferred-perl-interpreter.html 
+sidebar: sidebar 
+keywords: configure, preferred, perl distribution 
+summary: デフォルトでは、 OnCommand Workflow Automation （ WFA ）とともに ActivePerl がインストールされます。別の Perl ディストリビューションを使用する場合は、任意の Perl ディストリビューションを WFA と連携するように設定できます。 
+---
+= 任意の Perl 配信を設定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+デフォルトでは、 OnCommand Workflow Automation （ WFA ）とともに ActivePerl がインストールされます。別の Perl ディストリビューションを使用する場合は、任意の Perl ディストリビューションを WFA と連携するように設定できます。
+
+必要な Perl ディストリビューションを WFA サーバにインストールしておく必要があります。
+
+デフォルトの ActivePerl インストールをアンインストールしたり上書きしたりしないでください。希望する Perl ディストリビューションを別の場所にインストールする必要があります。
+
+.手順
+. エクスプローラを開き、次のディレクトリに移動します。
++
+wfa_install_location \ wfa \bin\
+
+. ps.cmd ファイルをダブルクリックします。
++
+PowerShell コマンドラインインターフェイス（ CLI ）のプロンプトが開き、 ONTAP モジュールと WFA モジュールがロードされます。
+
+. プロンプトで、次のように入力します。
++
+'Set-WfaConfig-Name CustomPerl-PerlPath CustomPerlPath
+
++
+"Set-WfaConfig-Name CustomPerl-PerlPath C:\myperl\perl.exe"
+
+. プロンプトが表示されたら、 WFA サービスを再起動します。
+

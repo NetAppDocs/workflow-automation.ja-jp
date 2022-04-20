@@ -1,0 +1,32 @@
+---
+permalink: workflows/task-rollback-pack-to-a-previous-version-in-scm.html 
+sidebar: sidebar 
+keywords: roll, pack, previous, version, source, control, management, import, oncommand, workflow, automation 
+summary: パックは、 Source Control Management （ SCM ；ソース管理管理）で以前のバージョンにロールバックして、 OnCommand Workflow Automation （ WFA ）にインポートできます。 
+---
+= WFA ワークフローパックを SCM 内の以前のバージョンにロールバックします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+パックは、 Source Control Management （ SCM ；ソース管理管理）で以前のバージョンにロールバックして、 OnCommand Workflow Automation （ WFA ）にインポートできます。
+
+SCM をセットアップする必要があり、管理者またはアーキテクトのクレデンシャルが必要です。
+
+.手順
+. SCM クライアントの場所で、 SCM ツールを使用して、ファイルシステムの場所にある以前のバージョンにパックをロールバックします。
++
+SCM クライアントは、必要な変更番号と完全に同期されます。
+
+. Web ブラウザを使用して WFA ウィンドウにログインします。
+. 更新したパックを WFA にインポートします。
++
+link:task-import-an-oncommand-workflow-automation-pack.html["WFA ワークフローパックをインポート"]
+
++
+
+NOTE: これにより、 WFA データベースが以前のバージョンにロールバックされます。
+
+

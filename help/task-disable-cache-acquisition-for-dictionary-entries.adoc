@@ -1,0 +1,21 @@
+---
+permalink: help/task-disable-cache-acquisition-for-dictionary-entries.html 
+sidebar: sidebar 
+keywords: necessary, cache, dictionary, objects, oncommand, workflow, automation, disable, reduce, time, complete, data, source, acquisition 
+summary: OnCommand Workflow Automation （ WFA ）でディクショナリオブジェクトをキャッシュする必要がない場合は、オブジェクトのキャッシュを無効にできます。不要なオブジェクトのキャッシュを無効にすると、 WFA でデータソースの取得にかかる時間を短縮できます。 
+---
+= ディクショナリエントリのキャッシュ取得を無効にします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）でディクショナリオブジェクトをキャッシュする必要がない場合は、オブジェクトのキャッシュを無効にできます。不要なオブジェクトのキャッシュを無効にすると、 WFA でデータソースの取得にかかる時間を短縮できます。
+
+.手順
+. [ * データソースデザイン *>* 辞書 * ] をクリックします。
+. データ収集を無効にするディクショナリエントリを選択します。
+. をクリックします image:../media/disable_acquisition_wfa_icon.gif["取得を無効にするアイコン"] ツールバーで、 * はい * をクリックします。
+. 辞書エントリの _Cache acquisition が無効にできないというエラーメッセージが表示された場合は '_' エラーメッセージに示されている辞書エントリのキャッシュ取得を無効にしてから ' 現在の辞書オブジェクトのキャッシュ取得を無効にしてください
+

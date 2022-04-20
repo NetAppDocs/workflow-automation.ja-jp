@@ -1,0 +1,95 @@
+---
+permalink: windows-install/reference-system-requirements-for-oncommand-workflow-automation-windows.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, system requirements, install 
+summary: WFA をインストールする前に、 OnCommand Workflow Automation （ WFA ）のハードウェアとソフトウェアの要件を理解しておく必要があります。 
+---
+= OnCommand Workflow Automation をインストールするためのシステム要件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+WFA をインストールする前に、 OnCommand Workflow Automation （ WFA ）のハードウェアとソフトウェアの要件を理解しておく必要があります。
+
+
+
+== WFA をインストールするためのハードウェア要件
+
+次の表に、 WFA サーバのハードウェアの最小要件と推奨されるハードウェア仕様を示します。
+
+[cols="3*"]
+|===
+| コンポーネント | 最小要件 | 推奨される仕様 
+
+
+ a| 
+CPU
+ a| 
+2.27GHz 以上、 4 コア、 64 ビット
+ a| 
+2.27GHz 以上、 4 コア、 64 ビット
+
+
+
+ a| 
+RAM
+ a| 
+4 GB
+ a| 
+8 GB
+
+
+
+ a| 
+空きディスク容量
+ a| 
+5 GB
+ a| 
+20 GB
+
+|===
+WFA を仮想マシン（ VM ）にインストールする場合は、 VM に十分なリソースが確保されるように、必要なメモリと CPU を確保しておく必要があります。インストーラは CPU 速度を確認しません。
+
+
+
+== WFA をインストールするためのソフトウェア要件
+
+WFA は 64 ビットの Windows オペレーティングシステムで実行され、専用の物理マシンまたは VM にインストールする必要があります。WFA を実行するサーバには、他のアプリケーションをインストールしないでください。
+
+WFA は、 Microsoft Windows Server 2012 Enterprise Edition から Microsoft Windows Server 2016 （すべてのエディション）に実行されます。Enterprise Edition は、推奨される Windows オペレーティングシステムです。
+
+Windows 2012 サーバの場合は、 Windows システムに .NET Framework バージョン 4.5.2 がインストールされている必要があります。.NET Framework バージョン 4.5.2 がインストールされていない場合、 WFA 5.1 のインストールが失敗します。
+
+* 次のいずれかのブラウザがサポートされています。
++
+** Mozilla Firefox
+** Microsoft Internet Explorer の略
+** Google Chrome
+
+
+* PowerShell 3.0
+* VMware PowerCLI バージョン 5
++
+
+NOTE: VMware API 用の PowerShell 拡張機能が必要になるのは、 WFA を使用して VMware vSphere 上でワークフローを実行する場合のみです。
+
+
+
+
+NOTE: ウィルス対策アプリケーションを使用すると、 WFA のサービスが開始されない場合があり
+
+この問題 を回避するには、 WFA の次のディレクトリに対してウィルススキャンの除外を設定します。
+
+* WFA をインストールしたディレクトリ
+* Perl をインストールしたディレクトリ
+* OpenJDK をインストールしたディレクトリです
+* MySQL データディレクトリ
+
+
+詳細については、 Interoperability Matrix Tool を参照してください。
+
+* 関連情報 *
+
+https://mysupport.netapp.com/matrix["NetApp Interoperability Matrix Tool で確認できます"^]

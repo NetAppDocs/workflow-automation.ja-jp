@@ -1,0 +1,24 @@
+---
+permalink: windows-install/task-configure-syslog.html 
+sidebar: sidebar 
+keywords: configure, syslog 
+summary: イベントロギングやログ情報の分析などの目的で、ログデータを特定の syslog サーバに送信するように OnCommand Workflow Automation （ WFA ）を設定できます。 
+---
+= syslog を設定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+イベントロギングやログ情報の分析などの目的で、ログデータを特定の syslog サーバに送信するように OnCommand Workflow Automation （ WFA ）を設定できます。
+
+WFA サーバのデータを受け入れるように syslog サーバを設定しておく必要があります。
+
+.手順
+. Web ブラウザから admin として WFA にログインします。
+. [ * 設定 * ] をクリックし、 [ * メンテナンス * ] で [ * Syslog * ] をクリックします。
+. [Enable Syslog* （ syslog を有効にする） ] チェックボックスを選択します。
+. Syslog ホスト名を入力し、 Syslog ログレベルを選択します。
+. [ 保存（ Save ） ] をクリックします。
+

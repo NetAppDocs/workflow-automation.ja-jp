@@ -1,0 +1,18 @@
+---
+permalink: rhel-install/concept-oncommand-workflow-automation-installation-and-configuration-instructions.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, installation, setup, overview 
+summary: OnCommand Workflow Automation （ WFA ）のインストールでは、インストールの準備、 WFA インストーラのダウンロード、インストーラの実行などのタスクを実行します。インストールが完了したら、要件に合わせて WFA を設定できます。 
+---
+= OnCommand Workflow Automation のインストールとセットアップの概要
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）のインストールでは、インストールの準備、 WFA インストーラのダウンロード、インストーラの実行などのタスクを実行します。インストールが完了したら、要件に合わせて WFA を設定できます。
+
+次のフローチャートは、インストールと設定のタスクを示しています。
+
+image::../media/wfa_isg_flowchart.gif[WFA ISG フローチャート]

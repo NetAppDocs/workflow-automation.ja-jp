@@ -1,0 +1,28 @@
+---
+permalink: help/task-add-a-new-remote-system-type.html 
+sidebar: sidebar 
+keywords: new, remote, system, type, oncommand, Workflow, automation, predefined, meet, requirement, change, configuration, predefined 
+summary: 事前定義されたシステムタイプが要件を満たしていない場合や、事前定義されたシステムタイプの設定を変更する場合は、 OnCommand Workflow Automation （ WFA ）に新しいリモートシステムタイプを追加できます。 
+---
+= 新しいリモートシステムタイプを追加します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+事前定義されたシステムタイプが要件を満たしていない場合や、事前定義されたシステムタイプの設定を変更する場合は、 OnCommand Workflow Automation （ WFA ）に新しいリモートシステムタイプを追加できます。
+
+* 必要なもの *
+
+* WFA をインストールしておく必要があります。
+* WFA の管理者権限または Architect のクレデンシャルが必要です。
+
+
+.手順
+. Web ブラウザから管理者またはアーキテクトとして WFA にログインします。
+. [ * データソースデザイン *>* リモートシステムタイプ * ] をクリックします。
+. をクリックして、新しいリモートシステムタイプを作成します image:../media/new_wfa_icon.gif["新しいアイコン"] をクリックします。
+. リモートシステムタイプの名前、タイプ、概要 、エンティティバージョンなどの必要な情報を * 新規リモートシステムタイプ * ダイアログボックスに入力します。
+. [ 保存（ Save ） ] をクリックします。
+

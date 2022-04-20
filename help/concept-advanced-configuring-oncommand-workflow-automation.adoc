@@ -1,0 +1,23 @@
+---
+permalink: help/concept-advanced-configuring-oncommand-workflow-automation.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, wfa, enable, configure, setting, example, autosupport, notification 
+summary: OnCommand Workflow Automation （ WFA ）を使用すると、 AutoSupport や通知など、さまざまな設定を行うことができます。 
+---
+= OnCommand Workflow Automation を設定しています
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）を使用すると、 AutoSupport や通知など、さまざまな設定を行うことができます。
+
+WFA を設定する際には、必要に応じて次の作業を 1 つ以上セットアップできます。
+
+* AutoSupport ：テクニカルサポートに AutoSupport メッセージを送信するために使用します
+* Microsoft Active Directory の Lightweight Directory Access Protocol （ LDAP ）サーバ： WFA ユーザの LDAP 認証と許可に使用されます
+* ワークフロー処理および AutoSupport メッセージの送信に関する E メール通知用のメールです
+* Simple Network Management Protocol （ SNMP ；簡易ネットワーク管理プロトコル）。ワークフローの処理に関する通知に使用します
+* リモートデータロギング用の syslog
+

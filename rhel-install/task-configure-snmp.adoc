@@ -1,0 +1,23 @@
+---
+permalink: rhel-install/task-configure-snmp.html 
+sidebar: sidebar 
+keywords: configure, snmp 
+summary: ワークフロー処理のステータスに関する簡易ネットワーク管理プロトコル（ SNMP ）トラップを送信するように OnCommand Workflow Automation （ WFA ）を設定できます。 
+---
+= SNMP を設定する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ワークフロー処理のステータスに関する簡易ネットワーク管理プロトコル（ SNMP ）トラップを送信するように OnCommand Workflow Automation （ WFA ）を設定できます。
+
+WFA では現在、 SNMP v1 および SNMP v3 プロトコルがサポートされています。SNMP v3 は、追加のセキュリティ機能を提供します。
+
+wfa_mib ファイルには、 WFA サーバから送信されるトラップに関する情報が格納されます。MIB ファイルは WFA サーバの <wfa_install_location >\WFA\bin\wfa_mib ディレクトリにあります。
+
+
+NOTE: WFA サーバは、すべてのトラップ通知を汎用のオブジェクト ID （ 1.3.6.1.4.1.789.1.12.0 ）で送信します。
+
+SNMP 設定に community_string@snmp_host などの SNMP コミュニティストリングは使用できません。

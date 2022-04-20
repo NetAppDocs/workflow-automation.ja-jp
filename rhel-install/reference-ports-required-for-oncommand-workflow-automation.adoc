@@ -1,0 +1,184 @@
+---
+permalink: rhel-install/reference-ports-required-for-oncommand-workflow-automation.html 
+sidebar: sidebar 
+keywords: ports, required, workflow, automation 
+summary: ファイアウォールを使用する場合は、 Workflow Automation （ WFA ）に必要なポートを確認しておく必要があります。 
+---
+= Workflow Automation に必要なポート
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ファイアウォールを使用する場合は、 Workflow Automation （ WFA ）に必要なポートを確認しておく必要があります。
+
+このセクションでは、デフォルトのポート番号を示します。デフォルト以外のポート番号を使用する場合は、そのポートを開いて通信する必要があります。詳細については、ファイアウォールのマニュアルを参照してください。
+
+次の表に、 WFA サーバで開いている必要があるデフォルトのポートを示します。
+
+[cols="4*"]
+|===
+| ポート | プロトコル | 方向（ Direction ） | 目的 
+
+
+ a| 
+80 、 443
+ a| 
+HTTP 、 HTTPS
+ a| 
+受信
+ a| 
+WFA を開いてログインします
+
+
+
+ a| 
+80 、 443 、 22
+ a| 
+HTTP 、 HTTPS 、 SSH
+ a| 
+送信
+ a| 
+コマンド実行（ ZAPI 、 PowerCLI ）
+
+
+
+ a| 
+445 、 139 、 389 、 636
+ a| 
+Microsoft-ds 、 NetBinets-SSN 、 AD LDAP 、 AD LDAPS
+ a| 
+送信
+ a| 
+Microsoft Active Directory LDAP 認証
+
+
+
+ a| 
+161
+ a| 
+SNMP
+ a| 
+送信
+ a| 
+ワークフローのステータスに関する SNMP メッセージの送信
+
+
+
+ a| 
+3306
+ a| 
+MySQL
+ a| 
+受信
+ a| 
+読み取り専用ユーザをキャッシュしています
+
+
+
+ a| 
+25
+ a| 
+SMTP
+ a| 
+送信
+ a| 
+メール通知
+
+
+
+ a| 
+80 、 443 、 25
+ a| 
+HTTP 、 HTTPS 、 SMTP
+ a| 
+送信
+ a| 
+AutoSupport メッセージの送信
+
+
+
+ a| 
+514
+ a| 
+syslog
+ a| 
+送信
+ a| 
+syslog サーバにログを送信しています
+
+|===
+次の表に、 Unified Manager サーバで開いているデフォルトのポートを示します。
+
+[cols="4*"]
+|===
+| ポート | プロトコル | 方向（ Direction ） | 目的 
+
+
+ a| 
+2638
+ a| 
+Sybase の場合
+ a| 
+受信
+ a| 
+6.0 より前の Active IQ Unified Manager からデータをキャッシュしています
+
+
+
+ a| 
+3306
+ a| 
+MySQL
+ a| 
+受信
+ a| 
+Active IQ Unified Manager 6.0 以降のデータのキャッシュ
+
+
+
+ a| 
+8088 、 8488
+ a| 
+HTTP 、 HTTPS
+ a| 
+受信
+ a| 
+6.0 より前の Active IQ Unified Manager に含まれている Performance Advisor からデータをキャッシュしています
+
+|===
+次の表に、 VMware vCenter で開いているデフォルトのポートを示します。
+
+[cols="4*"]
+|===
+| ポート | プロトコル | 方向（ Direction ） | 目的 
+
+
+ a| 
+443
+ a| 
+HTTPS
+ a| 
+受信
+ a| 
+VMware vCenter からのデータのキャッシュ
+
+|===
+次の表に、 SNMP ホストマシンで開く必要があるデフォルトのポートを示します。
+
+[cols="4*"]
+|===
+| ポート | プロトコル | 方向（ Direction ） | 目的 
+
+
+ a| 
+162
+ a| 
+SNMP
+ a| 
+受信
+ a| 
+ワークフローのステータスに関する SNMP メッセージの受信
+
+|===

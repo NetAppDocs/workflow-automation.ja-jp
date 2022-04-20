@@ -1,0 +1,174 @@
+---
+permalink: help/reference-references-to-learning-material.html 
+sidebar: sidebar 
+keywords: aware, certain, scripting, programming, practices, advanced, workflow, automation, reference, material, learn, required, options, building blocks 
+summary: 高度な Workflow Automation （ WFA ）ワークフローを作成するためには、スクリプト作成とプログラミングに関するいくつかの手順を理解しておく必要があります。WFA のビルディングブロックまたはワークフローを作成する前に、参考資料を使用して必要なオプションを確認できます。 
+---
+= 学習資料への参照
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+高度な Workflow Automation （ WFA ）ワークフローを作成するためには、スクリプト作成とプログラミングに関するいくつかの手順を理解しておく必要があります。WFA のビルディングブロックまたはワークフローを作成する前に、参考資料を使用して必要なオプションを確認できます。
+
+
+
+== Windows PowerShell の場合
+
+WFA では、ワークフローの処理に PowerShell スクリプトを使用します。次の表に、 PowerShell の学習資料への参照資料を示します。
+
+[cols="2*"]
+|===
+
+
+ a| 
+Windows PowerShell を使用する前に
+ a| 
+http://msdn.microsoft.com/en-us/library/windows/desktop/aa973757(v=vs.85).aspx[]
+
+
+
+ a| 
+PowerShell 開発 -- 統合スクリプト環境 (ISE)
+ a| 
+https://docs.microsoft.com/en-us/powershell/scripting/windows-powershell/ise/introducing-the-windows-powershell-ise?view=powershell-7.2[]
+
+
+
+ a| 
+_.NET フレームワークの命名ガイドライン _
+ a| 
+http://msdn.microsoft.com/en-us/library/xzf533w0%28v=vs.71%29.aspx[]
+
+
+
+ a| 
+PowerShell コード形式
+ a| 
+http://get-powershell.com/post/2011/04/13/Extra-Points-for-Style-when-writing-PowerShell-Code.aspx[]
+
+
+
+ a| 
+PowerShell の try/catch が最後に行われました
+ a| 
+http://technet.microsoft.com/en-us/library/dd315350.aspx[]
+
+
+
+ a| 
+PowerShell の自動変数
+ a| 
+http://technet.microsoft.com/en-us/library/dd347675.aspx[]
+
+
+
+ a| 
+PowerShell エラーレポート機能
+ a| 
+https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/error-reporting-concepts?view=powershell-7.2[]
+
+
+
+ a| 
+PowerShell の共通パラメータ
+ a| 
+https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7.2[]
+
+|===
+
+
+== Data ONTAP PowerShell ツールキット
+
+Data ONTAP PowerShell ツールキットには WFA がバンドルされています。PowerShell Toolkit のコマンドレットを使用して、 PowerShell スクリプトから Data ONTAP コマンドを呼び出すことができます。詳細については、「 wfa_install_location \wfa \posh\Modules\DataONTAP\webhelp/index.html 」の形式でアクセスできる Data ONTAP PowerShell Toolkit Help_ を参照してください
+
+「 _wfa_install_location _ 」は WFA のインストールディレクトリ、「 C:\Program Files\NetApp 」はデフォルトのインストールディレクトリです。
+
+次の表に、 Data ONTAP PowerShell ツールキットに関する情報の参照先を示します。
+
+[cols="2*"]
+|===
+
+
+ a| 
+ONTAP PowerShell Toolkit の記事
+ a| 
+https://community.netapp.com/t5/Tech-OnTap-Articles/The-Data-ONTAP-PowerShell-Toolkit/ta-p/85933[]
+
+
+
+ a| 
+ONTAP PowerShell Toolkit ネットアップコミュニティ
+ a| 
+https://community.netapp.com/t5/forums/filteredbylabelpage/board-id/microsoft-cloud-and-virtualization-discussions/label-name/powershell%20toolkit[]
+
+|===
+
+
+== Perl の場合
+
+WFA では、ワークフロー処理用の Perl コマンドがサポートされます。WFA をインストールすると、必要な Perl モジュールと Perl モジュールが WFA サーバにインストールされます。
+
+https://docs.activestate.com/activeperl/5.26/perl/["ActivePerl ユーザガイド"^]
+
+_ActivePerl User Guide_に は、「 wfa_install_location \WFA\Perl64\HTML\index.html」 からもアクセスできます
+
+「 _wfa_install_location _ 」は WFA のインストールディレクトリ、「 C:\Program Files\NetApp 」はデフォルトのインストールディレクトリです WFA では ' ワークフローの操作に Perl スクリプトを使用します次の表に、 Perl の学習資料の参照先を示します。
+
+[cols="2*"]
+|===
+
+
+ a| 
+最新の Perl ： 2014
+ a| 
+http://modernperlbooks.com/books/modern_perl_2014/index.html[]
+
+
+
+ a| 
+Perl プログラミングのドキュメント
+ a| 
+http://perldoc.perl.org/[]
+
+
+
+ a| 
+Perl プログラミング言語
+ a| 
+http://www.perl.org/[]
+
+|===
+
+
+== NetApp Manageability SDK の使用
+
+NetApp Manageability SDK に必要な Perl モジュールは、 WFA にバンドルされています。これらの Perl モジュールは、 WFA で Perl コマンドを使用するために必要です。詳細については、 NetApp Manageability SDK のドキュメントを参照してください。このドキュメントには、「 wfa_install_location \wfa \perl\NMSDK \html. 」からアクセスできます
+
+「 wfa_install_location 」は WFA のインストールディレクトリ、「 C:\Program Files\NetApp 」はデフォルトのインストールディレクトリです。
+
+
+
+== Structured Query Language （ SQL ；構造化クエリ言語）
+
+SQL SELECT 構文は、フィルタおよびユーザー入力の入力に使用されます。
+
+http://dev.mysql.com/doc/refman/5.1/en/select.html["MySQL Select の構文"^]
+
+
+
+== MVFLEX 表現言語（ MVEL ）
+
+WFA ワークフローの MVEL 式の構文を関数や変数などで使用できます。
+
+詳細については、 _ MVEL 言語ガイド _ を参照してください。
+
+
+
+== 正規表現
+
+WFA では正規表現（ regex ）を使用できます。
+
+https://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/RegExp.html["ActionScript 3.0 では正規表現を使用します"^]

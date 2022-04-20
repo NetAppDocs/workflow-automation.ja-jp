@@ -1,0 +1,24 @@
+---
+permalink: windows-install/task-configure-a-database-user-on-active-iq-unified-manager.html 
+sidebar: sidebar 
+keywords: configure, database, user, active iq unified manager 
+summary: Active IQ Unified Manager データベースの OnCommand Workflow Automation への読み取り専用アクセスを設定するには、 Active IQ Unified Manager でデータベースユーザを作成する必要があります。 
+---
+= Active IQ Unified Manager でデータベースユーザを設定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Active IQ Unified Manager データベースの OnCommand Workflow Automation への読み取り専用アクセスを設定するには、 Active IQ Unified Manager でデータベースユーザを作成する必要があります。
+
+.手順
+. 管理者のクレデンシャルで Active IQ Unified Manager にログインします。
+. [ * 設定 * > * ユーザー * ] をクリックします。
+. [ 新規ユーザーの追加 ] をクリックします。
+. ユーザーのタイプとして * データベースユーザー * を選択します。
++
+OnCommand Workflow Automation OnCommand Workflow Automation で Active IQ Unified Manager をデータソースとして追加するときは、同じユーザを使用する必要があります。
+
+

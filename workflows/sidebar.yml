@@ -1,0 +1,193 @@
+---
+section: workflow
+title: ワークフロー
+entries:
+- title: OnCommand Workflow Automation の概要
+  url: "/workflows/concept-overview-of-oncommand-workflow-automation.html"
+- title: Workflow Automation Designer の概要を参照してください
+  url: "/workflows/concept-understanding-workflow-automation-designer.html"
+  entries:
+  - title: OnCommand Workflow Automation でのビルディングブロックの操作
+    url: "/workflows/concept-working-with-the-building-blocks-in-oncommand-workflow-automation.html"
+    entries:
+    - title: データソースとは
+      url: "/workflows/concept-what-data-sources-are.html"
+    - title: ディクショナリエントリとは
+      url: "/workflows/concept-what-dictionary-entries-are.html"
+    - title: コマンドの仕組み
+      url: "/workflows/concept-how-commands-work.html"
+    - title: フィルタとは
+      url: "/workflows/concept-what-filters-are.html"
+    - title: ファインダとは
+      url: "/workflows/concept-what-finders-are.html"
+    - title: 機能とは
+      url: "/workflows/concept-what-functions-are.html"
+    - title: 方式は何ですか
+      url: "/workflows/concept-what-schemes-are.html"
+    - title: リモートシステムの種類
+      url: "/workflows/concept-what-remote-system-types-are.html"
+    - title: テンプレートの使用方法
+      url: "/workflows/concept-how-you-use-templates.html"
+    - title: カテゴリの使用方法
+      url: "/workflows/concept-how-you-use-categories.html"
+    - title: エンティティのバージョン管理の仕組み
+      url: "/workflows/concept-how-entity-versioning-works.html"
+  - title: プレイグラウンドデータベースとは
+    url: "/workflows/concept-what-a-playground-database-is.html"
+- title: ワークフローの管理
+  url: "/workflows/concept-managing-workflows.html"
+  entries:
+  - title: 定義済みのワークフローをカスタマイズする
+    url: "/workflows/task-customize-predefined-workflows.html"
+    entries:
+    - title: ボリュームの作成ワークフローと CIFS 共有ワークフローをカスタマイズします
+      url: "/workflows/task-customize-the-create-volume-and-create-cifs-share-workflow.html"
+  - title: ワークフローの作成
+    url: "/workflows/concept-creating-workflows.html"
+    entries:
+    - title: ワークフローの作成に関連するタスク
+      url: "/workflows/concept-tasks-involved-in-creating-workflows.html"
+    - title: ワークフローを定義する方法
+      url: "/workflows/concept-how-you-define-workflows.html"
+    - title: ユーザ入力の定義方法
+      url: "/workflows/concept-how-you-define-user-input.html"
+    - title: コマンドパラメータのマッピング方法
+      url: "/workflows/concept-how-you-map-command-parameters.html"
+    - title: 定数の定義方法
+      url: "/workflows/concept-how-you-define-constants.html"
+    - title: 行の繰り返しの仕組み
+      url: "/workflows/concept-how-repeat-row-works.html"
+    - title: リソース選択の仕組み
+      url: "/workflows/concept-how-resource-selection-works.html"
+    - title: 予約の仕組み
+      url: "/workflows/concept-how-reservation-works.html"
+    - title: 増分命名とは何ですか
+      url: "/workflows/concept-what-incremental-naming-is.html"
+    - title: 条件付き実行とは
+      url: "/workflows/concept-what-conditional-execution-is.html"
+    - title: 戻りパラメータの仕組み
+      url: "/workflows/concept-what-return-parameters-are.html"
+    - title: どの承認ポイントがあるか
+      url: "/workflows/concept-what-approval-points-are.html"
+    - title: カスタム REST エンドポイントの実行方法
+      url: "/workflows/concept-how-you-execute-custom-rest-end-points.html"
+    - title: 障害発生時の続行方法
+      url: "/workflows/concept-what-continue-on-failure-is.html"
+    - title: ワークフロー要件チェックリストの例
+      url: "/workflows/reference-workflow-requirements-checklist.html"
+    - title: ワークフローを作成します
+      url: "/workflows/task-create-a-workflow.html"
+      entries:
+      - title: ワークフローヘルプコンテンツを作成します
+        url: "/workflows/task-create-workflow-help-content.html"
+  - title: WFA ワークフローパックを作成します
+    url: "/workflows/task-create-a-workflow-automation-pack.html"
+    entries:
+    - title: WFA ワークフローパックにエンティティを追加します
+      url: "/workflows/task-add-entity-to-a-workflow-automation-pack.html"
+    - title: OnCommand Workflow Automation パックを削除します
+      url: "/workflows/task-delete-wfa-packs.html"
+    - title: OnCommand Workflow Automation コンテンツをエクスポートします
+      url: "/workflows/task-export-oncommand-workflow-automation-content.html"
+    - title: OnCommand Workflow Automation コンテンツをインポートします
+      url: "/workflows/task-import-oncommand-workflow-automation-content.html"
+    - title: WFA ワークフローパックをインポート
+      url: "/workflows/task-import-an-oncommand-workflow-automation-pack.html"
+    - title: OnCommand Workflow Automation コンテンツをインポートする際の考慮事項
+      url: "/workflows/reference-considerations-of-importing-wfa-content.html"
+    - title: アップグレード中のパック ID
+      url: "/workflows/reference-pack-identification-during-upgrade.html"
+  - title: WFA ワークフローパックを SCM リポジトリと統合する
+    url: "/workflows/concept-integrating-the-wfa-pack-with-scm-repository.html"
+    entries:
+    - title: SCM に新しいワークフローパックをチェックインします
+      url: "/workflows/task-check-in-a-new-pack-to-scm.html"
+    - title: 新しいバージョンの WFA ワークフローパックをチェックインします
+      url: "/workflows/task-check-in-a-new-version-of-a-pack-to-a-new-location-in-scm.html"
+    - title: SCM サーバから WFA ワークフローパックを更新します
+      url: "/workflows/task-update-the-pack-from-scm.html"
+    - title: 既存の WFA ワークフローパックを SCM サーバにチェックインします
+      url: "/workflows/task-check-in-an-already-existing-pack-into-scm.html"
+    - title: WFA ワークフローパックをエンティティから削除します
+      url: "/workflows/task-remove-entities-from-a-pack.html"
+    - title: WFA ワークフローパックを SCM 内の以前のバージョンにロールバックします
+      url: "/workflows/task-rollback-pack-to-a-previous-version-in-scm.html"
+- title: ワークフローのビルディングブロックの作成
+  url: "/workflows/concept-creating-building-blocks-for-workflows.html"
+  entries:
+  - title: データソースタイプを作成します
+    url: "/workflows/task-create-a-data-source-type.html"
+  - title: コマンドを作成します
+    url: "/workflows/task-create-a-command.html"
+    entries:
+    - title: 予約スクリプトでコマンドをテストします
+      url: "/workflows/task-test-the-wfa-reservation-script-for-commands.html"
+  - title: Finder を作成します
+    url: "/workflows/task-create-a-finder.html"
+  - title: フィルタを作成します
+    url: "/workflows/task-create-a-filter.html"
+  - title: ディクショナリエントリを作成します
+    url: "/workflows/task-create-a-dictionary-entry.html"
+  - title: 関数を作成します
+    url: "/workflows/task-create-a-function.html"
+  - title: テンプレートを作成します
+    url: "/workflows/task-create-a-template.html"
+  - title: キャッシュクエリを作成します
+    url: "/workflows/task-create-a-cache-query.html"
+  - title: 定期的なスケジュールを作成
+    url: "/workflows/task-create-recurring-schedules.html"
+  - title: フィルタルールを定義します
+    url: "/workflows/task-define-filter-rules.html"
+  - title: 承認ポイントを追加します
+    url: "/workflows/task-add-approval-points.html"
+- title: WFA のコーディングガイドライン
+  url: "/workflows/concept-coding-guidelines-for-wfa.html"
+  entries:
+  - title: 変数のガイドライン
+    url: "/workflows/reference-guidelines-for-variables.html"
+  - title: インデントのガイドライン
+    url: "/workflows/reference-guidelines-for-indentation.html"
+  - title: コメントのガイドライン
+    url: "/workflows/reference-guidelines-for-comments.html"
+  - title: ロギングのガイドライン
+    url: "/workflows/reference-guidelines-for-logging.html"
+  - title: エラー処理のガイドライン
+    url: "/workflows/reference-guidelines-for-error-handling.html"
+  - title: WFA での PowerShell と Perl の一般的な規則
+    url: "/workflows/reference-general-powershell-conventions-for-wfa.html"
+    entries:
+    - title: Windows にバンドルされている Perl モジュール
+      url: "/workflows/reference-perl-database-modules-bundled-with-windows.html"
+  - title: カスタムの PowerShell モジュールと Perl モジュールを追加する場合の考慮事項
+    url: "/workflows/reference-guidelines-for-adding-custom-powershell-modules-to-wfa.html"
+  - title: WFA のコマンドレットと機能
+    url: "/workflows/reference-wfa-powershell-functions.html"
+  - title: PowerShell および Perl WFA モジュール
+    url: "/workflows/reference-powershell-and-perl-wfa-modules.html"
+  - title: PowerShell コマンドを Perl に変換する際の考慮事項
+    url: "/workflows/reference-guidelines-for-other-programming-aspects.html"
+  - title: WFA のビルディングブロックに関するガイドライン
+    url: "/workflows/reference-guidelines-for-wfa-building-blocks.html"
+    entries:
+    - title: WFA の SQL に関するガイドライン
+      url: "/workflows/reference-guidelines-for-sql-in-wfa.html"
+    - title: WFA の機能に関するガイドラインを参照してください
+      url: "/workflows/reference-guidelines-for-wfa-functions.html"
+    - title: WFA ディクショナリエントリのガイドライン
+      url: "/workflows/reference-guidelines-for-wfa-dictionary-entry.html"
+    - title: コマンドのガイドライン
+      url: "/workflows/reference-guidelines-for-commands.html"
+    - title: ワークフローのガイドライン
+      url: "/workflows/reference-guidelines-for-workflows.html"
+    - title: リモートシステムタイプの検証スクリプトを作成する際のガイドライン
+      url: "/workflows/reference-guidelines-for-creating-a-validation-script-for-remote-system-type.html"
+    - title: データソースタイプの作成に関するガイドライン
+      url: "/workflows/reference-guidelines-for-data-source-type.html"
+- title: 予約語
+  url: "/workflows/reference-reserved-words.html"
+- title: REST API の使用方法
+  url: "/workflows/concept-how-you-use-the-rest-api.html"
+- title: 学習資料への参照
+  url: "/workflows/reference-references-to-learning-material.html"
+- title: OnCommand Workflow Automation の関連ドキュメント
+  url: "/workflows/reference-related-documentation-for-oncommand-workflow-automation.html"

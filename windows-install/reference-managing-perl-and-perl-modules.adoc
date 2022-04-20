@@ -1,0 +1,16 @@
+---
+permalink: windows-install/reference-managing-perl-and-perl-modules.html 
+sidebar: sidebar 
+keywords: manage, perl, perl modules 
+summary: OnCommand Workflow Automation （ WFA ）は、ワークフロー処理用の Perl コマンドをサポートしています。WFA をインストールすると、 WFA サーバに ActivePerl 5.26.3 がインストールされ、設定されます。優先する Perl ディストリビューションモジュールと Perl モジュールをインストールして設定できます。 
+---
+= Perl モジュールと Perl モジュールの管理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）は、ワークフロー処理用の Perl コマンドをサポートしています。WFA をインストールすると、 WFA サーバに ActivePerl 5.26.3 がインストールされ、設定されます。優先する Perl ディストリビューションモジュールと Perl モジュールをインストールして設定できます。
+
+ActivePerl に加えて、 NetApp Manageability SDK から必要な Perl モジュールは WFA をインストールするときにもインストールされます。Perl コマンドを正常に実行するには、 NetApp Manageability SDK Perl モジュールが必要です。

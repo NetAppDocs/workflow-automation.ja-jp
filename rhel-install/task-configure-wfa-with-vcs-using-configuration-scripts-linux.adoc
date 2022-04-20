@@ -1,0 +1,59 @@
+---
+permalink: rhel-install/task-configure-wfa-with-vcs-using-configuration-scripts-linux.html 
+sidebar: sidebar 
+keywords: configure, workflow, automation, vcs 
+summary: VCS に Workflow Automation （ WFA ）をインストールしたら、ハイアベイラビリティ用の設定スクリプトを使用して VCS で WFA を設定する必要があります。 
+---
+= VCS で Workflow Automation を設定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VCS に Workflow Automation （ WFA ）をインストールしたら、ハイアベイラビリティ用の設定スクリプトを使用して VCS で WFA を設定する必要があります。
+
+* 両方のクラスタノードに同じバージョンの WFA をインストールしておく必要があります。
+* 両方のノードで同じインストールパスが必要です。
+* WFA のバックアップを作成する必要があります。
+
+
+.手順
+. クラスタの 1 つ目のノードにログインします。
+. クラスタマネージャを使用して、両方のノードの HA 状態が実行中であることを確認します。
+. シェルプロンプトで、 ha_setup.pl スクリプトを実行して WFA データを共有の場所に移動し、フェイルオーバー用に VCS を使用して WFA を設定します。「 perl ha_setup.pl --first [-t type_of cluster_vcs] [-g cluster_group_name ] [-e nic_card_name] [-i ip_address] [-m ip_address] [-mount_group [-d] logicalmask] _cluster _name [-fl
++
+デフォルトのインストール場所については、このスクリプトは /opt/NetApp/wfa/bin/ha/ にあります。
+
++
+perl ha_setup.pl -- first-t vcs -g wfa -e eth0 -i 10.238.170.3 -m 255.255.255.0 -n wfa_cluster -f /mnt/wfa_mount/-v lun_DG -l /opt/NetApp/wfa ’
+
+. Cluster Manager を使用して、 WFA サービス、マウントポイント、仮想 IP 、 NIC 、およびボリュームグループがクラスタグループに追加されていることを確認します。
+. Cluster Manager を使用して、 WFA リソースをセカンダリノードに移動します。
++
+.. クラスタグループを選択して右クリックします。
+.. * Switch to * > * Secondary Node * を選択します。
+
+
+. クラスタの 2 つ目のノードで、データマウント、仮想 IP 、ボリュームグループ、および NIC カードが動作していることを確認します。
+. Cluster Manager を使用して WFA サービスをオフラインにします。
++
+.. WFA * > * Application * > * wfa -server * を選択します。
+.. 右クリックして、 * オフライン * を選択します。
+.. WFA * > * Application * > * wfA-db * を選択します。
+.. 右クリックして、 * オフライン * を選択します。
+
+
+. シェルプロンプトで、クラスタのセカンダリノードで ha_setup.pl スクリプトを実行して、共有の場所からデータを使用するように WFA を設定します。「 perl ha_setup.pl --join [-t type_of cluster_vcs] [-f mount_point_on_shared_lun] 」
++
+デフォルトのインストール場所については、このスクリプトは /opt/NetApp/wfa/bin/ha/ にあります。
+
++
+`perl ha_setup.pl -- join-t vcs -f /mnt/wfa_mount/`
+
+. Cluster Manager に移動し、 * Cluster Group * > * Online * > * Server * をクリックします。
++
+クラスタマネージャがアプリケーションリソースがオンラインであると表示するまでに時間がかかることがあります。また、アプリケーションリソースを右クリックして、リソースがオンラインかどうかを確認することもできます。
+
+. WFA には、この設定時に使用した IP アドレス経由でアクセスできることを確認してください。
+

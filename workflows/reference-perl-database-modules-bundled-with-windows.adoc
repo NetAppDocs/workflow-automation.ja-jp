@@ -1,0 +1,49 @@
+---
+permalink: workflows/reference-perl-database-modules-bundled-with-windows.html 
+sidebar: sidebar 
+keywords: perl, modules, bundle, windows, active, state, distribution, oncommand, workflow, automation, use, code, writing, commands 
+summary: 一部の Perl モジュールは、 OnCommand Workflow Automation （ WFA ）用の Windows Active 状態 Perl ディストリビューションにバンドルされています。これらの Perl モジュールは、 Windows に付属している場合にのみ、コマンドの記述に Perl コードで使用できます。 
+---
+= Windows にバンドルされている Perl モジュール
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+一部の Perl モジュールは、 OnCommand Workflow Automation （ WFA ）用の Windows Active 状態 Perl ディストリビューションにバンドルされています。これらの Perl モジュールは、 Windows に付属している場合にのみ、コマンドの記述に Perl コードで使用できます。
+
+次の表に、 Windows for WFA にバンドルされている Perl データベースモジュールを示します。
+
+[cols="2*"]
+|===
+| データベースモジュール | 説明 
+
+
+ a| 
+DBD::mysql
+ a| 
+MySQL データベースへの接続を可能にする Perl5 データベースインタフェースドライバ。
+
+
+
+ a| 
+試してみましょう
+ a| 
+評価ブロックを使用して一般的なミスを最小限に抑えます
+
+
+
+ a| 
+XML::libxml
+ a| 
+DOM 、 SAX 、 XMLReader インターフェイスを持つ XML および HTML パーサーを提供する libxml2 へのインターフェイス。
+
+
+
+ a| 
+DBD ： Cassandra
+ a| 
+CQL3 クエリ言語を使用する Cassandra 用の Perl5 データベースインターフェイスドライバ。
+
+|===

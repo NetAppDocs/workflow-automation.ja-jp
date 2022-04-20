@@ -1,0 +1,59 @@
+---
+permalink: help/task-configure-email-notifications-for-data-source-acquisition-failures.html 
+sidebar: sidebar 
+keywords: control, notifications, generate, oncommand, workflow, automation, data, source, acquisition, fail, configure, threshold, interval, factor, notifications 
+summary: データソースの取得に失敗した場合に OnCommand Workflow Automation （ WFA ）で生成される通知を制御できます。通知のしきい値と間隔を設定できます。 
+---
+= データソースの取得に失敗した場合の E メール通知を設定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+データソースの取得に失敗した場合に OnCommand Workflow Automation （ WFA ）で生成される通知を制御できます。通知のしきい値と間隔を設定できます。
+
+* 必要なもの *
+
+OnCommand Workflow Automation （ WFA ）で E メール通知を設定しておく必要があります。
+
+.手順
+. Web ブラウザから管理者として WFA にログインします。
+. 通知しきい値を設定します。
++
+.. [ * 設定 * ] をクリックし、 [ * 設定 * ] で [ * ワークフロー設定 * ] をクリックします。
+.. 下にスクロールして「 * 詳細設定 * 」セクションを表示します。
+.. [* Acquisition notification threshold *] フィールドに、必要な値を入力します。
++
+デフォルト値は 2 です。
+
++
+この値を 2 に指定すると、 WFA は、データソース取得が 2 回連続して失敗した場合に E メール通知を送信します。
+
+
+
+. [ 保存（ Save ） ] をクリックします。
+. 通知間隔係数を設定します。
++
+.. [ * 設定 * ] をクリックし、 [ * 設定 * ] で [ * データソース * ] をクリックします。
+.. 必要なデータソースに対して指定された間隔をメモします。
++
+デフォルト値は 30 です。データソースを編集して間隔を変更することができます。
+
+.. [ * 設定 * ] をクリックし、 [ * 設定 * ] で [ * ワークフロー設定 * ] をクリックします。
+.. 下にスクロールして「 * 詳細設定 * 」セクションを表示します。
+.. [* Acquisition notification interval factor] フィールドに、必要な値を入力します。
++
+デフォルト値は 6 です。
+
++
+データソースに指定された間隔が 30 分で、乗算係数が 6 の場合、データソースのデータ収集が 180 分間行われないときに、電子メール通知が送信されます。
+
++
+
+NOTE: データソースの取得間隔として 12 時間以上を指定すると、 WFA は間隔係数を 1 とみなし、データソースの指定した取得間隔のあとに通知を送信します。
+
+
+
+. [ 保存（ Save ） ] をクリックします。
+

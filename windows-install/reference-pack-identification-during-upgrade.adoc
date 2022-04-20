@@ -1,0 +1,27 @@
+---
+permalink: windows-install/reference-pack-identification-during-upgrade.html 
+sidebar: sidebar 
+keywords: pack, identification, during upgrade 
+summary: アップグレードプロセスの実行中、 OnCommand Workflow Automation （ WFA ）はエンティティを識別してパックに分類します。アップグレード前にパックのエンティティを削除した場合、アップグレード中にパックは識別されません。 
+---
+= アップグレード中のパック ID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+アップグレードプロセスの実行中、 OnCommand Workflow Automation （ WFA ）はエンティティを識別してパックに分類します。アップグレード前にパックのエンティティを削除した場合、アップグレード中にパックは識別されません。
+
+WFA はアップグレードプロセス中に、データベースのパックと Storage Automation Store でリリースされたパックのリストを比較し、アップグレード前にインストールされたパックを特定します。したがって、パック ID はデータベース内の既存のパックを分類します。
+
+WFA は次のプロセスを実行して、パックを特定し、分類します。
+
+* Storage Automation Store でリリースされたパックのリストを管理し、アップグレード前にインストールされたパックを比較して確認します。
+* Storage Automation Store が有効になっている場合に、パック内のエンティティを Storage Automation Store の同期の一部として分類します。
+* 更新されたリストを使用してエンティティをパックに分類します。
+
+
+パック ID は、 Storage Automation Store からダウンロードしたネットアップ認定パックにのみ適用されます。
+
+アップグレード中にパックが特定されなかった場合は、パックを再インポートして WFA で特定できるようにすることができます。wfa.log ファイルには、アップグレード時にパックとして識別されなかったエンティティに関する詳細が含まれています。

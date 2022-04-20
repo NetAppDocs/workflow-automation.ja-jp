@@ -1,0 +1,95 @@
+---
+permalink: help/reference-reserved-words.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, include, reserved, words, use, attribute, parameters, variable name, user, input, constants, return parameters 
+summary: OnCommand Workflow Automation （ WFA ）には予約語が含まれています。変数名、ユーザ入力、定数、戻りパラメータなどの属性やパラメータには、ワークフローで予約語を使用しないでください。 
+---
+= 予約語
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）には予約語が含まれています。変数名、ユーザ入力、定数、戻りパラメータなどの属性やパラメータには、ワークフローで予約語を使用しないでください。
+
+WFA での予約語のリストを次に示します。
+
+[cols="3*"]
+|===
+
+
+ a| 
+* および
+* 配列
+* アサート
+* ブール値
+* ブール値
+* バイト
+* バイト
+* 特性
+* を押します
+* CharSequence （シャルシーケンス
+* クラス
+* クラスローダー
+* コンパイラ
+* が含まれます
+* convertable_to
+* DEF
+* する
+* ダブル
+* ダブル
+* それ以外
+* 空です
+* いいえ
+
+ a| 
+* 浮動小数点
+* 浮動小数点
+* の場合
+* foreach
+* 機能
+* 状況
+* インポート
+* IMPORT STATIC
+* インチ
+* instanceof
+* 整数
+* 整数
+* はです
+* isdef
+* 長
+* 長
+* 数学
+* 新規
+* null
+* 番号
+* オブジェクト
+* または
+
+ a| 
+* Proto
+* 戻ります
+* 実行時
+* SecurityManager
+* 短い
+* 短い
+* サウンド好き
+* StrictMath
+* 文字列
+* StringBuffer
+* StringBuilder
+* strsim
+* スイッチ
+* システム
+* ねじ切り（ Thread ）
+* ThreadLocal を選択します
+* 正しいです
+* まで
+* VAR
+* 無効です
+* 間
+* を使用
+
+
+|===

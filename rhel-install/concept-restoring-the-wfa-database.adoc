@@ -1,0 +1,33 @@
+---
+permalink: rhel-install/concept-restoring-the-wfa-database.html 
+sidebar: sidebar 
+keywords: restore, oncommand, workflow, automation, database 
+summary: OnCommand Workflow Automation （ WFA ）データベースをリストアするときは、システムの設定をリストアするか、プレイグラウンドデータベースなどのキャッシュ情報をリストアします。 
+---
+= OnCommand Workflow Automation データベースのリストア
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）データベースをリストアするときは、システムの設定をリストアするか、プレイグラウンドデータベースなどのキャッシュ情報をリストアします。
+
+* WFA データベースをリストアすると、現在の WFA データベースが消去されます。
+* WFA のデータベースバックアップは、同じバージョンかそれ以降のバージョンの WFA を実行しているシステムにのみリストアできます。
++
+たとえば、 WFA 4.2 を実行しているシステムで作成したバックアップは、 WFA 4.2 以降を実行しているシステムにのみリストアできます。
+
+* リストア処理が完了すると、 WFA の SSL 証明書がバックアップファイルの SSL 証明書に置き換えられます。
+
+
+[NOTE]
+====
+* WFA のデータベースと設定の包括的なリストア処理はディザスタリカバリ時に必要であり、スタンドアロン環境とハイアベイラビリティ環境の両方で使用できます。
+* Web UI では、包括的なバックアップを作成することはできません。
++
+ディザスタリカバリ時には、 CLI コマンドまたは REST API のみを使用して WFA データベースを包括的にバックアップおよびリストアできます。
+
+
+
+====

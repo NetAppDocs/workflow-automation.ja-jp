@@ -1,0 +1,18 @@
+---
+permalink: workflows/concept-tasks-involved-in-creating-workflows.html 
+sidebar: sidebar 
+keywords: create, storage, automation, workflows, define, steps, perform, building blocks, commands, finders, filters, dictionary, entries 
+summary: OnCommand Workflow Automation （ WFA ）でストレージ自動化ワークフローを作成するには、ワークフローで実行する手順を定義し、コマンド、ファインダ、フィルタ、ディクショナリエントリなどの WFA ビルディングブロックを使用してワークフローを作成します。 
+---
+= ワークフローの作成に関連するタスク
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）でストレージ自動化ワークフローを作成するには、ワークフローで実行する手順を定義し、コマンド、ファインダ、フィルタ、ディクショナリエントリなどの WFA ビルディングブロックを使用してワークフローを作成します。
+
+次のフローチャートは、ワークフローの作成プロセスを示しています。
+
+image::../media/designing_wfa_workflows_flowchart.gif[WFA ワークフローの設計フローチャート]

@@ -1,0 +1,141 @@
+---
+permalink: help/reference-mvel-examples.html 
+sidebar: sidebar 
+keywords: expression, language, syntax, several, oncommand, workflows, automation, sample, review, learn, use 
+summary: MVFLEX Expression Language （ MVEL ）の構文は、いくつかの OnCommand Workflow Automation （ WFA ）サンプルワークフローで使用されます。WFA での MVEL の使用方法については、 MVEL 構文の例を参照してください。 
+---
+= MVEL 構文の例
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MVFLEX Expression Language （ MVEL ）の構文は、いくつかの OnCommand Workflow Automation （ WFA ）サンプルワークフローで使用されます。WFA での MVEL の使用方法については、 MVEL 構文の例を参照してください。
+
+次のセクションでは、 WFA で使用される MVEL 構文の例を示します。
+
+
+
+== 条件付き実行
+
+次の MVEL 式は、見つかったボリュームの数が 4 未満の場合に、コマンドの条件付き実行に使用されます。
+
+[listing]
+----
+$NoOfVolumes < 4
+----
+
+
+== 名前の増分
+
+次の MVEL 式は、オブジェクトの増分命名に使用されます。
+
+[listing]
+----
+last_volume.name+last_volume.state
+----
+この MVEL 式は、最後に作成されたボリューム名と、名前付け用に最後に作成されたボリュームの状態を使用します。
+
+
+
+== コマンドの文字列表現
+
+次の MVEL 構文が文字列表現として使用されます。
+
+[listing]
+----
+DestinationCluster + ":" + DestinationVserver + "/" + DestinationVolume
+----
+
+
+== テンプレート
+
+テンプレートでは、次の MVEL 構文を使用します。
+
+[listing]
+----
+calculateSnapReserveSize(calculateVolumeSizeFromDataSize((int)($fs_size*1.01),$snap_space),$snap_space)
+----
+この MVEL 構文は、 Snapshot コピー用にリザーブされるボリューム容量の割合を計算するために使用します。
+
+
+
+== コマンドの詳細
+
+パラメータの属性セクションでは、次の MVEL 関数を使用します。
+
+[listing]
+----
+actualVolumeSize($VolumeSizeInGB * 1024, volume.snapshot_reserved_percent)
+----
+次の MVEL 構文は、パラメーターの属性セクションで使用されます。
+
+[listing]
+----
+$VolumeName+'test001'
+----
+
+
+== ワークフロー定数
+
+ワークフロー内の定数には、次の MVEL 構文が使用されます。
+
+[listing]
+----
+convertNullToZero(infinite_volume.max_namespace_constituent_size_mb)
+----
+[listing]
+----
+$Size_TB*1048576L
+----
+
+
+== パラメータを返します
+
+次の MVEL 構文を使用して、要求されたサイズを割り当てることができるかどうかを検証します。
+
+[listing]
+----
+size_remaining == 0 ? '' : throwException('Not sufficient space in capacity_class_aggregate or data constituent of size less than 1 TB can not be created: Total size requested='+$Size_TB+'TB'+' ,Size remaining='+size_remaining/TB_TO_MB+'TB'+', Infinite volume name='+infinite_volume.name+', Storage class='+CAPACITY_CLASS_LABEL)
+----
+
+
+== 関数の定義
+
+次の MVEL 構文は、 NULL をゼロに変換するために使用される関数定義で使用されます。
+
+[listing]
+----
+def convertNullToZero (data)
+{
+  if(data == null)
+  {
+    return 0;
+  }
+  else
+  {
+    return data;
+  }
+}
+----
+
+
+== 特定の行の繰り返し
+
+次の MVEL 式は、ユーザー入力を使用して、 LUN を作成するために行を繰り返す必要がある回数を示します。
+
+[listing]
+----
+$NumberOfLunsToBeCreated
+----
+
+
+== 行の条件式
+
+次の MVEL 式は、行が実行されるかどうかを示すためにユーザー入力を使用します。
+
+[listing]
+----
+$SetupSnapMirror
+----

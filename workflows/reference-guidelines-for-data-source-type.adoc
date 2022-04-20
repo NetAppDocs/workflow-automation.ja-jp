@@ -1,0 +1,45 @@
+---
+permalink: workflows/reference-guidelines-for-data-source-type.html 
+sidebar: sidebar 
+keywords: aware, guidelines, create, data, source, type, use, define, custom, oncommand, workflow, automation 
+summary: OnCommand Workflow Automation （ WFA ）のカスタムデータソースの定義に使用するデータソースタイプの作成に関するガイドラインを確認しておく必要があります。 
+---
+= データソースタイプの作成に関するガイドライン
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）のカスタムデータソースの定義に使用するデータソースタイプの作成に関するガイドラインを確認しておく必要があります。
+
+データソースタイプは、次のいずれかの方法で定義できます。
+
+* SQL ： WFA の SQL ガイドラインを使用して、外部データベースに基づいてデータソースからの選択クエリを定義できます。
+* スクリプト：特定のディクショナリ方式にデータを提供する PowerShell スクリプトを記述できます。
+
+
+データソースタイプの作成に関するガイドラインは次のとおりです。
+
+* スクリプトの作成には PowerShell の言語を使用する必要があります。
+* PowerShell スクリプトは、現在の作業ディレクトリ内の各ディクショナリエントリの出力を提供する必要があります。
+* データ・ファイルには 'dictionary_entry_csv' という名前を付ける必要がありますこの場合 ' ディクショナリ・エントリの名前は小文字にする必要があります
++
+Performance Advisor から情報を収集する事前定義されたデータソースのタイプでは、スクリプトベースのデータソースのタイプを使用します。出力ファイルの名前は 'array_performe.csv' および 'aggregate_performe.csv' です
+
+* 「 .csv 」ファイルには、ディクショナリエントリ属性と同じ順序でコンテンツが含まれている必要があります。
++
+ディクショナリエントリには、 array_ip 、 date 、 day 、 hour 、 cpu_busy 、 total_ops_per_sec 、 disk_per_sec
+
++
+PowerShell スクリプトは '.csv ファイルに同じ順序でデータを追加します
+
++
+[listing]
+----
+$values = get-Array-CounterValueString ([REF]$data)
+Add-Content $arrayFile ([byte[]][char[]] "\N t$arrayIP't$date't$day't$hour't$values'n")
+----
+* スクリプトからのデータ出力が WFA キャッシュに正確にロードされるようにするには、エンコーディングを使用します。
+* “ .csv ”ファイルにヌル値を入力するときは、“ N ”を使用する必要があります。
+

@@ -1,0 +1,50 @@
+---
+permalink: help/task-configure-authentication-settings.html 
+sidebar: sidebar 
+keywords: configure, oncommand, workflow, automation, use, microsoft, active, directory, lightweight, access, protocol, server, authentication, authorization 
+summary: OnCommand Workflow Automation （ WFA ）では、 Microsoft Active Directory （ AD ）の Lightweight Directory Access Protocol （ LDAP ）サーバを認証と許可に使用するように設定できます。 
+---
+= 認証を設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）では、 Microsoft Active Directory （ AD ）の Lightweight Directory Access Protocol （ LDAP ）サーバを認証と許可に使用するように設定できます。
+
+* 必要なもの *
+
+環境内に Microsoft AD LDAP サーバを設定しておく必要があります。
+
+* このタスクについて *
+
+WFA でサポートされるのは Microsoft AD LDAP 認証のみです。Microsoft AD ライトウェイトディレクトリサービス (AD LDS) や Microsoft グローバルカタログなど、他の LDAP 認証方法は使用できません。
+
+
+NOTE: 通信中、 LDAP はユーザ名とパスワードをプレーンテキストで送信します。ただし、 LDAPS （ LDAP セキュア）通信は暗号化されて安全に保護されます。
+
+.手順
+. Web ブラウザから admin として WFA にログインします。
+. [ * 設定 * ] をクリックし、 [ * 設定 * ] で [ * 認証 * ] をクリックします。
+. [Enable Active Directory*](Active Directory を有効にする ) チェックボックスをオンにします。
+. 各フィールドに必要な情報を入力します。
++
+.. * オプション： * ドメイン・ユーザに _user@domain_format を使用する場合は '*User name attribute* フィールドの sAMAccountName を 'userPrincipalName' に置き換えます
+.. * オプション： * 環境に固有の値が必要な場合は、必須フィールドを編集します。
+.. AD サーバの URI を次のように入力します。 +example:`ldap://active_director_server_address\[:port\]]
++
+「 ldap://NB-T01.example.com[:389]` 」を参照してください
+
++
+LDAP over SSL を有効にしている場合は、「 ldaps ： // active_director_server_address \ [ ： port\]] 」という URI 形式を使用できます
+
+.. AD グループ名のリストを追加し、必要なロールを指定します。
++
+
+NOTE: Active Directory Groups ウィンドウで、必要なロールに AD グループ名のリストを追加できます。
+
+
+
+. [ 保存（ Save ） ] をクリックします。
+

@@ -1,0 +1,44 @@
+---
+permalink: help/reference-test-connectivity-dialog-box.html 
+sidebar: sidebar 
+keywords: test, connectivity, dialog box, enable, test, system, associated, credential, operation, trigger, search, path, first, look, exact, match, pattern, service, authentication 
+summary: '[ 接続のテスト ] ダイアログボックスでは、認証情報に関連付けられたシステムへの接続をテストできます。接続テスト処理では、検索パスがトリガーされ、最初に完全に一致するものを検索し、次にパターンマッチングを検索し、最後に LDAP サービス認証を実行します。' 
+---
+= [ 接続のテスト ] ダイアログボックス
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+[ 接続のテスト ] ダイアログボックスでは、認証情報に関連付けられたシステムへの接続をテストできます。接続テスト処理では、検索パスがトリガーされ、最初に完全に一致するものを検索し、次にパターンマッチングを検索し、最後に LDAP サービス認証を実行します。
+
+Internet Control Message Protocol （ ICMP ）は、接続をテストする前にシステムが実行されているかどうかを確認するために使用されます。
+
+
+
+== 接続パラメータをテストします
+
+* * タイプ *
++
+ドロップダウンリストからクレデンシャルのタイプを選択できます。
+
+* * 名前 /IP *
++
+クレデンシャルのホスト名または IP アドレスを指定できます。
+
+
+
+
+
+== コマンドボタン
+
+* * テスト *
++
+ホスト名または IP アドレスへの接続試行を開きます。
+
+* * 閉じる *
++
+変更がある場合はキャンセルしてダイアログボックスを閉じます。
+
+

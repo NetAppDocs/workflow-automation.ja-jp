@@ -1,0 +1,14 @@
+---
+permalink: workflows/concept-creating-workflows.html 
+sidebar: sidebar 
+keywords: predefined, workflows, match, requirements, create, understand, capabilities, available, designer, checklist 
+summary: 定義済みのワークフローが要件に合わない場合は、必要なワークフローを作成できます。ワークフローを作成する前に、 WFA 設計者が利用できる機能を理解し、ワークフローチェックリストを作成する必要があります。 
+---
+= ワークフローの作成
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+定義済みのワークフローが要件に合わない場合は、必要なワークフローを作成できます。ワークフローを作成する前に、 WFA 設計者が利用できる機能を理解し、ワークフローチェックリストを作成する必要があります。

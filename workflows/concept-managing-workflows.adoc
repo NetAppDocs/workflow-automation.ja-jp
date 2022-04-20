@@ -1,0 +1,14 @@
+---
+permalink: workflows/concept-managing-workflows.html 
+sidebar: sidebar 
+keywords: customize, predefined, workflow, create, part, managing, understand, relevant, concepts 
+summary: ワークフローの管理の一環として、定義済みワークフローをカスタマイズしたり、新しいワークフローを作成したりできます。ワークフローの管理を開始する前に、関連する概念についても理解しておく必要があります。 
+---
+= ワークフローの管理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ワークフローの管理の一環として、定義済みワークフローをカスタマイズしたり、新しいワークフローを作成したりできます。ワークフローの管理を開始する前に、関連する概念についても理解しておく必要があります。

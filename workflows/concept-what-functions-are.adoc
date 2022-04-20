@@ -1,0 +1,18 @@
+---
+permalink: workflows/concept-what-functions-are.html 
+sidebar: sidebar 
+keywords: use, functions, workflows, complex, task, complete, during, planning, phase 
+summary: ワークフローの計画フェーズで完了する必要のある複雑なタスクに対して、ワークフロー内の関数を使用できます。 
+---
+= 機能とは
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ワークフローの計画フェーズで完了する必要のある複雑なタスクに対して、ワークフロー内の関数を使用できます。
+
+MVFLEX 式言語（ MVEL ）を使用して関数を記述できます。関数を使用すると、一般的に使用されるロジックと、名前付き関数内のより複雑なロジックをまとめて、それをコマンドパラメーターまたはフィルタパラメーターの値として再利用できます。関数を一度作成し、ワークフロー全体で使用できます。関数を使用すると、複雑な命名規則の定義など、複雑な繰り返し作業や作業を処理することができます。
+
+関数は実行中に他の関数を使用する場合があります。

@@ -1,0 +1,31 @@
+---
+permalink: help/task-delete-a-scheme.html 
+sidebar: sidebar 
+keywords: delete, scheme, create, oncommand, workflow, automation, require 
+summary: OnCommand Workflow Automation （ WFA ）で作成したスキームが不要になった場合は削除できます。 
+---
+= スキームを削除します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）で作成したスキームが不要になった場合は削除できます。
+
+* 必要なもの *
+
+* WFA をインストールしておく必要があります。
+* WFA の管理者権限または Architect のクレデンシャルが必要です。
+
+
+* このタスクについて *
+
+事前定義されたスキームは削除できません
+
+.手順
+. Web ブラウザから管理者またはアーキテクトとして WFA にログインします。
+. [ * データソース・デザイン * > * スキーム * ] をクリックします。
+. 削除するスキームを選択し、をクリックします image:../media/delete_wfa_icon.gif["削除アイコン"] をクリックします。
+. [Delete Scheme * （スキームの削除） ] 確認ダイアログボックスで、 * はい * をクリックします。
+

@@ -1,0 +1,47 @@
+---
+permalink: workflows/task-create-workflow-help-content.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, admins, architects, design, workflows, create, help, content, include 
+summary: ワークフローを設計する OnCommand Workflow Automation （ WFA ）の管理者およびアーキテクトは、ワークフローのヘルプコンテンツを作成してワークフローに含めることができます。 
+---
+= ワークフローヘルプコンテンツを作成します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ワークフローを設計する OnCommand Workflow Automation （ WFA ）の管理者およびアーキテクトは、ワークフローのヘルプコンテンツを作成してワークフローに含めることができます。
+
+HTML を使用して Web ページを作成する方法を理解しておく必要があります。
+
+このヘルプでは、ワークフローのワークフローに関する情報と、ワークフローを実行するストレージオペレータへのワークフローのユーザ入力について説明します。
+
+.手順
+. 次の名前のフォルダを作成します。 workflow-help
+. HTML エディタまたはテキストエディタを使用してヘルプコンテンツを作成し、「 workflow-help 」フォルダに「 index.htm 」ファイルとして保存します。
++
+JavaScript ファイルをヘルプコンテンツの一部として含めることはできません。サポートされるファイル拡張子は次のとおりです。
+
++
+** .jpg
+** .jpeg
+** .gif
+** .png
+** .xml に保存されます
+** THMX
+** .htm
+** .html からのアクセスが可能です
+** .css
+
+
++
+Windows で作成された 'Thumbs.db' ファイルも含めることができます
+
+. 「 index.htm 」ファイルと、イメージなどのヘルプコンテンツに関連するその他のファイルが「 workflow-help 」フォルダにあることを確認します。
+. フォルダの「 .zip 」ファイルを作成し、「 .zip 」ファイルのサイズが 2 MB 以下であることを確認します。
++
+「 NFS ボリュームの作成 - help.zip 」を参照してください
+
+. ヘルプコンテンツを作成したワークフローを編集し、 *Setup*>*Help Content*>*Browse* をクリックして、「 .zip 」ファイルをアップロードします。
+

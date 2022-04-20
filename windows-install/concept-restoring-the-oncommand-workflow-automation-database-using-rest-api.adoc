@@ -1,0 +1,20 @@
+---
+permalink: windows-install/concept-restoring-the-oncommand-workflow-automation-database-using-rest-api.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, restore, wfa, database, rest apis 
+summary: REST API を使用して OnCommand Workflow Automation （ WFA ）データベースをリストアできます。フェイルオーバー中は、コマンドラインインターフェイス（ CLI ）を使用して WFA データベースをリストアすることはできません。 
+---
+= REST API を使用した WFA データベースのリストア
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+REST API を使用して OnCommand Workflow Automation （ WFA ）データベースをリストアできます。フェイルオーバー中は、コマンドラインインターフェイス（ CLI ）を使用して WFA データベースをリストアすることはできません。
+
+次に、 2 種類のリストアを示します。
+
+* フルリストア
+* 通常のリストア
+

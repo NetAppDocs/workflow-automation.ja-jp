@@ -1,0 +1,135 @@
+---
+permalink: workflows/reference-guidelines-for-sql-in-wfa.html 
+sidebar: sidebar 
+keywords: aware, guidelines, use, sql, oncommand, workflow, automation, write, sql, queries, wfa 
+summary: OnCommand Workflow Automation （ WFA ）で SQL を使用して WFA 用の SQL クエリを記述する際のガイドラインに注意する必要があります。 
+---
+= WFA の SQL に関するガイドライン
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）で SQL を使用して WFA 用の SQL クエリを記述する際のガイドラインに注意する必要があります。
+
+WFA では、 SQL は次の場所で使用されます。
+
+* 選択のためのユーザ入力を入力する SQL クエリ
+* 特定のディクショナリエントリタイプのオブジェクトをフィルタリングするフィルタを作成するための SQL クエリ
+* プレイグラウンドデータベース内のテーブル内の静的データ
+* カスタム構成管理データベース（ CMDB ）などの外部データソースからデータを抽出する必要がある SQL タイプのカスタムデータソース。
+* 予約および検証スクリプトを照会する SQL です
+
+
+[cols="2*"]
+|===
+| ガイドライン | 例 
+
+
+ a| 
+SQL の予約キーワードは大文字で入力する必要があります。
+ a| 
+[listing]
+----
+SELECT
+    vserver.name
+FROM
+    cm_storage.vserver vserver
+----
+
+
+ a| 
+テーブル名と列名は小文字で入力する必要があります。
+ a| 
+表：アグリゲート
+
+列： Used_space_MB
+
+
+
+ a| 
+単語はアンダースコア（ _ ）文字で区切ります。スペースは使用できません。
+ a| 
+array_performance
+
+
+
+ a| 
+テーブル名が単数で定義されています。テーブルは 1 つ以上のエントリの集合です。
+ a| 
+「関数」ではなく「関数」
+
+
+
+ a| 
+SELECT クエリで意味のある名前を持つテーブルエイリアスを使用します
+ a| 
+[listing]
+----
+SELECT
+	vserver.name
+FROM
+	cm_storage.cluster cluster,
+	cm_storage.vserver vserver
+WHERE
+	vserver.cluster_id = cluster.id
+	AND cluster.name = '${ClusterName}'
+	AND vserver.type = 'cluster'
+ORDER BY
+	vserver.name ASC
+----
+
+
+ a| 
+フィルタクエリまたはユーザクエリでフィルタ入力パラメータまたはユーザ入力パラメータを参照する必要がある場合は、構文を「 $ ｛ inputVariableName ｝ 」として使用します。予約スクリプトおよび検証スクリプトでコマンド定義パラメータを参照する場合は、構文を使用することもできます。
+ a| 
+[listing]
+----
+SELECT
+	volume.name AS Name,
+	aggregate.name as Aggregate,
+	volume.size_mb AS 'Total Size (MB)',
+	voulme.used_size_mb AS 'Used Size (MB)',
+	volume.space_guarantee AS 'Space Guarantee'
+FROM
+	cm_storage.cluster,
+	cm_storage.aggregate,
+	cm_storage.vserver,
+	cm_storage.volume
+WHERE
+	cluster.id = vserver.cluster_id
+	AND aggregate.id = volume.aggregate_id
+	AND vserver.id = voulme.vserver_id
+	AND vserver.name = '${VserverName}'
+	AND cluster.name = '${ClusterName}'
+ORDER BY
+	volume.name ASC
+----
+
+
+ a| 
+複雑なクエリにはコメントを使用します。クエリでサポートされているコメントスタイルの一部を次に示します。
+
+* "`-- 行の最後まで
++
+このコメントスタイルでは、 2 番目のハイフンの後にスペースは必要です。
+
+* 行の末尾までの「 # 」文字から
+* "`/*`" から次の "*/`" シーケンスに移動します
+
+ a| 
+[listing]
+----
+/*
+multi-line
+comment
+*/
+--line comment
+SELECT
+	ip as ip, # comment till end of this line
+	NAME as name
+FROM --end of line comment
+	storage.array
+----
+|===

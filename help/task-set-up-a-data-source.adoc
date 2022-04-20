@@ -1,0 +1,137 @@
+---
+permalink: help/task-set-up-a-data-source.html 
+sidebar: sidebar 
+keywords: set up, connection, data, source, oncommand, source, workflow, autumation, acquire 
+summary: データソースからデータを取得するには、 OnCommand Workflow Automation （ WFA ）でデータソースとの接続をセットアップする必要があります。 
+---
+= データソースを設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+データソースからデータを取得するには、 OnCommand Workflow Automation （ WFA ）でデータソースとの接続をセットアップする必要があります。
+
+* 必要なもの *
+
+* 6.0 より前のバージョンの Active IQ Unified Manager では、データベースへの読み取り専用のリモートアクセスを有効にして設定するために、 Unified Manager サーバで最新バージョンの ocsetup ツールを実行しておく必要があります。
+* Active IQ Unified Manager 6.0 以降では、 Unified Manager サーバでデータベースユーザアカウントを作成しておく必要があります。
++
+詳細については、 OnCommand Unified Manager オンラインヘルプを参照してください。
+
+* Unified Manager サーバで受信接続用の TCP ポートが開いている必要があります。
++
+詳細については、ファイアウォールのマニュアルを参照してください。
+
++
+デフォルトの TCP ポート番号は次のとおりです。
+
++
+[cols="3*"]
+|===
+| TCP ポート番号 | Unified Manager サーバのバージョン | 説明 
+
+
+ a| 
+2638
+ a| 
+5.x
+ a| 
+Sybase SQL Anywhere データベース・サーバ
+
+
+
+ a| 
+3306
+ a| 
+6.x
+ a| 
+MySQL データベースサーバ
+
+|===
+* Performance Advisor の場合、 GlobalRead の最小ロールを持つ Active IQ Unified Manager ユーザーアカウントを作成しておく必要があります。
++
+詳細については、 OnCommand Unified Manager オンラインヘルプを参照してください。
+
+* VMware vCenter Server で受信接続用の TCP ポートが開いている必要があります。
++
+デフォルトの TCP ポート番号は 443 です。詳細については、ファイアウォールのマニュアルを参照してください。
+
+
+
+* このタスクについて *
+
+この手順 を使用して、 Unified Manager サーバのデータソースを WFA に複数追加できます。ただし、 Unified Manager サーバ 6.3 以降を WFA とペアリングし、 Unified Manager サーバの保護機能を使用する場合は、この手順 を使用しないでください。
+
+WFA と Unified Manager サーバ 6.x のペアリングの詳細については、 OnCommand Unified Manager オンラインヘルプを参照してください。
+
+
+NOTE: WFA を使用してデータソースをセットアップするときは、 WFA 4.0 リリースでは Active IQ Unified Manager 6.0 、 6.1 、 6.2 のデータソースタイプが廃止され、以降のリリースではこれらのデータソースタイプがサポートされないことに注意してください。
+
+.手順
+. Web ブラウザを使用して WFA にアクセスします。
+. [ * 設定 * ] をクリックし、 [ * 設定 * ] で [ * データソース * ] をクリックします。
+. 適切なアクションを選択します。
++
+[cols="2*"]
+|===
+| 目的 | 手順 
+
+
+ a| 
+新しいデータソースを作成します
+ a| 
+をクリックします image:../media/new_wfa_icon.gif["新しいアイコン"] をクリックします。
+
+
+
+ a| 
+WFA をアップグレードした場合は、リストアしたデータソースを編集します
+ a| 
+既存のデータソースエントリを選択し、をクリックします image:../media/edit_wfa_icon.gif["編集アイコン"] をクリックします。
+
+|===
++
+Unified Manager サーバのデータソースを WFA に追加してから Unified Manager サーバのバージョンをアップグレードした場合、アップグレード後の Unified Manager サーバのバージョンは WFA で認識されません。以前のバージョンの Unified Manager サーバを削除してから、アップグレード後のバージョンの Unified Manager サーバを WFA に追加する必要があります。
+
+. [ 新しいデータソース *] ダイアログボックスで、必要なデータソースの種類を選択し、データソースの名前とホスト名を入力します。
++
+選択したデータソースのタイプに基づいて、ポート、ユーザ名、パスワード、およびタイムアウトの各フィールドにデフォルトのデータが自動的に入力される場合があります。これらのエントリは必要に応じて編集できます。
+
+. 適切なアクションを選択します。
++
+[cols="2*"]
+|===
+| 用途 | 手順 
+
+
+ a| 
+Active IQ Unified Manager 6.0 より前のバージョン
+ a| 
+ocsetup ツールの実行時にデフォルトのクレデンシャルを上書きするために使用したユーザ名とパスワードを入力します。
+
+
+
+ a| 
+Active IQ Unified Manager 6.3 以降
+ a| 
+Unified Manager サーバで作成したデータベースユーザアカウントのクレデンシャルを入力します。データベースユーザアカウントの作成の詳細については、 OnCommand Unified Manager オンラインヘルプを参照してください。
+
+
+
+ a| 
+Performance Advisor （ 6.0 より前の Active IQ Unified Manager バージョン）
+ a| 
+GlobalRead の最小ロールを持つ Active IQ Unified Manager ユーザーの資格情報を入力します。
+
+[NOTE]
+====
+コマンドラインインターフェイスまたは ocsetup ツールを使用して作成された Active IQ Unified Manager データベースユーザアカウントのクレデンシャルは指定しないでください。
+
+====
+|===
+. [ 保存（ Save ） ] をクリックします。
+. * オプション： * [ データソース ] テーブルで、データソースを選択し、をクリックします image:../media/acquire_now_wfa_icon.gif["今すぐ取得アイコン"] をクリックします。
+. データ取得プロセスのステータスを確認します。
+

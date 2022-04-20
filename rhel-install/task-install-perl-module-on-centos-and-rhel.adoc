@@ -1,0 +1,171 @@
+---
+permalink: rhel-install/task-install-perl-module-on-centos-and-rhel.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, install, perl modules, centos, rhel 
+summary: 一部の Perl モジュールは、 Linux 用 Perl パッケージにデフォルトでは含まれていません。 
+---
+= CentOS および RHEL に Perl モジュールをインストールします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+一部の Perl モジュールは、 Linux 用 Perl パッケージにデフォルトでは含まれていません。
+
+WFA のインストール時に、 WFA インストーラはシステム内のすべての Perl モジュールが使用可能であることを検証し、その要件が満たされた場合に処理を続行します。OnCommand Workflow Automation （ WFA ）をインストールする前に、 Perl モジュールをインストールする必要があります。
+
+
+NOTE: perl モジュールがシステムで設定された yum リポジトリで利用可能な場合、 WFA インストーラは Perl モジュールのインストールを自動的に試行します。Perl モジュールがない場合は、ユーザに Perl モジュールを手動でインストールするように求められます。唯一の例外は、「 perl-core 」モジュールです。このモジュールは、システムに設定されている yum リポジトリで使用可能な場合でも、システムに自動的にはインストールされません。これは問題と呼ばれています。
+
+[cols="2*"]
+|===
+| Perl モジュール | RPM パッケージ名 
+
+
+ a| 
+Perl コアモジュール
+ a| 
+Perl - コア
+
+
+
+ a| 
+DBI
+ a| 
+PERLdBi
+
+
+
+ a| 
+XML::DOM
+ a| 
+PERLG-XML-dom
+
+
+
+ a| 
+用語：： ReadKey
+ a| 
+Perl - TermReadKey
+
+
+
+ a| 
+HTTP: 要求
+ a| 
+perl-libwww-perl
+
+
+
+ a| 
+XML::libxml perl-xml-libxml
+ a| 
+PERLG-XML-libxml
+
+
+
+ a| 
+DBD::mysql
+ a| 
+Perl - DBD - MySQL
+
+
+
+ a| 
+uri::url
+ a| 
+Perl URI
+
+
+
+ a| 
+HTTP: 応答
+ a| 
+perl-libwww-perl
+
+
+
+ a| 
+HTTP: ヘッダー
+ a| 
+perl-libwww-perl
+
+
+
+ a| 
+ネット： SSLeay
+ a| 
+Perl - Net-SSLeay
+
+
+
+ a| 
+URI::Escape
+ a| 
+Perl URI
+
+
+
+ a| 
+LWP::Protocol::https perl-LWP-Protocol-https
+ a| 
+Perl - LWP-Protocol-https
+
+
+
+ a| 
+XML::Parser
+ a| 
+Perl - XML - 解析ツール
+
+
+
+ a| 
+LWP::UserAgent
+ a| 
+perl-libwww-perl
+
+
+
+ a| 
+net ： LDAP
+ a| 
+Perl - LDAP
+
+
+
+ a| 
+日付：：計算
+ a| 
+Perl - 日付 - CalcXML
+
+|===
+.手順
+. Linux サーバに root ユーザとしてログインします
+. WFA に必要なすべての Perl モジュールがシステムにインストールされていることを確認します。
++
+WFA-4.2.0.0.0.bin -l
+
+. Perl モジュールが検出されない場合は、設定したリポジトリで使用できるかどうかを確認します。
++
+yum 'searchPerl - モジュール名
+
++
+DBD::mysql モジュールが検出されない場合は、次の手順を実行します。
+
++
+yum `search perl -dbd-mysql`
+
+. リポジトリに Perl モジュールがない場合は、 Perl モジュールを含むリポジトリを設定するか、インターネットから Perl モジュールをダウンロードします。
+. 設定済みのリポジトリに不足している Perl モジュールをインストールします。
++
+yum-y install Perl - module-name
+
++
+設定済みのリポジトリから DBD::mysql モジュールをインストールします。
+
++
+yum-y install perl - DBD - mysql`
+
+

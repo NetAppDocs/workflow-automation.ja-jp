@@ -1,0 +1,71 @@
+---
+permalink: workflows/concept-how-commands-work.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, commands, execution, blocks, step 
+summary: OnCommand Workflow Automation コマンドは、ワークフローの実行ブロックです。ワークフローの各ステップにコマンドを使用できます。 
+---
+= コマンドの仕組み
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation コマンドは、ワークフローの実行ブロックです。ワークフローの各ステップにコマンドを使用できます。
+
+WFA コマンドは、 PowerShell スクリプトと Perl スクリプトを使用して記述します。PowerShell コマンドでは、パッケージがインストールされている場合、 Data ONTAP PowerShell Toolkit と VMware PowerCLI を使用します。Perl コマンドでは、 WFA サーバにインストールされている Perl モジュールと Perl モジュールを使用します。PowerShell や Perl などのコマンドに複数のスクリプト言語を含める場合は、 WFA のインストール先のオペレーティングシステムと、 WFA の設定メニューで指定した言語の優先順位に基づいて、適切なスクリプトが WFA によって選択されます。
+
+WFA コマンドのスクリプトには、いくつかのパラメータが含まれています。これらのパラメータは、ディクショナリエントリ属性にマッピングされる場合があります。
+
+WFA コマンドには、それぞれ複数の Data ONTAP コマンドを含めることができます。
+
+WFA コマンドの中には、実行時間の長い処理を待機し、定期的にポーリングすることができるものもあるため、 wait コマンドと呼ばれるものもあります。たとえば、「 * wait for multiple volume Moves * 」コマンドなどです。ポーリングコマンドが実行される待機間隔は、処理が完了したかどうかを確認するように設定できます。
+
+WFA コマンドは、ワークフローの実行フェーズ中に WFA によって開始されます。WFA は、コマンドを左から右、上から下の順に実行します。ワークフローを計画することで、コマンドに指定するパラメータを使用できるかどうかと、その有効性を確認できます。コマンドの実行前に、 WFA サーバからコマンドに必要なすべてのパラメータが提供されます。
+
+コマンドのパラメータは、ワークフローの計画中に確定します。ワークフローは、実行時にこれらのパラメータをコマンドに渡します。コマンドからワークフローにパラメータを戻すことはできません。ただし、ワークフローのコマンド間での実行時に取得した情報を交換する場合は、指定の WFA PowerShell コマンドレットまたは Perl の機能を使用できます。
+
+WFA PowerShell コマンドでは、 PowerShell コマンドレットの -ErrorAction stop フラグは使用されません。そのため、エラーが原因でコマンドレットが失敗した場合でもワークフローは続行されます。ErrorAction stop フラグを特定のコマンドに指定する場合は、コマンドをクローニングして PowerShell スクリプトを変更し、フラグを追加します。
+
+WFA に含まれている PowerShell コマンドと Perl 機能を使用して、各コマンド間で情報を交換することができます。
+
+[cols="2*"]
+|===
+| PowerShell コマンドレット | Perl 関数 
+
+
+ a| 
+Add-WfaWorkflowParameter
+ a| 
+addWfaWorkflowParameter
+
+
+
+ a| 
+Get-WfaWorkflowParameter
+ a| 
+getWfaWorkflowParameter
+
+|===
+コマンドに「 add 」コマンドレットまたは関数によって追加されたパラメータは、後で実行され、「 get 」コマンドレットまたは関数を使用するコマンドによって取得できます。たとえば、 PowerShell WFA コマンドのコードで次のように指定すると、 volumeID というパラメータを追加できます。 Add-WfaWorkflowParameter -Name "VolumeUUID" -value "12345" -AddAsReturnParameter $true"次に、このコマンドのあとのコマンドで次のように指定すると、ボリューム ID の値が取得されます。「 $volumeID = Get-WfaWorkflowParameter - Name volumeID 」。
+
+WFA コマンドは WFA データベースを照会して、必要な結果を取得できます。これにより、フィルタやファインダを使用せずにコマンドを作成できます。次の関数を使用して、データベースを照会できます。
+
+[cols="2*"]
+|===
+| PowerShell コマンドレット | Perl 関数 
+
+
+ a| 
+例：「 Invoke-NaMySqlQuery -Query 」 cm_storage.cluster から「 Cluster Name 」に cluster.name を選択します
+ a| 
+invokeMySqlQuery
+
+|===
+* 関連情報 *
+
+xref:task-create-a-filter.adoc[フィルタを作成します]
+
+xref:task-create-a-finder.adoc[Finder を作成します]
+
+xref:task-create-a-command.adoc[コマンドを作成します]

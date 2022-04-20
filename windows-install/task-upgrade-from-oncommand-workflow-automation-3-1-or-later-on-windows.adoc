@@ -1,0 +1,62 @@
+---
+permalink: windows-install/task-upgrade-from-oncommand-workflow-automation-3-1-or-later-on-windows.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, upgrade, later versions 
+summary: OnCommand Workflow Automation （ WFA ） 3.1 以降のバージョンから、使用可能な最新バージョンの WFA へのインプレースアップグレードを実行して、新しい機能と拡張機能を使用できます。 
+---
+= OnCommand Workflow Automation 3.1 以降のバージョンからアップグレードします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ） 3.1 以降のバージョンから、使用可能な最新バージョンの WFA へのインプレースアップグレードを実行して、新しい機能と拡張機能を使用できます。
+
+ネットアップサポートサイトから WFA ホストマシンに .exe バイナリファイルをダウンロードしておきます。
+
+WFA 5.1 クラスタ接続では、 SSL 証明書を承認する必要があります。以前のバージョンの WFA を WFA 5.1 に更新する際には、クラスタ接続を認定する必要があります。インプレースアップグレードの完了後に、クラスタ証明書のクラスタ接続の詳細を保存します。
+
+以前のバージョンの WFA からアップグレードする場合、 MySQL を独自にインストールすることはできません。ただし、 MySQL は独自にインストールできます。
+
+* WFA 4.2 以降を新規にインストールするとき
+* WFA 4.2 から新しいバージョンの WFA にアップグレードする場合。
+
+
+.ステップ
+. 次のいずれかの方法を選択して、 WFA 3.1 以降のバージョンからアップグレードします。
++
+** 対話型インストール
++
+... WFA ホストマシンの .exe バイナリファイルに移動し、ファイルを実行します。
+... ウィザードの指示に従って、アップグレードを完了します。
+
+
+** サイレントインストール
++
+コマンドプロンプトで、次のコマンドを入力します。
+
++
+「 WFA-version_number-build_number.exe /s /v 」 wfa_admin_username_up = WFA ユーザ名 wfa_admin_password_up = パスワード /qr/l * v C ： \upgrades.log
+
++
+* 例 * ：
+
++
+「 WFA-x64-v4.2.0.0.0-B2973881.exe /s /v 」 wfa_admin_username_up = admin wfa_admin_password_up = パスワード * 123/QR / l * v C ： \upgrades.log
+
++
+
+NOTE: /qn オプションは、 WFA ではサポートされません。
+
++
+サイレントアップグレードを実行する場合は、すべてのコマンドパラメータの値を指定する必要があります。
+
++
+*** wfa_admin_username_up は、 WFA データベースのバックアップを作成する権限を持つ WFA ユーザのユーザ名です。
+*** wfa_ADMIN_NETWORK_PASSWORD_UP はユーザのパスワードです。
+
+
+
+
+

@@ -1,0 +1,14 @@
+---
+permalink: workflows/concept-understanding-workflow-automation-designer.html 
+sidebar: sidebar 
+keywords: create, workflows, automation, designer, use, building blocks, finders, filters, commands, understanding, important, before, start 
+summary: Workflow Automation （ WFA ）設計者が、ファインダ、フィルタ、コマンドなどのビルディングブロックを使用してワークフローを作成します。ワークフローの作成を開始する前に、ビルディングブロックとワークフロー作成プロセスについて理解することが重要です。 
+---
+= Workflow Automation Designer の概要を参照してください
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Workflow Automation （ WFA ）設計者が、ファインダ、フィルタ、コマンドなどのビルディングブロックを使用してワークフローを作成します。ワークフローの作成を開始する前に、ビルディングブロックとワークフロー作成プロセスについて理解することが重要です。

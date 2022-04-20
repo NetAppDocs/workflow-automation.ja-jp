@@ -1,0 +1,25 @@
+---
+permalink: workflows/task-import-an-oncommand-workflow-automation-pack.html 
+sidebar: sidebar 
+keywords: import, workflow, server, oncommand, automation, storage, integration, requirements 
+summary: ストレージの自動化と統合の要件に応じて、サーバから OnCommand Workflow Automation （ WFA ）にワークフローパックをインポートできます。 
+---
+= WFA ワークフローパックをインポート
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ストレージの自動化と統合の要件に応じて、サーバから OnCommand Workflow Automation （ WFA ）にワークフローパックをインポートできます。
+
+インポートするサーバ内の WFA コンテンツにアクセスできる必要があります。
+
+.手順
+. Web ブラウザから * WFA * ウィンドウにログインします。
+. [* コンテンツ管理 * （ Content Management * ） ] > [* パック（ * Packs ） ]
+. [ サーバーからインポート（ Import from Server ） ] アイコンをクリックします。
+. [ サーバーフォルダからインポート *] ダイアログボックスの [ サーバーシステムのフォルダの場所 *] フィールドに、サーバー内のパックの場所を文字列形式で入力します。たとえば、「 C:\work \packs\test. 」と入力します
+. [OK] をクリックします。
+. パックが * パック * ウィンドウにインポートされていることを確認します。
+

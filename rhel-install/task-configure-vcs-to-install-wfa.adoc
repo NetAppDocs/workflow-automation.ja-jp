@@ -1,0 +1,58 @@
+---
+permalink: rhel-install/task-configure-vcs-to-install-wfa.html 
+sidebar: sidebar 
+keywords: configure, vcs, install, oncommand, workflow, automation 
+summary: Veritas Cluster Server （ VCS ）に OnCommand Workflow Automation （ WFA ）をインストールする前に、クラスタノードが WFA をサポートするように適切に設定されていることを確認する必要があります。 
+---
+= OnCommand Workflow Automation をインストールするように VCS を設定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Veritas Cluster Server （ VCS ）に OnCommand Workflow Automation （ WFA ）をインストールする前に、クラスタノードが WFA をサポートするように適切に設定されていることを確認する必要があります。
+
+* VCS は、 _Veritas Cluster Server 6.1.1 Installation Guide_. の手順に従って、クラスタの両方のノードにインストールする必要があります。
+* クラスタイベントに関する通知を受信するには、 _Veritas Cluster Server Administrator's Guide _ の手順に従って、 VCS ソフトウェアを SNMP および SMTP 用に設定する必要があります。
+* VCS のドキュメントに従って、クラスタサーバの設定に関するすべての要件とガイドラインを満たしている必要があります。
+* SnapDrive for UNIX を使用して LUN を作成する場合は、 SnapDrive for UNIX がインストールされている必要があります。
+* サポートされているバージョンのオペレーティングシステムが両方のクラスタノードで実行されている必要があります。
++
+サポートされるオペレーティングシステムは、 Red Hat Enterprise Linux 7.0 および VCS 6.1.1 以上です。
+
+* 両方のクラスタノードで同じバージョンの WFA を同じパスにインストールする必要があります。
+* WFA サーバが Fibre Channel （ FC ）または iSCSI 経由でストレージシステムに接続されている必要があります。
+* WFA サーバとストレージシステムの間のレイテンシを最小にする必要があります。
+* FC リンクがアクティブになっていて、作成した LUN に両方のクラスタノードからアクセスできる必要があります。
+* 各システムには、ノード間通信用とノードとクライアント間通信用の 2 つ以上のネットワークインターフェイスを設定する必要があります。
+* ノードとクライアント間の通信に使用するネットワークインターフェイスの名前は、両方のシステムで同じである必要があります。
+* クラスタノード間に独立したハートビートリンクが確立されている必要があります。確立されていない場合、クラスタノード間の通信にネットワークインターフェイスが使用されます。
+* 高可用性を実現するには、共有の場所を作成する必要があります。
++
+SnapDrive for UNIX を使用して共有の場所を作成できます。
+
++
+SnapDrive またはストレージシステムのコマンドラインインターフェイスを使用して LUN を管理することもできます。詳細については、 SnapDrive for UNIX の互換性マトリックスを参照してください。
+
+
+
+.手順
+. VCS が正しくインストールされていることを確認します
++
+両方のノードがオンラインであり、両方のノードで VCS サービスが実行されている必要があります。
+
+. 次のいずれかのオプションを使用して、両方のノードから LUN にアクセスできることを確認します。
++
+** LUN をネイティブで管理します。
+** SnapDrive for UNIX を使用：
++
+... 両方のノードに SnapDrive for UNIX をインストールします。
+... 両方のノードで SnapDrive for UNIX を設定します。
+... 最初のノードから SnapDrive storage create コマンドを実行して 'LUN を作成します
+... 「 lun storage show – all 」コマンドを実行して、最初のノードに作成された SnapDrive が 2 番目のノードに表示されることを確認します。
+
+
+
+
+

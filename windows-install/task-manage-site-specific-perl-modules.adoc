@@ -1,0 +1,123 @@
+---
+permalink: windows-install/task-manage-site-specific-perl-modules.html 
+sidebar: sidebar 
+keywords: manage, site-specific, perl modules 
+summary: ActiveState Perl Package Manager （ PPM ）を使用して、サイト固有の Perl モジュールを管理できます。WFA のアップグレード時に Perl モジュールが削除されないようにするために、サイト固有の Perl モジュールを OnCommand Workflow Automation （ WFA ）インストールディレクトリの外部にインストールする必要があります。 
+---
+= サイト固有の Perl モジュールを管理します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ActiveState Perl Package Manager （ PPM ）を使用して、サイト固有の Perl モジュールを管理できます。WFA のアップグレード時に Perl モジュールが削除されないようにするために、サイト固有の Perl モジュールを OnCommand Workflow Automation （ WFA ）インストールディレクトリの外部にインストールする必要があります。
+
+PERL5LIB 環境変数を使用すると、 WFA サーバにインストールされている Perl インタープリタを設定して Perl モジュールを使用できます。
+
+この手順 では、ユーザ領域の c:\Perl に Try-Tiny Perl モジュールをインストールする例として使用します。このユーザ領域は、 WFA をアンインストールしても削除されず、 WFA を再インストールまたはアップグレードしたあとに再利用できます。
+
+.手順
+. PERL5LIB 環境変数を Perl モジュールをインストールする場所に設定します。
++
+c:\> echo %PERL5LIB%`c:\Perl`
+
+. Perl モジュール領域が 'ppm area list' を使用して初期化されていないことを確認します
++
+c:\Program Files\NetApp\WFA\Perl64\bin>ppm area list`
+
++
+[listing]
+----
+┌────────┬──────┬───────────────────────────────────────────────────┐
+│ name   │ pkgs │ lib                                               │
+├────────┼──────┼───────────────────────────────────────────────────┤
+│ (user) │  n/a │ C:/Perl                                           │
+│  site* │  0   │ C:/Program Files/NetApp/WFA/Perl64/site/lib       │
+│  perl  │  229 │ C:/Program Files/NetAPP/WFA/Perl64/lib            │
+└────────┴──────┴───────────────────────────────────────────────────┘
+----
+. 「 ppm area init user 」を使用して、 Perl モジュール領域を初期化します。
++
+c:\Program Files\NetApp\WFA\Perl64\bin>ppm area init user`
+
++
+[listing]
+----
+Syncing user PPM database with .packlists...done
+----
+. Perl モジュール領域が 'ppm area list' を使用して初期化されていることを確認します
++
+c:\Program Files\NetApp\WFA\Perl64\bin>ppm area list`
+
++
+[listing]
+----
+┌────────┬──────┬───────────────────────────────────────────────────┐
+│ name   │ pkgs │ lib                                               │
+├────────┼──────┼───────────────────────────────────────────────────┤
+│  user  │  0   │ C:/Perl                                           │
+│  site* │  0   │ C:/Program Files/NetApp/WFA/Perl64/site/lib       │
+│  perl  │  229 │ C:/Program Files/NetAPP/WFA/Perl64/lib            │
+└────────┴──────┴───────────────────────────────────────────────────┘
+----
+. 必要なリポジトリを追加し、必要なパッケージをインストールします。
++
+.. 「 ppm repo add 」を使用して、必要なリポジトリを追加します。
++
+`+c ： \Program Files\NetApp\WFA\Perl64\bin>ppm repo add http://ppm4.activestate.com/MSWin32-x64/5.16/1600/package.xml+`[]
+
++
+[listing]
+----
+Downloading ppm4.activestate.com packlist...done
+Updating ppm4.activestate.com database...done
+Repo 1 added.
+----
+.. 「 ppm repo list 」を使用して、必要なリポジトリが追加されていることを確認します。
++
+c:\Program Files\NetApp\WFA\Perl64\bin>ppm repo list`
+
++
+[listing]
+----
+┌────────┬──────┬────────────────────────────────────────────────┐
+│ id     │ pkgs │ name                                           │
+├────────┼──────┼────────────────────────────────────────────────┤
+│  1     │17180 │ ppmr.activestate.com                           │
+└────────┴──────┴────────────────────────────────────────────────┘
+ (1 enabled repository)
+----
+.. 「 ppm install 」を使用して、必要な Perl モジュールをインストールします。
++
+c:\Program Files\NetApp\WFA\Perl64\bin>ppm install try -siny --area user`
+
++
+[listing]
+----
+Downloading ppm4.activestate.com packlist...done
+Updating ppm4.activestate.com database...done
+Downloading Try-Tiny-0.18...done
+Unpacking Try-Tiny-0.18...done
+Generating HTML for Try-Tiny-0.18...done
+Updating files in user area...done
+   2 files installed
+----
+.. 「 ppm area list 」を使用して、必要な Perl モジュールがインストールされていることを確認します。
++
+c:\Program Files\NetApp\WFA\Perl64\bin>ppm area list`
+
++
+[listing]
+----
+┌────────┬──────┬────────────────────────────────────────────────┐
+│ name   │ pkgs │ lib                                            │
+├────────┼──────┼────────────────────────────────────────────────┤
+│  user  │  1   │ C:/Perl                                        │
+│  site* │  0   │ C:/Program Files/NetApp/WFA/Perl64/site/lib    │
+│  perl  │  229 │ C:/Program Files/NetAPP/WFA/Perl64/lib         │
+└────────┴──────┴────────────────────────────────────────────────┘
+----
+
+
+

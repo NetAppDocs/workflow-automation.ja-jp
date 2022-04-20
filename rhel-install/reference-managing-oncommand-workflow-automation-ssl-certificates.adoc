@@ -1,0 +1,16 @@
+---
+permalink: rhel-install/reference-managing-oncommand-workflow-automation-ssl-certificates.html 
+sidebar: sidebar 
+keywords: manage, oncommand, workflow, automation, ssl certificate 
+summary: デフォルトの OnCommand Workflow Automation （ WFA ） SSL 証明書を自己署名証明書または認証局（ CA ）が署名した証明書に置き換えることができます。 
+---
+= OnCommand Workflow Automation SSL 証明書の管理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+デフォルトの OnCommand Workflow Automation （ WFA ） SSL 証明書を自己署名証明書または認証局（ CA ）が署名した証明書に置き換えることができます。
+
+デフォルトの自己署名 WFA SSL 証明書は WFA のインストール時に生成されます。アップグレードすると、以前のインストールの証明書が新しい証明書に置き換えられます。デフォルト以外の自己署名証明書または CA によって署名された証明書を使用している場合は、デフォルトの WFA SSL 証明書を証明書に置き換える必要があります。

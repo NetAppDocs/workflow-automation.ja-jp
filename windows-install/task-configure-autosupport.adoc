@@ -1,0 +1,60 @@
+---
+permalink: windows-install/task-configure-autosupport.html 
+sidebar: sidebar 
+keywords: configure, autosupport 
+summary: スケジュール、 AutoSupport メッセージの内容、プロキシサーバなど、複数の AutoSupport 設定を行うことができます。AutoSupport は、選択したコンテンツの週次ログをアーカイブと問題 分析のためにテクニカルサポートに送信します。 
+---
+= AutoSupport を設定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+スケジュール、 AutoSupport メッセージの内容、プロキシサーバなど、複数の AutoSupport 設定を行うことができます。AutoSupport は、選択したコンテンツの週次ログをアーカイブと問題 分析のためにテクニカルサポートに送信します。
+
+.手順
+. Web ブラウザから admin として WFA にログインします。
+. [ * 設定 * ] をクリックし、 [ * 設定 * ] で [ * AutoSupport * ] をクリックします。
+. [* AutoSupport を有効にする * ] ボックスが選択されていることを確認します。
+. 必要な情報を入力します。
+. [* コンテンツ * （ Content * ） ] リストから次のいずれかを選択します。
++
+[cols="2*"]
+|===
+| 含める項目 | 選択するオプション 
+
+
+ a| 
+WFA インストールのユーザ、ワークフロー、コマンドなど、設定の詳細のみを表示します
+ a| 
+「設定データのみ送信」
+
+
+
+ a| 
+WFA の設定の詳細と、スキームなどの WFA キャッシュテーブル内のデータ
+ a| 
+「 send configuration and cache data 」（デフォルト）
+
+
+
+ a| 
+WFA の設定の詳細、 WFA のキャッシュテーブル内のデータ、インストールディレクトリ内のデータ
+ a| 
+「構成を送信し、拡張データをキャッシュします。
+
+|===
++
+
+NOTE: WFA ユーザのパスワードは、 AutoSupport データに _not_included です。
+
+. AutoSupport メッセージをダウンロードできることをテストします。
++
+.. [ * ダウンロード ] をクリックします。
+.. 表示されたダイアログボックスで、 .7z ファイルの保存場所を選択します。
+
+
+. [ 今すぐ送信 ] をクリックして、指定した宛先への AutoSupport メッセージの送信をテストします。
+. [ 保存（ Save ） ] をクリックします。
+

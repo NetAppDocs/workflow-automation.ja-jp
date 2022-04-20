@@ -1,0 +1,129 @@
+---
+permalink: workflows/reference-guidelines-for-other-programming-aspects.html 
+sidebar: sidebar 
+keywords: aware, certain, important, considerations, convert, powershell, commands, perl, different, capabilities 
+summary: PowerShell と Perl の機能は異なるため、 PowerShell コマンドを Perl に変換する場合は、いくつかの重要な考慮事項に注意する必要があります。 
+---
+= PowerShell コマンドを Perl に変換する際の考慮事項
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+PowerShell と Perl の機能は異なるため、 PowerShell コマンドを Perl に変換する場合は、いくつかの重要な考慮事項に注意する必要があります。
+
+
+
+== コマンド入力タイプ
+
+OnCommand Workflow Automation （ WFA ）を使用すると、ワークフローの設計者は、コマンドを定義する際に、コマンドの入力としてアレイとハッシュを使用できます。これらの入力タイプは、 Perl を使用してコマンドを定義する場合には使用できません。Perl コマンドで配列とハッシュの入力を受け入れる場合は、デザイナで文字列として入力を定義できます。コマンド定義では、入力を解析できます。この入力は必要に応じて配列またはハッシュを作成するために渡されます。入力の概要 は、入力が想定される形式です。
+
+[listing]
+----
+my @input_as_array  = split(',', $InputString); #Parse the input string of format val1,val2 into an array
+
+my %input_as_hash = split /[;=]/, $InputString; #Parse the input string of format key1=val1;key2=val2 into a hash.
+----
+
+
+== PowerShell ステートメント
+
+次の例は、 PowerShell および Perl へのアレイ入力の受け渡し方法を示しています。例では、 cron ジョブの実行がスケジュールされている月を指定する、 CronMonth 入力について説明しています。有効な値は、整数 -1 ～ 11 です。値 -1 は、スケジュールが毎月実行されることを示します。その他の値は特定の月を表し、 0 は 1 月、 11 は 12 月を表します。
+
+[listing]
+----
+[parameter(Mandatory=$false, HelpMessage="Months in which the schedule executes. This is a comma separated list of values from 0 through 11. Value -1 means all months.")]
+  [ValidateRange(-1, 11)]
+  [array]$CronMonths,
+----
+
+
+== Perl ステートメント
+
+[listing]
+----
+GetOptions(
+    "Cluster=s"         => \$Cluster,
+    "ScheduleName=s"    => \$ScheduleName,
+    "Type=s"            => \$Type,
+    "CronMonths=s"      => \$CronMonths,
+) or die 'Illegal command parameters\n';
+
+sub get_cron_months {
+    return get_cron_input_hash('CronMonths', $CronMonths, 'cron-month', -1,
+        11);
+}
+
+sub get_cron_input_hash {
+    my $input_name   = shift;
+    my $input_value  = shift;
+    my $zapi_element = shift;
+    my $low          = shift;
+    my $high         = shift;
+    my $exclude      = shift;
+
+    if (!defined $input_value) {
+        return undef;
+    }
+
+    my @values = split(',', $input_value);
+
+    foreach my $val (@values) {
+        if ($val !~ /^[+-]?\d+$/) {
+            die
+                "Invalid value '$input_value' for $input_name: $val must be an integer.\n";
+        }
+        if ($val < $low || $val > $high) {
+            die
+                "Invalid value '$input_value' for $input_name: $val must be from $low to $high.\n";
+        }
+        if (defined $exclude && $val == $exclude) {
+            die
+                "Invalid value '$input_value' for $input_name: $val is not valid.\n";
+        }
+    }
+    # do something
+}
+----
+
+
+== コマンド定義
+
+PowerShell でパイプ演算子を使用する 1 行式を、 Perl で複数のステートメントブロックに拡張して、同じ機能を実現しなければならない場合があります。次の表に、待機コマンドの例を示します。
+
+[cols="2*"]
+|===
+| PowerShell ステートメント | Perl ステートメント 
+
+
+ a| 
+[listing]
+----
+# Get the latest job which moves the specified volume to the specified
+ aggregate.
+$job = Get-NcJob -Query $query | where
+{$_.JobDescription -eq "Split" + $VolumeCloneName} | Select-Object -First 1
+---- a| 
+[listing]
+----
+my $result = $server->job_get_iter(
+	'query' => {'job-type' => 'VOL_CLONE_SPLIT'},
+	'desired-attributes' => {
+		'job-type' => '',
+		'job-description' => '',
+		'job-progress' => '',
+		'job-state' => ''
+	}
+);
+my @jobarray;
+for my $job (@{ $result->{'attributes-list'}})
+{
+	my $description = $job->{'job-description'};
+	if($description =~ /$VolumeCloneName/)
+	{
+		push(@jobarray, $job)
+	}
+}
+----
+|===

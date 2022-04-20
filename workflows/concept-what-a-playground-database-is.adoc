@@ -1,0 +1,85 @@
+---
+permalink: workflows/concept-what-a-playground-database-is.html 
+sidebar: sidebar 
+keywords: playground, database, mysql, include, Workflow, automation, server, installation, add, tables, information, filters, queries, user, input 
+summary: プレイグラウンドデータベースは MySQL データベースで、 Workflow Automation （ WFA ）サーバのインストールに含まれています。プレイグラウンドデータベースにテーブルを追加して情報を含めることができます。この情報は、フィルタやユーザ入力用の SQL クエリで使用できます。 
+---
+= プレイグラウンドデータベースとは
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+プレイグラウンドデータベースは MySQL データベースで、 Workflow Automation （ WFA ）サーバのインストールに含まれています。プレイグラウンドデータベースにテーブルを追加して情報を含めることができます。この情報は、フィルタやユーザ入力用の SQL クエリで使用できます。
+
+プレイグラウンドデータベースは、 WFA Web ポータルからアクセスできないスキーマです。データベースにアクセスするには、 SQLyog 、 Toad for MySQL 、 MySQL Workbench 、またはコマンドラインインターフェイス（ CLI ）などの MySQL クライアントを使用します。
+
+プレイグラウンドデータベースにアクセスするには、次の資格情報を使用する必要があります。
+
+* ユーザ名： wfa
+* パスワード： Wfa123
+
+
+クレデンシャルに基づいて、プレイグラウンドデータベースに完全にアクセスできるほか、 WFA の MySQL データベースに定義されている他のスキーマへの読み取り専用アクセスが可能になります。プレイグラウンドデータベースに必要なテーブルを作成できます。
+
+環境内のストレージオブジェクトに使用するタグやメタデータをプレイグランドデータベース内のテーブルに追加できます。作成したタグやメタデータは、 WFA のフィルタやユーザ入力クエリによって、 WFA の他のキャッシュテーブル内の情報と一緒に使用できます。
+
+たとえば、次のようなユースケースでプレイグラウンドデータベースを使用できます。
+
+* ビジネスユニット（ BU ）名でアグリゲートにタグを付け、タグに基づいてボリュームをバスに割り当ててください
+* vFiler ユニットに BU 名をタグ付けしています
+* ストレージオブジェクトに地理または場所の詳細を追加しています
+* データベースへのデータベース管理者アクセスの定義
+
+
+たとえば、アグリゲートや vFiler ユニットなどのストレージオブジェクトのタグとして BU の名前を使用している場合、 BU の名前を含むプレイグラウンドデータベースにテーブルを作成できます。BU 名は、ワークフローのフィルタおよびユーザ入力クエリで使用できます。
+
+次に、プレイグラウンドデータベーステーブル（遊び場 .volume_bu） の例を示します。
+
+[cols="3*"]
+|===
+| array_ip | volume_name を使用してください | バックアップ 
+
+
+ a| 
+10.225.126.23
+ a| 
+DATA _ 11
+ a| 
+マーケティング
+
+
+
+ a| 
+10.225.126.28
+ a| 
+ARC_11
+ a| 
+時間
+
+|===
+次に、 BU 別にボリュームをフィルタリングできる SQL クエリの例を示します。
+
+[listing]
+----
+SELECT
+    vol.name,
+    array.ip AS 'array.ip'
+FROM
+    storage.volume AS vol,
+    storage.array AS array,
+    playground.volume_bu AS vol_bu
+WHERE
+    vol.array_id = array.id
+    AND array.ip = vol_bu.array_ip
+    AND vol.name = vol_bu.volume_name
+    AND vol_bu.bu = '{$bu}'
+----
+* 関連情報 *
+
+https://www.webyog.com/["SQLyog 社のサービスです"^]
+
+http://www.mysql.com/products/workbench/["MySQL ワークベンチ"^]
+
+http://www.quest.com/toad-for-mysql/["toad for mysql のように入力します"^]

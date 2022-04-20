@@ -1,0 +1,33 @@
+---
+permalink: windows-install/task-access-oncommand-workflow-automation.html 
+sidebar: sidebar 
+keywords: access, oncommand, workflow, automation 
+summary: OnCommand Workflow Automation （ WFA ）には、 Web ブラウザを使用して、 WFA サーバにアクセスできる任意のシステムからアクセスできます。 
+---
+= OnCommand Workflow Automation にアクセスします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）には、 Web ブラウザを使用して、 WFA サーバにアクセスできる任意のシステムからアクセスできます。
+
+使用している Web ブラウザに対応した Adobe Flash Player がインストールされている必要があります。
+
+.手順
+. Web ブラウザを開き、アドレスバーに次のいずれかを入力します。
++
+** 「 + https://wfa_server_ip+` 」と入力します
++
+wfa_server_ip は、 WFA サーバの IP アドレス（ IPv4 または IPv6 アドレス）または完全修飾ドメイン名（ FQDN ）です。
+
+** WFA サーバ上の WFA にアクセスしている場合：「 + https://localhost/wfa+` 」 WFA にデフォルト以外のポートを指定した場合は、次のようにポート番号を含める必要があります。
+** 「 + https://wfa_server_ip:port+` 」と入力します
+** 「 + https://localhost:port+` port 」は、インストール時に WFA サーバに使用した TCP ポート番号です。
+
+
+. サインインセクションで、インストール時に入力した admin ユーザのクレデンシャルを入力します。
+. [ * 設定 * > * 設定 * ] メニューで、資格情報とデータソースを設定します。
+. WFA Web GUI をブックマークに登録してアクセスを簡単にします。
+

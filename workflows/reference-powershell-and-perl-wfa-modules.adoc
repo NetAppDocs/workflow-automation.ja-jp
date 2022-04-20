@@ -1,0 +1,102 @@
+---
+permalink: workflows/reference-powershell-and-perl-wfa-modules.html 
+sidebar: sidebar 
+keywords: aware, powershell, perl, modules, oncommand, workflow, automation, write, scripts 
+summary: ワークフローのスクリプトを作成するには、 OnCommand Workflow Automation （ WFA ）用の PowerShell または Perl モジュールを理解しておく必要があります。 
+---
+= PowerShell および Perl WFA モジュール
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ワークフローのスクリプトを作成するには、 OnCommand Workflow Automation （ WFA ）用の PowerShell または Perl モジュールを理解しておく必要があります。
+
+
+
+== PowerShell モジュール
+
+[cols="2*"]
+|===
+| ガイドライン | 例 
+
+
+ a| 
+Data ONTAP PS Toolkit を使用して、 Toolkit が使用可能になったときにいつでも API を呼び出すことができます。
+ a| 
+[Add VLAN] コマンドでは ' 次のようにツールキットを使用します
+
+「 Add-NaNetVlan-Interface $Interface-VLANs $VlanID 」
+
+
+
+ a| 
+Data ONTAP PS Toolkit で使用できるコマンドレットがない場合は、「 Invoke-NaSSH 」コマンドを使用して、 Data ONTAP で CLI を呼び出します。
+ a| 
+Invoke-NaSsh -Name$ArrayName コマンド「 ifconfig -a 」 -Credential $Credentials 」が実行されます
+
+|===
+
+
+== Perl モジュール
+
+NaServer モジュールは WFA のコマンドで使用されます。NaServer モジュールを使用すると、 Data ONTAP システムのアクティブ管理で使用される Data ONTAP API の呼び出しが可能になります。
+
+[cols="2*"]
+|===
+| ガイドライン | 例 
+
+
+ a| 
+NetApp Manageability SDK が使用可能な場合は、 NaServer モジュールを使用して API を呼び出します。
+ a| 
+以下に、 SnapMirror の再開処理に NaServer モジュールを使用する例を示します。
+
+[listing]
+----
+  eval {
+
+    $wfa_util->sendLog('INFO',
+        "Connecting to the cluster: $DestinationCluster"
+    );
+    my $server
+        = $wfa_util->connect($DestinationClusterIp, $DestinationVserver);
+
+    my $sm_info = $server->snapmirror_get(
+        'destination-vserver' => $DestinationVserver,
+        'destination-volume'  => $DestinationVolume
+    );
+
+    my $sm_state  = $sm_info->{'attributes'}->{'snapmirror-info'}->{'mirror-state'};
+    my  $sm_status = $sm_info->{'attributes'}->{'snapmirror-info'}->{'relationship-status'};
+
+    $wfa_util->sendLog('INFO',
+        "SnapMirror relationship is $sm_state ($sm_status)");
+
+    if ($sm_status ne 'quiesced') {
+        $wfa_util->sendLog('INFO',
+            'The status needs to be quiesced to resume transfer.');
+    } else {
+        my $result = $server->snapmirror_resume(
+            'destination-vserver' => $DestinationVserver,
+            'destination-volume'  => $DestinationVolume
+        );
+        $wfa_util->sendLog('INFO', "Result of resume:  $result");
+        $wfa_util->sendLog('INFO', 'Resume operation started successfully.');
+    }
+}
+----
+
+
+ a| 
+Data ONTAP API が使用できない場合は、 executeSystemCli ユーティリティメソッドを使用して Data ONTAP CLI を呼び出します。
+
+[NOTE]
+====
+executeSystemCli はサポートされておらず、現在は 7-Mode の Data ONTAP でのみ使用できます。
+
+==== a| 
+なし
+
+|===

@@ -1,0 +1,58 @@
+---
+permalink: help/reference-edit-cache-query-dialog-box.html 
+sidebar: sidebar 
+keywords: edit, cache, query, dialog box, enable, associate, dictionary, entry 
+summary: '[ キャッシュ照会を編集（ Edit Cache Query ） ] ダイアログボックスでは、ディクショナリエントリに関連付けられたキャッシュ照会を編集できます。' 
+---
+= Edit Cache Query ダイアログボックス
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+[ キャッシュ照会を編集（ Edit Cache Query ） ] ダイアログボックスでは、ディクショナリエントリに関連付けられたキャッシュ照会を編集できます。
+
+* * 辞書エントリ *
++
+キャッシュクエリに関連付けられているディクショナリエントリを指定します。
+
+* * エンティティバージョン *
++
+キャッシュ・クエリーのバージョン番号を 'major.minor.revision 形式で入力できますたとえば '1.0.0 です
+
+* * データソースの種類 *
++
+キャッシュクエリに関連付けられているデータソースタイプを指定します。
+
+
+
+
+
+== テーブル構造
+
+ディクショナリエントリに関連付けられている属性と SQL 構文を表示します。
+
+* * SQL SELECT クエリ *
++
+ディクショナリエントリと選択したデータプロバイダタイプに関連付けられた SQL クエリを編集できます。
+
+
+
+
+
+== コマンドボタン
+
+* * テスト *
++
+SQL SELECT クエリ * フィールドに入力した SQL クエリをテストできます。
+
+* * 保存 *
++
+キャッシュクエリを保存してダイアログボックスを閉じます。
+
+* * キャンセル *
++
+変更がある場合はキャンセルしてダイアログボックスを閉じます。
+
+

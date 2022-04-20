@@ -1,0 +1,28 @@
+---
+permalink: workflows/task-check-in-an-already-existing-pack-into-scm.html 
+sidebar: sidebar 
+keywords: check, existing, packs, source, control, management, scm server, oncommand, workflow, automation 
+summary: 既存のパックは OnCommand Workflow Automation （ WFA ）からソース管理管理（ SCM ）サーバにチェックインできます。 
+---
+= 既存の WFA ワークフローパックを SCM サーバにチェックインします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+既存のパックは OnCommand Workflow Automation （ WFA ）からソース管理管理（ SCM ）サーバにチェックインできます。
+
+SCM をセットアップする必要があり、管理者またはアーキテクトのクレデンシャルが必要です。
+
+.手順
+. Web ブラウザから * WFA * ウィンドウにログインします。
+. [* コンテンツ管理 * （ Content Management * ） ] > [* パック（ * Packs ） ]
+. [ サーバーにエクスポート（ Export to Server ） ] アイコンをクリックします。
+. サーバーフォルダへのエクスポート * （ * Export to Server Folder * ）ダイアログボックスのサーバーシステムでのフォルダの場所 * （ * Folder location at server system * ）フィールドに、サーバーにパックが保存されているサーバーフォルダの場所を入力します。
++
+これにより、 SCM クライアントが作成されるファイルシステム内の展開形式でパックがエクスポートされます。
+
+. SCM クライアントの場所で、パックの内容を SCM サーバにチェックインします。
+. SCM で提供される diff ツールを使用して、 SCM 版と比較して変更内容を確認します。
+

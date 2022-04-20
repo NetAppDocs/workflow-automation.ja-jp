@@ -1,0 +1,24 @@
+---
+permalink: rhel-install/task-configure-the-timeout-value-for-linux.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, configure, timeout value 
+summary: Workflow Automation （ WFA ） Web GUI のタイムアウト値を設定できます。デフォルトのタイムアウト値である 180 秒を使用する必要はありません。 
+---
+= Workflow Automation のタイムアウト値を設定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Workflow Automation （ WFA ） Web GUI のタイムアウト値を設定できます。デフォルトのタイムアウト値である 180 秒を使用する必要はありません。
+
+設定するタイムアウト値は、非アクティブ時のタイムアウトではなく、絶対タイムアウトです。たとえば、この値を 30 分に設定すると、この時間の終わりにアクティブな場合でも、 30 分後にログアウトされます。WFA の Web GUI からタイムアウト値を設定することはできません。
+
+.手順
+. WFA ホストマシンに root ユーザとしてログインします。
+. タイムアウト値を設定します。
++
+`installdir bin/wfa -S = タイムアウト値 ( 分
+
+

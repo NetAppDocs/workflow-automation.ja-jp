@@ -1,0 +1,42 @@
+---
+permalink: windows-install/task-back-up-oncommand-workflow-automation-using-powershell-script.html 
+sidebar: sidebar 
+keywords: back up, wfa, database, powershell script 
+summary: OnCommand Workflow Automation （ WFA ）データベースを頻繁にバックアップする場合は、 WFA インストールパッケージに付属の PowerShell スクリプトを使用します。 
+---
+= PowerShell スクリプトを使用して WFA データベースをバックアップします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）データベースを頻繁にバックアップする場合は、 WFA インストールパッケージに付属の PowerShell スクリプトを使用します。
+
+管理者ユーザクレデンシャル、アーキテクトクレデンシャル、またはバックアップユーザクレデンシャルが必要です。
+
+詳細については、 REST のドキュメントを参照してください。
+
+.手順
+. admin ユーザとして Windows PowerShell を開き、 WFA データベースをバックアップします。「 <wfa_install_location \ wfa \bin\Backup.ps1 > -User user_name -Password password -Path backup_file_path
++
+** wfa_install_location には、 WFA のインストールディレクトリを指定します。
+** user_name は、 admin ユーザ、 Architect 、または backup ユーザのユーザ名です。
+** password は、 admin ユーザ、 architect ユーザ、またはバックアップユーザのパスワードです。
+** backup_file_path は、バックアップファイルの完全なディレクトリパスです。
+
+
+
+
+[NOTE]
+====
+バックアップファイルは、 wfa_backup_servername_.zip という形式の名前の zip ファイルです
+
+====
+* wfa_backup_ は、ファイル名の固定部分であり、バックアップサーバの名前です。
+* servername は Windows サーバ環境から抽出されます。
+* _.zip は、ファイル名の固定部分です。「 C ： \Program Files\NetApp\WFA\bin\Backup.ps1 - User backup - Password MyPassword123 - Path C ： \wfa_backups\backup_10_08_12 」
++
+バックアップが完了すると、次の出力が表示されます。 C ： \wfa_backups\backup_10_08_12\wfa_backup_myserver__.zip指定した場所にバックアップファイルが作成されたことを確認します。
+
+

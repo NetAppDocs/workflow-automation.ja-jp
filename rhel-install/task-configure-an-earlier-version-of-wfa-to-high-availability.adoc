@@ -1,0 +1,46 @@
+---
+permalink: rhel-install/task-configure-an-earlier-version-of-wfa-to-high-availability.html 
+sidebar: sidebar 
+keywords: configure, earlier version, oncommand, workflow, automation, high availability 
+summary: ハイアベイラビリティを実現するために、 3.1 より前のバージョンの OnCommand Workflow Automation （ WFA ）を設定することができます。 
+---
+= 以前のバージョンの OnCommand Workflow Automation をハイアベイラビリティ用に設定する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ハイアベイラビリティを実現するために、 3.1 より前のバージョンの OnCommand Workflow Automation （ WFA ）を設定することができます。
+
+.手順
+. 既存のバージョンの WFA を最新バージョンの WFA にアップグレードします。
++
+link:task-upgrade-from-wfa-4-2.html["WFA をアップグレードします"]
+
++
+アップグレード後のバージョンの WFA が、クラスタのプライマリノードになります。
+
+. WFA データベースのバックアップを作成します。
++
+link:reference-backing-up-of-the-oncommand-workflow-automation-database.html["WFA データベースをバックアップします"]
+
++
+パラメータを手動で変更した場合は、 WFA データベースのバックアップを作成し、既存の WFA インストールをアンインストールし、使用可能な最新バージョンの WFA をインストールしてバックアップをリストアし、 Veritas Cluster Server （ VCS ）の設定に進む必要があります。
+
+. プライマリノードに WFA をインストールするように VCS を設定します。
++
+link:task-configure-vcs-to-install-wfa.html["WFA をインストールするように VCS を設定します"]
+
+. セカンダリノードに最新バージョンの WFA をインストールします。
++
+link:task-install-oncommand-workflow-automation.html["WFA をインストールします"]
+
+. VCS で WFA を設定します。
++
+link:task-configure-wfa-with-vcs-using-configuration-scripts-linux.html["VCS で WFA を設定します"]
+
++
+WFA サーバはハイアベイラビリティ用に設定されています。
+
+

@@ -1,0 +1,42 @@
+---
+permalink: workflows/task-add-entity-to-a-workflow-automation-pack.html 
+sidebar: sidebar 
+keywords: entity, workflow, pack, oncommand, automation, storage, integration, requirements 
+summary: ストレージの自動化と統合の要件に応じて、 OnCommand Workflow Automation （ WFA ）のワークフローパックに 1 つ以上のエンティティを追加できます。 
+---
+= WFA ワークフローパックにエンティティを追加します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ストレージの自動化と統合の要件に応じて、 OnCommand Workflow Automation （ WFA ）のワークフローパックに 1 つ以上のエンティティを追加できます。
+
+次のエンティティからパックを削除できます。
+
+* ワークフロー
+* ファインダ
+* フィルタ
+* コマンド
+* 機能
+* テンプレート
+* スキーム
+* 辞書
+* データソースの種類
+* リモートシステムタイプ
+* キャッシュクエリ
+* カテゴリ
+
+
+.手順
+. Web ブラウザから * WFA * ウィンドウにログインします。
+. * ワークフローデザインポータルで、追加するエンティティに移動し、 * < エンティティ >* をクリックします。
+. エンティティー * ウィンドウで ' パックに追加するエンティティを選択します
+. 「 * パックに追加 * 」アイコンをクリックします。
++
+「 Add to Pack 」は、証明書が *None. * に設定されているエンティティに対してのみ有効になります
+
+. パックに追加 < エンティティ >* （ * Add to Pack < Entity > * ）ダイアログボックスの * 使用可能なパック * （ * Available Packs * ）ドロップダウンリストから、エンティティを追加するパックを選択します。
+. [OK] をクリックします。
+

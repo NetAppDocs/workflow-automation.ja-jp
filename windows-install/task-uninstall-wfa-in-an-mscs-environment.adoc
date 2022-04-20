@@ -1,0 +1,36 @@
+---
+permalink: windows-install/task-uninstall-wfa-in-an-mscs-environment.html 
+sidebar: sidebar 
+keywords: uninstall, workflow, automation, mscs environment 
+summary: Workflow Automation （ WFA ）をクラスタノードからすべて削除することで、クラスタからアンインストールできます。 
+---
+= MSCS 環境で Workflow Automation をアンインストールします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Workflow Automation （ WFA ）をクラスタノードからすべて削除することで、クラスタからアンインストールできます。
+
+このタスクでは、環境 Windows Server 2012 を実行します。
+
+.手順
+. フェイルオーバークラスタマネージャを使用してサービスをオフラインにします。
++
+.. ロールを右クリックします。
+.. [* 役割の停止 * ] を選択します。
+
+
+. 1 つ目のノードで WFA をアンインストールし、 2 つ目のノードで WFA をアンインストールします。
++
+link:task-uninstall-oncommand-workflow-automation.html["OnCommand Workflow Automation をアンインストールします"]
+
+. フェイルオーバークラスタマネージャからクラスタリソースを削除します。
++
+.. ロールを右クリックします。
+.. 「 * 削除」を選択します。
+
+
+. 共有ロケーションのデータを手動で削除します。
+

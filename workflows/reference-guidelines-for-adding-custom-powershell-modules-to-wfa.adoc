@@ -1,0 +1,24 @@
+---
+permalink: workflows/reference-guidelines-for-adding-custom-powershell-modules-to-wfa.html 
+sidebar: sidebar 
+keywords: aware, certain, considerations, adding, custom, powershell, perl, modules, oncommand, workflow, automation, enable, commands, create 
+summary: OnCommand Workflow Automation （ WFA ）に PowerShell および Perl のカスタムモジュールを追加する前に、一定の考慮事項について理解しておく必要があります。カスタムの PowerShell モジュールと Perl モジュールを使用すると、ワークフローを作成するためのカスタムコマンドを使用できます。 
+---
+= カスタムの PowerShell モジュールと Perl モジュールを追加する場合の考慮事項
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）に PowerShell および Perl のカスタムモジュールを追加する前に、一定の考慮事項について理解しておく必要があります。カスタムの PowerShell モジュールと Perl モジュールを使用すると、ワークフローを作成するためのカスタムコマンドを使用できます。
+
+* WFA コマンドの実行中に、すべてのカスタム PowerShell モジュールが WFA インストールディレクトリ「 /posh/modules 」に自動的にインポートされます。
+* 「 wfa/perl 」ディレクトリに追加されたすべてのカスタム Perl モジュールは、 _@INC_library に含まれています。
+* カスタムの PowerShell モジュールと Perl モジュールは、 WFA のバックアップ処理の一環としてバックアップされません。
+* カスタムの PowerShell モジュールおよび Perl モジュールは、 WFA のリストア処理中にリストアされません。
+
+
+新しい WFA にコピーするには、カスタムの PowerShell モジュールと Perl モジュールを手動でバックアップする必要があります。
+
+modules ディレクトリ内のフォルダ名は ' モジュール名と同じである必要があります

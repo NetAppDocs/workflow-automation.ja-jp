@@ -1,0 +1,462 @@
+---
+permalink: help/reference-supported-workflows-in-clustered-data-ontap.html 
+sidebar: sidebar 
+keywords: aware, workflow, supported, oncommand, workflow, automation, paired, different, version, unified manager, server 
+summary: OnCommand Workflow Automation （ WFA ）が Unified Manager サーバの異なるバージョンとペアリングされている場合は、サポートされるワークフローを確認しておく必要があります。 
+---
+= ONTAP でサポートされるワークフロー
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）が Unified Manager サーバの異なるバージョンとペアリングされている場合は、サポートされるワークフローを確認しておく必要があります。
+
+次の表に、 Unified Manager サーバのバージョンごとにサポートされるワークフローを示します。
+
+[cols="3*"]
+|===
+| ワークフロー名 | Unified Manager サーバ 6.3 以降でサポートされます | Unified Manager サーバ 5.x でサポート 
+
+
+ a| 
+SnapMirror 関係を中止します
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+ストレージクラスを Infinite Volume に追加または拡張します
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+Infinite Volume にパフォーマンスストレージクラスを追加または拡張します
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+SnapMirror 関係を解除します
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+CIFS / SMB サーバの設定
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+HA ペアのコントローラとシェルフのアップグレード
+ a| 
+はい。
+ a| 
+はい。
+
+Data ONTAP 8.3 より前のバージョンを実行するクラスタでのみサポートされます。
+
+
+
+ a| 
+基本的な clustered Data ONTAP ボリュームを作成
+ a| 
+はい。
+ a| 
+はい。
+
+
+
+ a| 
+clustered Data ONTAP の NFS ボリュームを作成
+ a| 
+はい。
+ a| 
+はい。
+
+
+
+ a| 
+clustered Data ONTAP の qtree CIFS 共有を作成
+ a| 
+はい。
+ a| 
+はい。
+
+
+
+ a| 
+clustered Data ONTAP ボリュームを作成
+ a| 
+はい。
+ a| 
+はい。
+
+
+
+ a| 
+clustered Data ONTAP ボリュームの CIFS 共有を作成
+ a| 
+はい。
+ a| 
+はい。
+
+
+
+ a| 
+QoS ポリシーグループを含む clustered Data ONTAP ボリュームを作成します
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+cron スケジュールを作成します
+ a| 
+はい。
+ a| 
+はい。
+
+
+
+ a| 
+Infinite Volume を備えた Storage Virtual Machine を作成および設定します
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+NAS Storage Virtual Machine を作成および設定します
+ a| 
+はい。
+ a| 
+はい。
+
+Data ONTAP 8.3 より前のバージョンを実行するクラスタでのみサポートされます。
+
+
+
+ a| 
+SAN Storage Virtual Machine を作成および設定します
+ a| 
+はい。
+ a| 
+はい。
+
+Data ONTAP 8.3 より前のバージョンを実行するクラスタでのみサポートされます。
+
+
+
+ a| 
+8.1.x で clustered Data ONTAP の SnapMirror 関係を作成
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+スケジュールとポリシーを作成
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+SnapMirror 関係を作成
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+スケジュールとポリシーを作成
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+SnapMirror を作成してから SnapMirror カスケードを作成します
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+SnapMirror を作成してから SnapVault カスケードを作成します
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+SnapVault 関係を作成
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+SnapVault を作成してから SnapMirror カスケードを作成します
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+clustered Data ONTAP ストレージに VMware NFS データストアを作成します
+ a| 
+はい。
+ a| 
+はい。
+
+
+
+ a| 
+SnapMirror 関係を使用して clustered Data ONTAP LUN を作成、マッピング、保護します
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+クラスタピアリングを確立する
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+ストレージクラスを含まない Infinite Volume を拡張します
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+SnapMirror 関係を変更します
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+clustered Data ONTAP ボリュームを移動
+ a| 
+はい。
+ a| 
+はい。
+
+
+
+ a| 
+Multiprotocol File Access の略
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+マルチプロトコルサーバの設定
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+NFSv3 ファイルアクセス
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+NFSv3 サーバの設定
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+SnapMirror 関係でボリュームを保護してください
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+SnapVault 関係でボリュームを保護してください
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+SnapMirror 関係を休止します
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+clustered Data ONTAP ボリュームを削除
+ a| 
+はい。
+ a| 
+はい。
+
+
+
+ a| 
+SnapMirror 関係を削除します
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+SnapMirror 関係を再開します
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+SnapMirror 関係を再同期します
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+SnapMirror 関係を逆再同期します
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+Infinite Volume のデータ保護を設定する
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+SMB ファイルアクセス
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+Storage Virtual Machine ピアリング
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+Storage Virtual Machine ルートボリューム昇格
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+Storage Virtual Machine のルートボリュームの保護
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+ a| 
+SnapMirror 関係を転送します
+ a| 
+はい。
+ a| 
+いいえ
+
+|===
+* 関連情報 *
+
+http://mysupport.netapp.com/matrix["Interoperability Matrix Tool で確認してください"^]

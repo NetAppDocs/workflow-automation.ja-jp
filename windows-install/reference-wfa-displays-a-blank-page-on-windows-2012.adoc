@@ -1,0 +1,26 @@
+---
+permalink: windows-install/reference-wfa-displays-a-blank-page-on-windows-2012.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, wfa, displays, blank page, windows 2012 
+summary: Adobe Flash Player を Adobe Web サイトとは別にダウンロードしてインストールすると、空白のページが表示されることがあります。Flash Player は Windows Server 2012 の Internet Explorer にバンドルされているため、個別にダウンロードしてインストールしないでください。Flash Player の更新プログラムは、 Windows の更新プログラムを使用してインストールされます。 
+---
+= OnCommand Workflow Automation （ WFA ）では、 Windows 2012 の空白ページが表示されます
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Adobe Flash Player を Adobe Web サイトとは別にダウンロードしてインストールすると、空白のページが表示されることがあります。Flash Player は Windows Server 2012 の Internet Explorer にバンドルされているため、個別にダウンロードしてインストールしないでください。Flash Player の更新プログラムは、 Windows の更新プログラムを使用してインストールされます。
+
+Flash Player を別途ダウンロードしてインストールした場合は、次の手順を実行する必要があります。
+
+.手順
+. インストール済みの Flash Player をアンインストールします。
+. Windows で、 * サーバーマネージャー * > * ローカルサーバー * > * 役割と機能 * > * タスク * を開き、 * 役割と機能の追加 * を選択します。
+. 役割と機能の追加ウィザードで、 * 機能 * > * ユーザーインターフェースとインフラストラクチャー * をクリックし、 * デスクトップエクスペリエンス * を選択して機能の追加を完了します。
++
+Desktop Experience を追加すると、 Flash Player が Windows に追加されます。
+
+. Windows を再起動します。
+

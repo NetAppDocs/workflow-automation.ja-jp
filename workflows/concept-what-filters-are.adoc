@@ -1,0 +1,16 @@
+---
+permalink: workflows/concept-what-filters-are.html 
+sidebar: sidebar 
+keywords: use, filters, workflows, select, required, resources 
+summary: ワークフローの WFA フィルタを使用して、必要なリソースを選択できます。 
+---
+= フィルタとは
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ワークフローの WFA フィルタを使用して、必要なリソースを選択できます。
+
+WFA フィルタは、 WFA データベースに対して機能する SQL ベースのクエリです。各フィルタは、特定のディクショナリタイプの要素のリストを返します。返されるエレメントは、 SQL クエリで指定された選択基準に基づいています。フィルタを作成または編集するには、 SQL 構文に注意する必要があります。

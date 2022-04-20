@@ -1,0 +1,25 @@
+---
+permalink: windows-install/task-add-active-directory-group-names.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, add, active directory groups 
+summary: Active Directory グループは、 OnCommand Workflow Automation （ WFA ）で追加できます。 
+---
+= Active Directory グループを追加します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Active Directory グループは、 OnCommand Workflow Automation （ WFA ）で追加できます。
+
+.手順
+. Web ブラウザから admin として WFA にログインします。
+. [ * 設定 * ] をクリックし、 [ * 管理 * ] の下にある [ * Active Directory グループ * ] をクリックします。
+. Active Directory Groups （ Active Directory グループ）ウィンドウで、 * New * （新規）アイコンをクリックします。
+. [ 新しい Active Directory グループ ] ダイアログボックスで、必要な情報を入力します。
++
+[*Role] ドロップダウンリストから [*Approver] を選択した場合は、承認者の電子メール ID を指定することをお勧めします。複数の承認者がいる場合は、 [ 電子メール *] フィールドにグループ電子メール ID を入力できます。特定の Active Directory グループに通知を送信するワークフローのさまざまなイベントを選択します。
+
+. [ 保存（ Save ） ] をクリックします。
+

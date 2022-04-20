@@ -1,0 +1,50 @@
+---
+permalink: help/reference-backup-restore-window.html 
+sidebar: sidebar 
+keywords: backup, restore, window, enable, backup, oncommand, workflow, automation, database, contain, system, configuration, settings, cache, information, core, include, powershell, toolkits, perl toolkits, save, upgrade, reinstall 
+summary: バックアップとリストアウィンドウでは、 OnCommand Workflow Automation （ WFA ）データベースをバックアップできます。 WFA データベースには、システム構成の設定、キャッシュ情報、 PowerShell ツールキットと Perl ツールキットなどのコアパックが含まれています。また、 WFA をアップグレードまたは再インストールするときに、保存されているデータベースをリストアすることもできます。 
+---
+= [ バックアップと復元 ] ウィンドウ
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+バックアップとリストアウィンドウでは、 OnCommand Workflow Automation （ WFA ）データベースをバックアップできます。 WFA データベースには、システム構成の設定、キャッシュ情報、 PowerShell ツールキットと Perl ツールキットなどのコアパックが含まれています。また、 WFA をアップグレードまたは再インストールするときに、保存されているデータベースをリストアすることもできます。
+
+
+
+== Backup セクション
+
+このウィンドウにアクセスするには、 * Settings * を選択し、 * Maintenance * （メンテナンス）で * Backup & Restore * （バックアップと復元）をクリックします。
+
+* * バックアップ *
++
+[ ファイルのダウンロード ] ダイアログボックスを開きます。このダイアログボックスでは、現在のデータベースを圧縮ファイルとして指定した場所に保存できます。
+
+
+
+
+
+== セクションを復元します
+
+* * 「ファイル」を選択します。 *
++
+バックアップデータベースファイルを検索できます。
+
+* * 復元 *
++
+構成設定を回復し、バックアップデータベースファイルから現在の WFA 設定に情報をキャッシュできます（該当する場合）。
+
++
+最新バージョンのツールキットとコアパックはリストア処理のあとに入手できます。
+
++
+
+NOTE: バックアップに、システムにあるパックよりも新しいパックが含まれている場合は、リストア後にバックアップから新しいパックを使用できます。
+
++
+コアパックをインポートする前に、実行中のワークフローをすべて停止する必要があります。
+
+

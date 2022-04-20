@@ -1,0 +1,39 @@
+---
+permalink: windows-install/task-fully-restore-the-oncommand-workflow-automation-database-using-clis-windows.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, restore, wfa, database, cli 
+summary: コマンドラインインターフェイス（ CLI ）を使用して、 OnCommand Workflow Automation （ WFA ）データベースの完全なリストアを実行できます。フルリストアでは、 WFA データベース、 WFA 設定、およびキーをリストアできます。 
+---
+= CLI を使用して WFA データベースをリストア（フル）します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+コマンドラインインターフェイス（ CLI ）を使用して、 OnCommand Workflow Automation （ WFA ）データベースの完全なリストアを実行できます。フルリストアでは、 WFA データベース、 WFA 設定、およびキーをリストアできます。
+
+* WFA データベースのバックアップを作成しておく必要があります。
+* 管理者またはアーキテクトのクレデンシャルが必要です。
+
+
+.手順
+. シェルプロンプトで、 WFA サーバの次のディレクトリに移動します。 wfa_install_location WFA\bin
++
+wfa_install_location には、 WFA のインストールディレクトリを指定します。
+
+. リストア処理を実行します。
++
+'wfer.cmd --restore --full--user=user_name [--password=password] [--location=path] --restart`
+
++
+** user_name は、 admin ユーザまたは Architect ユーザのユーザ名です。
+** password はユーザのパスワードです。
++
+パスワードを指定していない場合は、プロンプトが表示されたらパスワードを入力する必要があります。
+
+** path は、リストアファイルの完全なディレクトリパスです。
+
+
+. リストア処理が成功し、 WFA にアクセスできることを確認してください。
+

@@ -1,0 +1,133 @@
+---
+permalink: rhel-install/reference-prerequisites-for-installing-workflow-automation.html 
+sidebar: sidebar 
+keywords: prerequisites, install, workflow, automation 
+summary: OnCommand Workflow Automation （ WFA ）をインストールする前に、必要な情報を入手し、特定の作業を完了しておく必要があります。 
+---
+= Workflow Automation をインストールするための前提条件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）をインストールする前に、必要な情報を入手し、特定の作業を完了しておく必要があります。
+
+システムに WFA をインストールする前に、次の作業を完了しておく必要があります。
+
+* ネットアップサポートサイトから WFA インストールファイルをダウンロードし、 WFA をインストールするサーバにファイルをコピーします
++
+
+NOTE: ネットアップサポートサイトにログインするための有効なクレデンシャルが必要です。有効なクレデンシャルがない場合は、ネットアップサポートサイトに登録してクレデンシャルを取得できます。
+
+* 必要に応じて、システムが次の機能にアクセスできることを確認します。
++
+** ストレージコントローラ
+** Active IQ Unified Manager
+
+
+
+
+[NOTE]
+====
+Secure Shell （ SSH ）を使用したアクセスが必要な環境の場合は、ターゲットコントローラで SSH を有効にする必要があります。
+
+====
+* Perl v5.10.1 がインストールされていることを確認します
+
+
+
+
+== 必要な設定情報
+
+[cols="3*"]
+|===
+| ユニットまたはシステム | 詳細 | 目的 
+
+
+ a| 
+アレイ
+ a| 
+* IP アドレス
+* ユーザ名とパスワード
+
+ a| 
+ストレージシステム上で操作を実行します
+
+[NOTE]
+====
+ストレージ（アレイ）には root または admin アカウントのクレデンシャルが必要です。
+
+====
+
+
+ a| 
+OnCommand Balance データベースやカスタムデータベースなどの外部リポジトリ
+ a| 
+* IP アドレス
+* 読み取り専用ユーザアカウントのユーザ名とパスワード
+
+ a| 
+データの取得外部リポジトリからデータを取得するには、外部リポジトリのディクショナリエントリやキャッシュクエリなど、関連する WFA コンテンツを作成する必要があります。
+
+
+
+ a| 
+メールサーバ
+ a| 
+* IP アドレス
+* ユーザ名とパスワード
+
+
+
+NOTE: メールサーバで認証が必要な場合は、ユーザ名とパスワードが必要です。
+ a| 
+WFA 通知を E メールで受信
+
+
+
+ a| 
+AutoSupport サーバ
+ a| 
+* メールホスト
+
+ a| 
+SMTPIF 経由で AutoSupport メッセージを送信メールホストが設定されていない場合は、 HTTP または HTTPS を使用して AutoSupport メッセージを送信できます。
+
+
+
+ a| 
+Microsoft Active Directory （ AD ） LDAP サーバ
+ a| 
+* IP アドレス
+* ユーザ名とパスワード
+* グループ名
+
+ a| 
+AD LDAP または AD LDAPS を使用して認証と許可を行います
+
+
+
+ a| 
+SNMP 管理アプリケーション
+ a| 
+* IP アドレス
+* ポート
+
+ a| 
+WFA の SNMP 通知の受信
+
+
+
+ a| 
+syslog サーバ
+ a| 
+* IP アドレス
+
+ a| 
+ログデータを送信します
+
+|===
+* 関連情報 *
+
+https://mysupport.netapp.com/site/["ネットアップサポート"^]

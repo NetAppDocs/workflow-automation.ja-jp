@@ -1,0 +1,66 @@
+---
+permalink: help/reference-add-cache-query-dialog-box.html 
+sidebar: sidebar 
+keywords: add, cache, query, dialog, enable, create, new, dictionary, entry, associate, data, provide, type, specific, unified manager, version 
+summary: '[Add Cache Query] ダイアログボックスでは、ディクショナリエントリの新しいキャッシュクエリーを作成し、そのクエリーを特定の Active IQ Unified Manager バージョンなどのデータ提供タイプに関連付けることができます。' 
+---
+= Add Cache Query ダイアログボックス
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+[Add Cache Query] ダイアログボックスでは、ディクショナリエントリの新しいキャッシュクエリーを作成し、そのクエリーを特定の Active IQ Unified Manager バージョンなどのデータ提供タイプに関連付けることができます。
+
+* * 辞書エントリ *
++
+キャッシュクエリを作成するディクショナリエントリを選択できます。
+
+* * エンティティバージョン *
++
+キャッシュ・クエリーのバージョン番号を 'major.minor.revision 形式で入力できますたとえば '1.0.0 です
+
+* * データソースの種類 *
++
+キャッシュクエリに関連付けるデータソースタイプを選択できます。たとえば、 Active IQ Unified Manager _6.0 です。
+
+
+
+
+
+== テーブル構造
+
+* * 属性タブ *
++
+ディクショナリエントリに関連付けられている属性を表示します。
+
+* * テーブル SQL タブの作成 *
++
+そのディクショナリエントリのテーブル作成スクリプトを表示します。
+
+
+
+
+
+== SQL 選択クエリ
+
+指定したデータプロバイダのテーブルからデータを取得する SQL SELECT クエリを入力できます。
+
+
+
+== コマンドボタン
+
+* * テスト *
++
+SQL SELECT クエリ * フィールドに入力した SQL クエリをテストできます。
+
+* * 保存 *
++
+キャッシュクエリを保存してダイアログボックスを閉じます。
+
+* * キャンセル *
++
+変更がある場合はキャンセルしてダイアログボックスを閉じます。
+
+

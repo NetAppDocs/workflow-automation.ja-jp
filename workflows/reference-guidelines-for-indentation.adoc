@@ -1,0 +1,64 @@
+---
+permalink: workflows/reference-guidelines-for-indentation.html 
+sidebar: sidebar 
+keywords: aware, guidelines, indentation, writing, powershell, perl, script, oncommand, workflow, automation 
+summary: OnCommand Workflow Automation （ WFA ）用の PowerShell または Perl スクリプトを作成する場合は、インデント設定のガイドラインに注意する必要があります。 
+---
+= インデントのガイドライン
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）用の PowerShell または Perl スクリプトを作成する場合は、インデント設定のガイドラインに注意する必要があります。
+
+[cols="2*"]
+|===
+| ガイドライン | 例 
+
+
+ a| 
+タブは、 4 つの空白スペースに等しい。
+ a| 
+
+
+
+ a| 
+ブロックの先頭と末尾を表示するには、タブと波かっこを使用します。
+ a| 
+PowerShell スクリプト
+
+[listing]
+----
+if
+($pair.length-ne 2)
+{
+throw "Got wrong input data"
+}
+----
+Perl スクリプト
+
+[listing]
+----
+if
+(defined $MaxDirectorySize)
+{
+# convert from MBytes to Bytes
+my $MaxDirectorySizeBytes = $MaxDirectorySize *
+1024 * 1024;
+}
+----
+
+
+ a| 
+オペレーションのセットまたはコードのチャンク間に空白行を追加します。
+ a| 
+[listing]
+----
+$options=$option.trim();
+$pair=$option.split(" ");
+Get-WFAlogger -Info -messages $("split options: "+
+$Pair)
+----
+|===

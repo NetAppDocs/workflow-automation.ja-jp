@@ -1,0 +1,23 @@
+---
+permalink: windows-install/concept-known-limitations-and-enhancements.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, limitations, enhancements 
+summary: OnCommand Workflow Automation （ WFA ） 5.1 には、 WFA をインストールして設定する前に注意しておく必要がある制限事項とサポートされない機能がいくつか含まれています。 
+---
+= 既知の制限事項と拡張機能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ） 5.1 には、 WFA をインストールして設定する前に注意しておく必要がある制限事項とサポートされない機能がいくつか含まれています。
+
+* * カテゴリ名の作成 *
++
+** カテゴリ名にハイフン (-) を使用すると、カテゴリが保存されるとスペースに置き換えられます。たとえば、カテゴリ名「 abc-xyz 」を指定すると、カテゴリ名は「 abc xyz 」として保存され、ハイフンは削除されます。この問題 を回避するために、カテゴリ名にハイフンを使用しないでください。
+** カテゴリ名にコロン（ : ）が使用されている場合、カテゴリが保存されると、コロンの前のテキスト文字列は無視されます。たとえば、「 abc ： xyz 」というカテゴリ名が指定されている場合、カテゴリ名は「 xyz 」として保存され、「 abc 」という文字列は削除されます。この問題 を避けるため、カテゴリ名にはコロンを使用しないでください。
+** 2 つのカテゴリの名前が同じであることを防ぐチェックはありません。ただし、ナビゲーションペインからこれらのカテゴリを選択すると問題が発生します。この問題 を回避するには、各カテゴリ名が一意であることを確認してください。
+
+
+

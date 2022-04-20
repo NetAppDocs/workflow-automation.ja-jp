@@ -1,0 +1,23 @@
+---
+permalink: windows-install/task-back-up-full-oncommand-workflow-automation-database-using-rest-api.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, perform, full backup, wfa, database, rest apis 
+summary: REST API を使用して、 OnCommand Workflow Automation （ WFA ）データベースのフルバックアップを実行できます。フルバックアップでは、 WFA データベース、 WFA 設定、およびキーがバックアップされます。 
+---
+= REST API を使用して WFA データベースのフルバックアップを実行します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+REST API を使用して、 OnCommand Workflow Automation （ WFA ）データベースのフルバックアップを実行できます。フルバックアップでは、 WFA データベース、 WFA 設定、およびキーがバックアップされます。
+
+管理者またはアーキテクトのクレデンシャルが必要です。
+
+.ステップ
+. Web ブラウザに次の URL を入力します。「 + https://IP address of the WFA server/rest/backups ？ full=true+`
++
+詳細については、 REST のドキュメントを参照してください。
+
+

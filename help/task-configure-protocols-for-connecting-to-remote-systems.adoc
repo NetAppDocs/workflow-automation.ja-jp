@@ -1,0 +1,53 @@
+---
+permalink: help/task-configure-protocols-for-connecting-to-remote-systems.html 
+sidebar: sidebar 
+keywords: configure, protocol, oncommand, workflow, automation, connect, remote, systems, organization, security, requirements, support, remote 
+summary: リモートシステムへの接続に OnCommand Workflow Automation （ WFA ）で使用するプロトコルを設定できます。プロトコルは、組織のセキュリティ要件およびリモートシステムでサポートされるプロトコルに基づいて設定できます。 
+---
+= リモートシステムに接続するためのプロトコルを設定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+リモートシステムへの接続に OnCommand Workflow Automation （ WFA ）で使用するプロトコルを設定できます。プロトコルは、組織のセキュリティ要件とリモートシステムでサポートされるプロトコルに基づいて設定できます。
+
+.手順
+. Web ブラウザから admin として WFA にログインします。
+. [ * データソースデザイン *>* リモートシステムタイプ * ] をクリックします。
+. 次のいずれかを実行します。
++
+[cols="2*"]
+|===
+| 状況 | 手順 
+
+
+ a| 
+新しいリモートシステムのプロトコルを設定します
+ a| 
+.. をクリックします image:../media/new_wfa_icon.gif["新しいアイコン"]。
+.. [ 新しいリモートシステムタイプ ] ダイアログボックスで、名前、概要 、バージョンなどの詳細を指定します。
+
+
+
+
+ a| 
+既存のリモートシステムのプロトコル設定を変更する
+ a| 
+.. 変更するリモートシステムを選択してダブルクリックします。
+.. をクリックします image:../media/edit_wfa_icon.gif["編集アイコン"]。
+
+
+|===
+. [* 接続プロトコル * ] リストから、次のいずれかを選択します。
++
+** HTTPS を HTTP にフォールバック（デフォルト）
+** HTTPS のみ
+** HTTP のみ
+** カスタム
+
+
+. プロトコル、デフォルトポート、およびデフォルトタイムアウトの詳細を指定します。
+. [ 保存（ Save ） ] をクリックします。
+

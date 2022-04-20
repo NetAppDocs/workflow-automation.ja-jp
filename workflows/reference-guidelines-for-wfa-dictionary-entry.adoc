@@ -1,0 +1,117 @@
+---
+permalink: workflows/reference-guidelines-for-wfa-dictionary-entry.html 
+sidebar: sidebar 
+keywords: aware, guidelines, create, dictionary, entries, oncommand, workflow, automation 
+summary: OnCommand Workflow Automation （ WFA ）でディクショナリエントリを作成するためのガイドラインを確認しておく必要があります。 
+---
+= WFA ディクショナリエントリのガイドライン
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）でディクショナリエントリを作成するためのガイドラインを確認しておく必要があります。
+
+[cols="2*"]
+|===
+| ガイドライン | 例 
+
+
+ a| 
+ディクショナリエントリ名には、英数字とアンダースコアのみを使用する必要があります。
+ a| 
+Cluster License （クラスタライセンス）
+
+switch_23
+
+
+
+ a| 
+辞書エントリ名の先頭は大文字にする必要があります。名前のすべての単語の先頭には大文字を入力し、各単語をアンダースコア（ _ ）で区切ります。
+ a| 
+ボリューム
+
+array_License
+
+
+
+ a| 
+ディクショナリエントリの属性名にディクショナリエントリの名前を含めることはできません。
+ a| 
+なし
+
+
+
+ a| 
+ディクショナリエントリ内の属性と参照は、小文字で記述する必要があります。
+ a| 
+アグリゲート、 size_MB
+
+
+
+ a| 
+単語はアンダースコアで区切ります。スペースは使用できません。
+ a| 
+resource_pool を指定します
+
+
+
+ a| 
+辞書エントリには、別のスキームからの参照を含めることはできません。ディクショナリエントリが別のスキームのオブジェクトへの相互参照を必要とする場合は、参照されるオブジェクトのすべての自然キーがディクショナリエントリに存在することを確認します。
+ a| 
+array_Performance ディクショナリエントリでは、 Array ディクショナリエントリのすべての自然キーが直接属性として必要になります。
+
+
+
+ a| 
+属性に適切なデータ型を使用します。
+ a| 
+なし
+
+
+
+ a| 
+サイズやスペースに関連する属性には、長いデータ型を使用します。
+ a| 
+storage.Volume 辞書エントリの size_mb と available_size MB です
+
+
+
+ a| 
+属性の値が固定されている場合は、 Enum を使用します。
+ a| 
+storage.1 の raid_type 。ボリューム辞書エントリ
+
+
+
+ a| 
+データソースがその属性または参照の値を提供する場合は、属性または参照の「キャッシュする」を true に設定します。 Active IQ Unified Manager データソースの場合、データソースがその属性に値を提供できる場合は、キャッシュ可能な属性を追加します。
+ a| 
+なし
+
+
+
+ a| 
+この属性または参照の値を提供するデータソースが NULL を返す可能性がある場合は '` を null にすることができます
+ a| 
+なし
+
+
+
+ a| 
+各属性と参照に意味のある概要 を指定します。ワークフローを設計する際には、コマンドの詳細に概要 が表示されます。
+ a| 
+なし
+
+
+
+ a| 
+ディクショナリエントリ内の属性の名前として「 id` 」を使用しないでください。 WFA の内部使用のために予約されています。
+ a| 
+なし
+
+|===
+* 関連情報 *
+
+xref:reference-references-to-learning-material.adoc[学習資料への参照]

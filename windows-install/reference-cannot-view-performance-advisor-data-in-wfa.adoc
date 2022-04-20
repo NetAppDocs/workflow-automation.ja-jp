@@ -1,0 +1,22 @@
+---
+permalink: windows-install/reference-cannot-view-performance-advisor-data-in-wfa.html 
+sidebar: sidebar 
+keywords: cannot, view, performance, advisor, data, wfa 
+summary: WFA で Performance Advisor データを表示できない場合、または Performance Advisor データソースからのデータ取得プロセスに失敗した場合は、問題 のトラブルシューティングを行うために特定の操作を実行する必要があります。 
+---
+= WFA で Performance Advisor のデータを表示できません
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+WFA で Performance Advisor データを表示できない場合、または Performance Advisor データソースからのデータ取得プロセスに失敗した場合は、問題 のトラブルシューティングを行うために特定の操作を実行する必要があります。
+
+* WFA で Performance Advisor をデータソースとして設定する場合は、 GlobalRead の最小ロールを持つ Active IQ Unified Manager ユーザのクレデンシャルを指定していることを確認してください。
+* WFA で Performance Advisor をデータソースとして設定する際に、正しいポートを指定していることを確認してください。
++
+デフォルトでは、 Active IQ Unified Manager は HTTP 接続にポート 8088 、 HTTPS 接続にポート 8488 を使用します。
+
+* パフォーマンスデータが Active IQ Unified Manager サーバで収集されていることを確認します。
+

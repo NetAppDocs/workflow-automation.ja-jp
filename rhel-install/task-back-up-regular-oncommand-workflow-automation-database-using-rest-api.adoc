@@ -1,0 +1,23 @@
+---
+permalink: rhel-install/task-back-up-regular-oncommand-workflow-automation-database-using-rest-api.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, perform, regular backup, wfa database, rest apis 
+summary: REST API を使用して、 OnCommand Workflow Automation （ WFA ）データベースの定期的なバックアップを実行できます。通常のバックアップでは、 WFA データベースのみがバックアップされます。 
+---
+= REST API を使用して WFA データベースの定期的なバックアップを実行します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+REST API を使用して、 OnCommand Workflow Automation （ WFA ）データベースの定期的なバックアップを実行できます。通常のバックアップでは、 WFA データベースのみがバックアップされます。
+
+管理、設計、またはバックアップのクレデンシャルが必要です。
+
+.ステップ
+. Web ブラウザに次の URL を入力します。「 + WFA サーバの https://IP アドレス /rest/backups +
++
+詳細については、 REST のドキュメントを参照してください。
+
+

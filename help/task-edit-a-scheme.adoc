@@ -1,0 +1,32 @@
+---
+permalink: help/task-edit-a-scheme.html 
+sidebar: sidebar 
+keywords: edit, display, name, description, entity, version, scheme, create 
+summary: 作成したスキームの表示名、概要 、およびエンティティバージョンを編集できます。 
+---
+= スキームを編集します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+作成したスキームの表示名、概要 、およびエンティティバージョンを編集できます。
+
+* 必要なもの *
+
+* WFA をインストールしておく必要があります。
+* WFA の管理者権限または Architect のクレデンシャルが必要です。
+
+
+* このタスクについて *
+
+事前定義されたスキームは変更できません
+
+.手順
+. Web ブラウザから管理者またはアーキテクトとして WFA にログインします。
+. [ * データソース・デザイン * > * スキーム * ] をクリックします。
+. 変更するスキームを選択し、をクリックします image:../media/edit_wfa_icon.gif["編集アイコン"] をクリックします。
+. [ スキーム（ * SchemeName ） ]>[ * （ * SchemeName ） ] ダイアログボックスで必要な情報を変更します。
+. [ 保存（ Save ） ] をクリックします。
+

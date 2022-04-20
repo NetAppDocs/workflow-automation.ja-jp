@@ -1,0 +1,59 @@
+---
+permalink: help/task-create-local-users.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, enable, create, manage, local, users, specific, permissions, roles, guest, operator, approver, architect, admin, backup 
+summary: OnCommand Workflow Automation （ WFA ）を使用すると、ゲスト、オペレータ、承認者、アーキテクト、 admin 、 backup のいずれかです。 
+---
+= ローカルユーザを作成する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）を使用すると、ゲスト、オペレータ、承認者、アーキテクト、 admin 、 backup のいずれかです。
+
+* 必要なもの *
+
+WFA をインストールし、 admin としてログインしておく必要があります。
+
+* このタスクについて *
+
+WFA では、次のロールのユーザを作成できます。
+
+* * ゲスト *
++
+このユーザーは、ポータルとワークフロー実行のステータスを表示し、ワークフロー実行のステータスの変更を通知できます。
+
+* * 演算子 *
++
+このユーザーは、ユーザーにアクセス権が付与されているワークフローをプレビューおよび実行できます。
+
+* * 承認者 *
++
+このユーザーは、ユーザーにアクセス権が与えられているワークフローをプレビュー、実行、承認、および却下することができます。
+
++
+
+NOTE: 承認者の E メール ID を指定することを推奨します。複数の承認者がいる場合は、 [ 電子メール *] フィールドにグループ電子メール ID を入力できます。
+
+* * 建築家 *
++
+このユーザには作成ワークフローへのフルアクセスが許可されますが、 WFA サーバのグローバル設定の変更は禁止されています。
+
+* * 管理者 *
++
+このユーザには WFA サーバへの完全なアクセス権があります。
+
+* * バックアップ *
++
+WFA サーバのバックアップをリモートで生成できる唯一のユーザです。ただし、ユーザは他のすべてのアクセスから制限されます。
+
+
+
+.手順
+. [ * 設定 * ] をクリックし、 [ * 管理 * ] で [ * ユーザー * ] をクリックします。
+. をクリックして新しいユーザを作成します image:../media/new_wfa_icon.gif["新しいアイコン"] をクリックします。
+. [ 新規ユーザー * （ New User * ） ] ダイアログボックスに必要な情報を入力します。
+. [ 保存（ Save ） ] をクリックします。
+

@@ -1,0 +1,59 @@
+---
+permalink: workflows/task-create-a-cache-query.html 
+sidebar: sidebar 
+keywords: define, cache, query, cache, information, dictionary, object, wfa database, data source, create, associate, entry, active iq, unified manager 
+summary: データソースの種類から WFA データベース内のディクショナリオブジェクトに関する情報をキャッシュする場合は、キャッシュクエリを定義できます。キャッシュクエリを作成して、ディクショナリエントリと、 Active IQ Unified Manager 6.1 などの 1 つ以上のデータソースタイプに関連付けることができます。 
+---
+= キャッシュクエリを作成します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+データソースの種類から WFA データベース内のディクショナリオブジェクトに関する情報をキャッシュする場合は、キャッシュクエリを定義できます。キャッシュクエリを作成して、ディクショナリエントリと、 Active IQ Unified Manager 6.1 などの 1 つ以上のデータソースタイプに関連付けることができます。
+
+キャッシュクエリを作成するには、適切な SQL 構文を知っている必要があります。
+
+.手順
+. [ * データソースデザイン *>* キャッシュクエリ * ] をクリックします。
+. をクリックします image:../media/new_wfa_icon.gif["新しいアイコン"] をクリックします。
+. [ キャッシュクエリの追加 *] ダイアログボックスで、必要なディクショナリエントリとデータソースタイプを選択します。
+. [SQL SELECT QUERY] セクションで ' 適切な SQL クエリを入力します
++
+次の SQL クエリは、 Active IQ Unified Manager 6.1 データソースタイプからディスクディクショナリオブジェクトに関する情報をキャッシュします。
+
++
+[listing]
+----
+SELECT
+    disk.objId AS id,
+    disk.name AS NAME,
+    disk.uid AS uid,
+    disk.effectiveInterfaceType AS TYPE,
+    disk.rpm AS rpm,
+    disk.homeNodeId AS home_node_id,
+    disk.ownerNodeId AS owner_node_id,
+    disk.model AS model,
+    disk.serialNumber AS serial_number,
+    disk.totalBytes/1024/1024 AS size_mb,
+    disk.shelf AS shelf,
+    disk.shelfBay AS shelf_bay,
+    disk.pool AS pool,
+    disk.vendor AS vendor,
+    LOWER(disk.raidPosition) AS raid_position,
+    disk.containerTypeRaw AS container_type,
+    disk.clusterId AS cluster_id
+FROM
+    netapp_model_view.disk disk
+----
+. SQL クエリをテストする場合は、 * Test * をクリックします。
++
+複数のデータソースタイプを選択した場合は、 [ キャッシュクエリのテスト ] ダイアログボックスが開き、必要なデータソースタイプを選択できます。
+
++
+テスト結果が表示されます。
+
+. ダイアログボックスを閉じます。
+. [ 保存（ Save ） ] をクリックします。
+

@@ -1,0 +1,39 @@
+---
+permalink: rhel-install/task-back-up-the-wfa-database-and-configurations-linux.html 
+sidebar: sidebar 
+keywords: back up, restore, oncommand, workflow, automation, database, configurations, linux 
+summary: 災害発生時にデータをリカバリできるように、 OnCommand Workflow Automation （ WFA ）データベースとサポートされている設定をバックアップおよびリストアできます。サポートされる構成には、データアクセス、 HTTP タイムアウト、 SSL 証明書があります。 
+---
+= Linux での OnCommand Workflow Automation データベースと設定のバックアップとリストア
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+災害発生時にデータをリカバリできるように、 OnCommand Workflow Automation （ WFA ）データベースとサポートされている設定をバックアップおよびリストアできます。サポートされる構成には、データアクセス、 HTTP タイムアウト、 SSL 証明書があります。
+
+管理者権限またはアーキテクトクレデンシャルが必要です。
+
+バックアップをリストアすると WFA がアクセスするすべてのストレージシステムにアクセスできるようになるため、安全な場所にバックアップを作成する必要があります。
+
+[NOTE]
+====
+* WFA のデータベースと設定の包括的なバックアップはディザスタリカバリ時に必要であり、スタンドアロン環境でも高可用性環境でも使用できます。
+* ディザスタリカバリ時の包括的なバックアップおよびリストア処理に使用できるのは、 CLI コマンドまたは REST API のみです。
++
+Web UI を使用して、ディザスタリカバリ時に WFA データベースをバックアップまたはリストアすることはできません。
+
+
+
+====
+.手順
+. OnCommand Workflow Automation データベースをバックアップします。
++
+link:reference-backing-up-of-the-oncommand-workflow-automation-database.html["OnCommand Workflow Automation データベースをバックアップしています"]
+
+. OnCommand Workflow Automation データベースの以前のバックアップをリストアします。
++
+link:concept-restoring-the-wfa-database.html["OnCommand Workflow Automation データベースのリストア"]
+
+

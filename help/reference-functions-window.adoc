@@ -1,0 +1,138 @@
+---
+permalink: help/reference-functions-window.html 
+sidebar: sidebar 
+keywords: functions, window, display, available, oncommand, workflow, automation, enable, manage 
+summary: Functions ウィンドウには、使用可能な OnCommand Workflow Automation （ WFA ）機能が表示され、それらの機能を管理することができます。 
+---
+= [ 機能 ] ウィンドウ
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Functions ウィンドウには、使用可能な OnCommand Workflow Automation （ WFA ）機能が表示され、それらの機能を管理することができます。
+
+機能は、ワークフローの実行を計画するために必要な、ボックス化された重要な操作または黒の操作を実行するための補完的なツールです。機能は計画フェーズで処理されます。関数を使用すると、複雑な命名規則の定義など、繰り返しの多い複雑なタスクを実行することができます。関数は独自のサンドボックス内で実行され、実行中に他の関数を使用する場合があります。関数は、 MVEL (MVEL) で記述されています。
+
+
+
+== 関数 (Functions) テーブル
+
+次の表に、 WFA で使用できる機能を示します。各エントリは、次のいずれかとみなされます。
+
+* image:../media/community_certification.gif[""] - ユーザーが作成したコンテンツ
+* image:../media/ps_certified_icon_wfa.gif[""] - Professional Services （ PS ；プロフェッショナルサービス）が開発したコンテンツ。 PS によるカスタムインストールでのみ利用可能です
+* image:../media/community_certification.gif[""] - ユーザが開発したパック
+* image:../media/lock_icon_wfa.gif[""] - ロックされているユーザーが作成したコンテンツ
+* image:../media/netapp_certified.gif[""] - ネットアップ認定コンテンツ
+
+
+各列に対応したフィルタリング機能とソート機能を使用したり、列の順序を並べ替えたりして、テーブルの表示をカスタマイズできます。
+
+* image:../media/filter_icon_wfa.gif["フィルタアイコン"] テーブル全体のフィルタリングを有効または無効にします。フィルタリングが無効になっている場合は、アイコンの上に赤色の「 x 」が表示されます。
+* をダブルクリックします image:../media/filter_icon_wfa.gif["フィルタアイコン"] フィルタリングの選択をクリアおよびリセットします。
+* image:../media/wfa_filter_icon.gif["フィルタアイコン"] 各列ヘッダーのを使用すると、列の内容に基づいてフィルタリングできます。をクリックします image:../media/wfa_filter_icon.gif["フィルタアイコン"] 列では、ドロップダウンリストまたは使用可能なすべての項目で特定の項目をフィルタできます。
+* 列ヘッダーをクリックすると、ソートの昇順と降順が切り替わります。適用されたソート順序は、ソート用矢印（image:../media/wfa_sortarrow_up_icon.gif["ソート上矢印アイコン"] （昇順の場合）および image:../media/wfa_sortarrow_down_icon.gif["ソート下矢印アイコン"] 降順の場合）。
+* 列の位置を並べ替えるには、列をドラッグアンドドロップして必要な順序で配置します。ただし、これらの列を非表示にしたり削除したりすることはできません。
+* [ * 検索 * （ Search * ） ] フィルタテキストボックスをクリックすると、特定のコンテンツを検索できます。さらに、対応する列タイプ、アルファベット、数字を指定して、サポートされている演算子を使用して検索することもできます。
+
+
+Functions テーブルには、次の列があります。
+
+* * 認定 *
++
+関数がユーザー作成であるかどうかを示します（image:../media/community_certification.gif[""]）、 ps （image:../media/ps_certified_icon_wfa.gif[""]）、 community （image:../media/community_certification.gif[""]）、ユーザーロック（image:../media/lock_icon_wfa.gif[""]）、またはネットアップ認定（image:../media/netapp_certified.gif[""]）。
+
+* * 名前 *
++
+関数の名前を表示します。
+
+* * エンティティバージョン *
++
+オブジェクトのバージョン番号を「 major.minor.revision 」形式で表示します。たとえば、 1.0.0 です。
+
+* * 概要 *
++
+機能の概要 を表示します。
+
+* * 最終更新日 *
++
+関数が最後に更新された日時を表示します。
+
+* * 更新者 *
++
+機能を更新したユーザーを表示します。
+
+* * ロック元 *
++
+機能をロックしたユーザーを表示します。
+
+
+
+
+
+== ツールバー
+
+ツールバーは列ヘッダーの上にあります。ツールバーのアイコンを使用して、さまざまな操作を実行できます。これらのアクションには、ウィンドウの右クリックメニューからもアクセスできます。
+
+* *image:../media/new_wfa_icon.gif["新しいアイコン"] （新規） *
++
+[ 新規関数 ] ウィンドウが開き、新しい関数を作成できます。
+
+* *image:../media/edit_wfa_icon.gif["編集アイコン"] （編集） *
++
+選択した関数の <EntryName> 関数ウィンドウを開きます。このウィンドウで、関数を編集できます。
+
+* *image:../media/clone_wfa_icon.gif["クローンアイコン"] （クローン） *
++
+選択した関数のコピーを作成できる [ 新規関数 ]<EntryName>_copy ウィンドウを開きます。
+
+* *image:../media/lock_wfa_icon.gif["鍵のアイコン"] （ロック） *
++
+[ 機能の確認をロック（ Lock the function confirmation ） ] ダイアログボックスを開きます。このダイアログボックスでは、選択した機能をロックできます。このオプションは、作成した機能に対してのみ有効になります。
+
+* *image:../media/unlock_wfa_icon.gif["ロック解除アイコン"] （ロック解除） *
++
+関数のロックを解除する確認ダイアログボックスを開きます。このダイアログボックスで、選択した機能のロックを解除できます。
+
++
+このオプションは、ロックした機能に対してのみ有効になります。管理者は、他のユーザーによってロックされた機能をロック解除できます。
+
+* *image:../media/delete_wfa_icon.gif["削除アイコン"] （削除） *
++
+Delete Function 確認ダイアログボックスを開きます。このダイアログボックスで、選択したユーザー作成機能を削除できます。
+
++
+
+NOTE: WFA または PS 機能は削除できません。
+
+* *image:../media/export_wfa_icon.gif["エクスポートアイコン"] （エクスポート） *
++
+選択したユーザ作成機能をエクスポートできます。
+
++
+
+NOTE: WFA または PS 機能はエクスポートできません。
+
+* *image:../media/test_wfa_icon.gif["テストアイコン"] （テスト） *
++
+[ テスト ] ダイアログボックスが開き、選択した機能をテストできます。
+
+* *image:../media/add_to_pack.png["パックに追加アイコン"] （パックに追加） *
++
+パック機能に追加（ Add to Pack Functions ）ダイアログボックスを開きます。このダイアログボックスでは、機能とその信頼できるエンティティをパックに追加できます。このパックは編集可能です。
+
++
+
+NOTE: [ パックに追加 ] 機能は、証明書が [ なし ] および [ ロック ] に設定されている機能に対して有効になります。
+
+* *image:../media/remove_from_pack.png["パックから削除アイコン"] （パックから削除） *
++
+選択した機能の [ パック機能から削除 ] ダイアログボックスを開きます。このダイアログボックスで、パックから機能を削除または削除できます。
+
++
+
+NOTE: パックから削除機能は、証明書が [ なし ] および [ ロック ] に設定されている機能に対して有効になります。
+
+

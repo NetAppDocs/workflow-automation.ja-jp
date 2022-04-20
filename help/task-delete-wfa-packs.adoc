@@ -1,0 +1,33 @@
+---
+permalink: help/task-delete-wfa-packs.html 
+sidebar: sidebar 
+keywords: delete, pack, oncommand, workflow, automation, require, delete, entities, associate 
+summary: 不要になったパックは OnCommand Workflow Automation （ WFA ）から削除できます。パックを削除すると、パックに関連付けられているすべてのエンティティが削除されます。 
+---
+= OnCommand Workflow Automation パックを削除します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+不要になったパックは OnCommand Workflow Automation （ WFA ）から削除できます。パックを削除すると、パックに関連付けられているすべてのエンティティが削除されます。
+
+* このタスクについて *
+
+* パックの一部であるエンティティに依存関係がある場合は、パックを削除できません。
++
+たとえば、カスタムワークフローの一部であるコマンドを含むパックを削除しようとすると、カスタムワークフローはパックに依存するため、削除処理が失敗します。パックを削除できるのは、カスタムワークフローを削除した後だけです。
+
+* パックの一部であるエンティティを個別に削除することはできません。
++
+パックの一部であるエンティティを削除するには、そのエンティティを含むパックを削除する必要があります。エンティティが複数のパックに含まれている場合、 WFA サーバからそのエンティティを含むすべてのパックが削除されるまでエンティティは削除されません。
+
+
+
+.手順
+. Web ブラウザから admin として WFA にログインします。
+. [* コンテンツ管理 * （ Content Management * ） ] > [* パック（ * Packs ） ]
+. 削除するパックを選択し、をクリックします image:../media/delete_wfa_icon.gif["削除アイコン"]。
+. [ * パックの削除 * （ * Delete Pack * ） ] 確認ダイアログボックスで、 [OK] をクリックします。
+

@@ -1,0 +1,26 @@
+---
+permalink: windows-install/task-uninstall-oncommand-workflow-automation.html 
+sidebar: sidebar 
+keywords: uninstall, oncommand, workflow, automation 
+summary: OnCommand Workflow Automation （ WFA ）は、 Microsoft Windows のプログラムと機能を使用してアンインストールできます。 
+---
+= OnCommand Workflow Automation をアンインストールします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）は、 Microsoft Windows のプログラムと機能を使用してアンインストールできます。
+
+.手順
+. admin 権限があるアカウントで Windows にログインします。
+. [ * すべてのプログラム * ] 、 [ * コントロールパネル * ] 、 [ * コントロールパネル * ] 、 [ * プログラムと機能 * ] の順にクリックします。
+. 次のいずれかを実行して WFA をアンインストールします。
++
+** NetApp WFA * を選択し、 * Uninstall * をクリックします。
+** NetApp WFA * を右クリックし、 * Uninstall * を選択します。
+
+
+. アンインストールプロセスが完了する前に応答を停止した場合は、 Windows サービスコンソールから * NetApp WFA Database * サービスを停止してから、もう一度アンインストールしてください。
+

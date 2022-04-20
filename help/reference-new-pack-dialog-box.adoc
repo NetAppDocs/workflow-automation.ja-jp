@@ -1,0 +1,46 @@
+---
+permalink: help/reference-new-pack-dialog-box.html 
+sidebar: sidebar 
+keywords: new, pack, dialog box, enable, create 
+summary: 新しいパック（ New Pack ）ダイアログボックスでは、新しいパックを作成できます。 
+---
+= [ 新しいパック（ New Pack ） ] ダイアログボックス
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+新しいパック（ New Pack ）ダイアログボックスでは、新しいパックを作成できます。
+
+* * 名前 *
++
+名前を入力し、パックを保存できます。
+
+* * バージョン *
++
+バージョンを入力してパックを保存できます。
+
+* * 作成者 *
++
+作成者の名前を入力し、パックを保存できます。
+
+* * 概要 *
++
+概要 を入力してパックを保存できます。
+
+
+
+
+
+== コマンドボタン
+
+* * 保存 *
++
+パックを保存してダイアログボックスを閉じます。
+
+* * キャンセル *
++
+保存せずにダイアログボックスを閉じます。
+
+

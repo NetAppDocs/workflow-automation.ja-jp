@@ -1,0 +1,32 @@
+---
+permalink: workflows/task-update-the-pack-from-scm.html 
+sidebar: sidebar 
+keywords: update, pack, source, control, management, server, import, oncommand, workflow, automation 
+summary: ソース管理（ SCM ）サーバのパックを更新し、更新されたパックを OnCommand Workflow Automation （ WFA ）にインポートできます。 
+---
+= SCM サーバから WFA ワークフローパックを更新します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ソース管理（ SCM ）サーバのパックを更新し、更新されたパックを OnCommand Workflow Automation （ WFA ）にインポートできます。
+
+SCM をセットアップする必要があり、管理者またはアーキテクトのクレデンシャルが必要です
+
+SCM サーバのパックに変更や更新を加える場合、管理者やアーキテクトは SCM で提供される diff ツールを使用して競合を解決する必要があります。WFA は XML の差分ファイルを調整し、関連する変更のみを表示します。
+
+パックをインポートする前に、 WFA パックのコンテンツに加えられた変更について通知されます。
+
+.手順
+. Web ブラウザを使用して WFA ウィンドウにログインします。
+. 更新したパックを WFA にインポートします。
++
+link:task-import-an-oncommand-workflow-automation-pack.html["WFA ワークフローパックをインポート"]
+
++
+
+NOTE: WFA データベースに同じパックがすでに含まれている場合は、パックのコンテンツが上書きされます。
+
+

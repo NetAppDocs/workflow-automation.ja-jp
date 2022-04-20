@@ -1,0 +1,22 @@
+---
+permalink: windows-install/concept-wfa-data-sources.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, data sources 
+summary: OnCommand Workflow Automation （ WFA ）は、データソースから取得されたデータに対して機能します。WFA の定義済みのデータソースの種類として、 Active IQ Unified Manager および VMware vCenter Server のさまざまなバージョンが用意されています。データ収集用のデータソースを設定する前に、事前に定義されているデータソースのタイプを確認しておく必要があります。 
+---
+= OnCommand Workflow Automation データソース
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）は、データソースから取得されたデータに対して機能します。WFA の定義済みのデータソースの種類として、 Active IQ Unified Manager および VMware vCenter Server のさまざまなバージョンが用意されています。データ収集用のデータソースを設定する前に、事前に定義されているデータソースのタイプを確認しておく必要があります。
+
+データソースは、特定のデータソースタイプのデータソースオブジェクトへの接続として機能する読み取り専用のデータ構造です。たとえば、データソースは、 Active IQ Unified Manager 6.3 データソースタイプの Active IQ Unified Manager データベースに接続できます。WFA にカスタムデータソースを追加するには、必要なデータソースのタイプを定義します。
+
+事前定義されたデータソースの種類の詳細については、 Interoperability Matrix を参照してください。
+
+* 関連情報 *
+
+https://mysupport.netapp.com/matrix["NetApp Interoperability Matrix Tool で確認できます"^]

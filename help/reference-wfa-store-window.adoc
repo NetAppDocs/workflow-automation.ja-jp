@@ -1,0 +1,16 @@
+---
+permalink: help/reference-wfa-store-window.html 
+sidebar: sidebar 
+keywords: storage, automation, store, cotains, netapp-certified, workflow, pack, developed, use, oncommand, download, import, execute 
+summary: Storage Automation Store で、 OnCommand Workflow Automation （ WFA ）用に開発されたネットアップ認定のストレージワークフロー自動化パックを提供しています。パックをダウンロードし、 WFA にインポートして実行できます。 
+---
+= Storage Automation Store のウィンドウが開きます
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Storage Automation Store で、 OnCommand Workflow Automation （ WFA ）用に開発されたネットアップ認定のストレージワークフロー自動化パックを提供しています。パックをダウンロードし、 WFA にインポートして実行できます。
+
+自動化されたワークフローは、で使用できます https://automationstore.netapp.com["Storage Automation Store の略"^]

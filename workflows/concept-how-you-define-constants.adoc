@@ -1,0 +1,40 @@
+---
+permalink: workflows/concept-how-you-define-constants.html 
+sidebar: sidebar 
+keywords: create, use, constants, define, value, across, single, window, workflow, level 
+summary: 1 つのワークフローで使用できる値を定義するために、定数を作成して使用できます。定数はワークフローレベルで定義されます。 
+---
+= 定数の定義方法
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+1 つのワークフローで使用できる値を定義するために、定数を作成して使用できます。定数はワークフローレベルで定義されます。
+
+ワークフローで使用されている定数とその値は、計画および実行中のワークフローの監視ウィンドウに表示されます。定数には一意の名前を使用する必要があります。
+
+定数を定義する際には、次の命名規則を使用できます。
+
+* 各単語の最初の文字に大文字を使用します。単語間にアンダースコアやスペースは使用しません
++
+すべての用語と略語で大文字を使用する必要があります。たとえば、「 ActualVolumeSizeInMB 」と入力します。
+
+* すべての文字で大文字
++
+アンダースコアを使用して単語を区切ることができますたとえば 'aggregate_Used_space_threshold' のようにします
+
+
+
+ワークフロー定数には、次の値を指定できます。
+
+* 数字
+* 文字列
+* MVEL 式
++
+式は、ワークフローの計画フェーズと実行フェーズで評価されます。式では、ループで定義されている変数を参照しないでください。
+
+* ユーザ入力
+* 変数（ variables ）
+

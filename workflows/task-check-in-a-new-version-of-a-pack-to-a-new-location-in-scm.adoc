@@ -1,0 +1,33 @@
+---
+permalink: workflows/task-check-in-a-new-version-of-a-pack-to-a-new-location-in-scm.html 
+sidebar: sidebar 
+keywords: update, version, pack, oncommand, workflow, automation, check, new, location, source, control, management, server 
+summary: OnCommand Workflow Automation （ WFA ）でパックのバージョンを更新し、ソース管理管理（ SCM ）サーバの新しい場所に更新したパックをチェックインできます。 
+---
+= 新しいバージョンの WFA ワークフローパックをチェックインします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）でパックのバージョンを更新し、ソース管理管理（ SCM ）サーバの新しい場所に更新したパックをチェックインできます。
+
+SCM をセットアップする必要があり、管理者またはアーキテクトのクレデンシャルが必要です。
+
+.手順
+. Web ブラウザから * WFA * ウィンドウにログインします。
+. [* コンテンツ管理 * （ Content Management * ） ] > [* パック（ * Packs ） ]
+. 「 * パックの編集 * 」アイコンをクリックします。
+. * パック < パック名 >* ダイアログボックスの * バージョン * フィールドで、パックのバージョンを更新します。
+. [ 保存（ Save ） ] をクリックします。
+. パックレベルで * サーバーにエクスポート * アイコンをクリックします。
+. サーバーフォルダへのエクスポート * （ * Export to Server Folder * ）ダイアログボックスのサーバーシステムでのフォルダの場所 * （ * Folder location at server system * ）フィールドに、新しいファイルシステムの場所を入力します。
++
+パックが以前に「 C:\p4.cd\1.0.0 」ファイルシステムの場所に保存されていた場合は、「 C:\p4.cd\2.0.0 」の場所に保存します。
+
+. SCM クライアントの場所で、パックの内容を SCM サーバの新しい場所にチェックインします。
++
+パックが SCM サーバ内の「 /depot/wfa/packs/cdot /1.0.0 」パスに保存されていた場合は、「 //depot/wfa/packs/cdot /2.0.0 」などの別の場所に保存できます
+
+

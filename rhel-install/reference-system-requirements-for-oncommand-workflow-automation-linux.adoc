@@ -1,0 +1,115 @@
+---
+permalink: rhel-install/reference-system-requirements-for-oncommand-workflow-automation-linux.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, install, system requirements 
+summary: WFA をインストールする前に、 OnCommand Workflow Automation （ WFA ）のハードウェアとソフトウェアの要件を理解しておく必要があります。 
+---
+= OnCommand Workflow Automation をインストールするためのシステム要件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+WFA をインストールする前に、 OnCommand Workflow Automation （ WFA ）のハードウェアとソフトウェアの要件を理解しておく必要があります。
+
+
+
+== WFA をインストールするためのハードウェア要件
+
+次の表に、 WFA サーバのハードウェアの最小要件と推奨されるハードウェア仕様を示します。
+
+[cols="3*"]
+|===
+| コンポーネント | 最小要件 | 推奨される仕様 
+
+
+ a| 
+CPU
+ a| 
+2.27GHz 以上、 4 コア、 64 ビット
+ a| 
+2.27GHz 以上、 4 コア、 64 ビット
+
+
+
+ a| 
+RAM
+ a| 
+4 GB
+ a| 
+8 GB
+
+
+
+ a| 
+空きディスク容量
+ a| 
+5 GB
+ a| 
+20 GB
+
+|===
+[NOTE]
+====
+WFA を仮想マシン（ VM ）にインストールする場合は、 VM に十分なリソースが確保されるように、必要なメモリと CPU を確保しておく必要があります。インストーラは CPU 速度を確認しません。
+
+====
+
+
+== WFA をインストールするためのソフトウェア要件
+
+次の表に、 WFA サーバと互換性があるすべてのオペレーティングシステムのバージョンを示します。
+
+[cols="2*"]
+|===
+| オペレーティングシステム | バージョン 
+
+
+ a| 
+Red Hat Enterprise Linux の場合
+ a| 
+7.0 、 7.1 、 7.2 、 7.3 、 7.4 、 7.5 および 7.6 の 64 ビットオペレーティングシステム
+
+
+
+ a| 
+CentOS の場合
+ a| 
+7.1 、 7.2 、 7.3 、 7.4 、 7.5 、および 7.6 の 64 ビットオペレーティングシステム
+
+|===
+[NOTE]
+====
+WFA は、専用の物理マシンまたは VM にインストールする必要があります。WFA を実行するサーバには、他のアプリケーションをインストールしないでください。
+
+====
+* 次のいずれかのブラウザがサポートされています。
++
+** Mozilla Firefox
+** Microsoft Internet Explorer の略
+** Google Chrome
+
+
+* Perl V5.x
++
+インストールする必要がある Perl モジュールに関する情報は './WFA-version_number.bin -l コマンドを使用して取得できます
+
+
+
+詳細については、を参照してください https://mysupport.netapp.com/matrix/["Interoperability Matrix Tool で確認してください"^]。
+
+
+NOTE: ウィルス対策アプリケーションを使用すると、 WFA のサービスが開始されない場合があり
+
+この問題 を回避するには、 WFA の次のディレクトリに対してウィルススキャンの除外を設定します。
+
+* WFA をインストールしたディレクトリ
+* Perl をインストールしたディレクトリ
+* OpenJDK をインストールしたディレクトリです
+* MySQL データディレクトリ
+
+
+* 関連情報 *
+
+https://mysupport.netapp.com/matrix["NetApp Interoperability Matrix Tool で確認できます"^]

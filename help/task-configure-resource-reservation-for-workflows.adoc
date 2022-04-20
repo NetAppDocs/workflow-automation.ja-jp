@@ -1,0 +1,34 @@
+---
+permalink: help/task-configure-resource-reservation-for-workflows.html 
+sidebar: sidebar 
+keywords: configure, resource, reservation, capability, oncommand, workflow, automation, ensure, required, available, successful, execution 
+summary: OnCommand Workflow Automation （ WFA ）ワークフローのリソースリザベーション機能を設定して、必要なリソースをワークフローの実行に利用できるようにすることができます。 
+---
+= ワークフローのリソースリザベーションを設定する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）ワークフローのリソースリザベーション機能を設定して、必要なリソースをワークフローの実行に利用できるようにすることができます。
+
+.手順
+. Web ブラウザから管理者として WFA にログインします。
+. [ * 設定 * ] をクリックし、 [ * 設定 * ] で [ * ワークフロー設定 * ] をクリックします。
+. [ コマンドの予約を有効にする *] チェックボックスがオンになっていることを確認します。
+. [ 予約有効期限（ H ） *] フィールドに、必要な値を入力します。
++
+デフォルトは 4 です。
+
+. [ 保存（ Save ） ] をクリックします。
+. 必要なワークフローごとにリソースリザベーションを有効にします。
++
+.. 必要なワークフローの [* ワークフロー *>* 詳細 *] をクリックします。
++
+「ワークフロー」は、リソースの予約が必要なワークフローです。
+
+.. 「 * 予約済みエレメントを考慮 * 」を選択します。
+
+
+

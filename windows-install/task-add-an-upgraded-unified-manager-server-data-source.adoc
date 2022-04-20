@@ -1,0 +1,29 @@
+---
+permalink: windows-install/task-add-an-upgraded-unified-manager-server-data-source.html 
+sidebar: sidebar 
+keywords: add, upgraded, unified manager server, data source 
+summary: WFA のデータソースとして Unified Manager サーバ（ 5.x または 6.x ）を追加したあと、 Unified Manager サーバをアップグレードした場合は、 アップグレード後のバージョンに関連付けられているデータは、手動でデータソースとして追加しないかぎり WFA に取り込まれないため、アップグレードした Unified Manager サーバをデータソースとして追加する必要があります。 
+---
+= アップグレードした Unified Manager サーバをデータソースとして追加します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+WFA のデータソースとして Unified Manager サーバ（ 5.x または 6.x ）を追加したあと、 Unified Manager サーバをアップグレードした場合は、 アップグレード後のバージョンに関連付けられているデータは、手動でデータソースとして追加しないかぎり WFA に取り込まれないため、アップグレードした Unified Manager サーバをデータソースとして追加する必要があります。
+
+.手順
+. WFA Web GUI に管理者としてログインします。
+. [ * 設定 * ] をクリックし、 [ * 設定 * ] で [ * データソース * ] をクリックします。
+. をクリックします image:../media/new_wfa_icon.gif["新しいアイコン"] をクリックします。
+. [ 新しいデータソース ] ダイアログボックスで、必要なデータソースの種類を選択し、データソースの名前とホスト名を入力します。
++
+選択したデータソースのタイプに基づいて、ポート、ユーザ名、パスワード、およびタイムアウトの各フィールドにデフォルトのデータが自動的に入力される場合があります。これらのエントリは必要に応じて編集できます。
+
+. [ 保存（ Save ） ] をクリックします。
+. 以前のバージョンの Unified Manager サーバを選択し、をクリックします image:../media/delete_wfa_icon.gif["削除アイコン"] をクリックします。
+. [ データソースタイプの削除 ] 確認ダイアログボックスで、 [ はい *] をクリックします。
+. [ データソース ] テーブルで、データソースを選択し、をクリックします image:../media/acquire_now_wfa_icon.gif["今すぐ取得アイコン"] をクリックします。
+. History テーブルでデータ取得ステータスを確認します。
+

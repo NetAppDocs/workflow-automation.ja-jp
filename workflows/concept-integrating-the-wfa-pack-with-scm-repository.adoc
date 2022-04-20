@@ -1,0 +1,20 @@
+---
+permalink: workflows/concept-integrating-the-wfa-pack-with-scm-repository.html 
+sidebar: sidebar 
+keywords: integrate, oncommand, workflow, automation, pack, source control, management, repository 
+summary: OnCommand Workflow Automation （ WFA ）パックは、ソース管理管理（ SCM ）リポジトリと統合できます。 
+---
+= WFA ワークフローパックを SCM リポジトリと統合する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）パックは、ソース管理管理（ SCM ）リポジトリと統合できます。
+
+管理者またはアーキテクトのクレデンシャルが必要です。
+
+GitHub 、 Perforce 、 SVN などの SCM ツールでは、 SCM リポジトリサーバからコードをチェックアウトするためにローカルディレクトリをマッピングする必要があります。このローカルディレクトリマッピングは、 _SCM クライアントの場所と呼ばれます。 _ SCM クライアントを設定して、ファイルシステムの場所をクライアント領域として指定する必要があります。
+
+WFA サーバシステムに SCM クライアントを設定できます。SCM を使用するには、 WFA サーバシステムにアクセスできる必要があります

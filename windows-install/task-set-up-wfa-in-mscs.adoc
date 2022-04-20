@@ -1,0 +1,19 @@
+---
+permalink: windows-install/task-set-up-wfa-in-mscs.html 
+sidebar: sidebar 
+keywords: set up, workflow, automation, mscs, high availability 
+summary: Workflow Automation （ WFA ）を MSCS （ Microsoft クラスタサービス）環境にインストールして設定することで、ハイアベイラビリティ構成とフェイルオーバーを実現できます。WFA をインストールする前に、必要なすべてのコンポーネントが正しく設定されていることを確認する必要があります。 
+---
+= MSCS で Workflow Automation をセットアップして高可用性を実現します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Workflow Automation （ WFA ）を MSCS （ Microsoft クラスタサービス）環境にインストールして設定することで、ハイアベイラビリティ構成とフェイルオーバーを実現できます。WFA をインストールする前に、必要なすべてのコンポーネントが正しく設定されていることを確認する必要があります。
+
+ハイアベイラビリティ構成では、アプリケーションの運用が常にサポートされます。いずれかのコンポーネントに障害が発生すると、セットアップ内のミラーリングされたコンポーネントが処理を引き継ぎ、中断のないネットワークリソースを提供します。
+
+
+NOTE: Windows の WFA でサポートされているクラスタリング解決策 は MSCS だけです。

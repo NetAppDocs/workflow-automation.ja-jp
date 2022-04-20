@@ -1,0 +1,46 @@
+---
+permalink: help/reference-approval-portal.html 
+sidebar: sidebar 
+keywords: approval, portal, window, enable, reject, workflow 
+summary: '[ 承認ポータル（ Approval Portal ） ] ウィンドウでは、ワークフローを承認または拒否できます。' 
+---
+= [ 承認ポータル ] ウィンドウ
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+[ 承認ポータル（ Approval Portal ） ] ウィンドウでは、ワークフローを承認または拒否できます。
+
+[ 承認ポータル ] ウィンドウには、ワークフローの承認のために電子メール通知に記載されているリンクからログインできます。
+
+* * WFA に戻ります。 *
++
+Approval Portal ウィンドウから WFA アプリケーションに戻ります。
+
+
+
+
+
+== 承認ポータル
+
+* * コメントを入力 *
++
+ワークフローの承認または却下に関するコメントを入力できます
+
+
+
+
+
+== コマンドボタン
+
+* * 承認と再開 *
++
+ワークフローを承認し、ワークフローを再開できます。
+
+* * 拒否と中止 *
++
+ワークフローを拒否し、ワークフローを中止できます。
+
+

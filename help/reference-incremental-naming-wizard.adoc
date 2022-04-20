@@ -1,0 +1,43 @@
+---
+permalink: help/reference-incremental-naming-wizard.html 
+sidebar: sidebar 
+keywords: incremental, naming, wizard, enable, define, value, attribute, search, existing, parameter 
+summary: 増分ネーミングウィザードを使用すると、既存のパラメーターの検索に基づいて属性の値を定義できます。 
+---
+= 増分命名ウィザード
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+増分ネーミングウィザードを使用すると、既存のパラメーターの検索に基づいて属性の値を定義できます。
+
+* * 既存の < 辞書オブジェクト >* の検索条件
++
+[ リソースを選択 * （ * Resource Selection * ） ] ダイアログボックスを開きます。このダイアログボックスでは、ディクショナリオブジェクトの検索条件を指定できます。
+
+* * 上記の検索条件に一致する <dictionary object> がない場合は、 <attribute> の値を入力します。 *
++
+指定した検索条件を使用して <dictionary object> が見つからない場合に、 <attribute> の値を指定できます。
+
+* * 上記の検索条件を使用して < 辞書オブジェクト > が見つかった場合は、 < 属性 > の値を * で設定します
++
+指定した検索条件を使用して <dictionary object> が見つからない場合に、 <attribute> の値を指定できます。
+
+* * 上記の検索条件に一致する <dictionary object> がない場合は、 <attribute> の値を入力します。 *
++
+指定した検索条件を使用して <dictionary object> が見つかった場合に、 <attribute> の値を設定するメソッドを選択できます。
+
++
+** * 増分値とサフィックス * を指定します
++
+増分の数値を入力できます。必要に応じて、属性名のサフィックスを入力することもできます。
+
+** * カスタム式 * を提供します
++
+属性の値のカスタム式を入力できます。MVEL （ MVEL ）構文を使用して、値を指定できます。
+
+
+
+

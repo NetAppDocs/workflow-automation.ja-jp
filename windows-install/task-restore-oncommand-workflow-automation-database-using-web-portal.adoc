@@ -1,0 +1,33 @@
+---
+permalink: windows-install/task-restore-oncommand-workflow-automation-database-using-web-portal.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, restore, wfa, database 
+summary: 以前にバックアップした OnCommand Workflow Automation （ WFA ）データベースをリストアできます。 
+---
+= WFA データベースをリストアします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+以前にバックアップした OnCommand Workflow Automation （ WFA ）データベースをリストアできます。
+
+* WFA データベースのバックアップを作成しておく必要があります。
+* 管理者またはアーキテクトのクレデンシャルが必要です。
+* WFA データベースをリストアすると、現在のデータベースが消去されます。
+* WFA のデータベースバックアップは、同じバージョンか新しいバージョンの OnCommand Workflow Automation を実行しているシステムにのみリストアできます。
++
+たとえば、 OnCommand Workflow Automation 4.2 を実行しているシステムで作成したバックアップは、 OnCommand Workflow Automation 4.2 以降を実行しているシステムにのみリストアできます。
+
+
+
+.手順
+. WFA Web GUI に admin としてログインします。
+. [ * 設定 * ] をクリックし、 [ * メンテナンス * ] で [ * バックアップと復元 * ] をクリックします。
+. [ * ファイルの選択 * ] をクリックします。
+. 表示されたダイアログボックスで WFA バックアップファイルを選択し、 * Open * をクリックします。
+. [* リストア ] をクリックします。
+
+
+リストアしたコンテンツには、カスタムワークフローの機能など、機能の完全性が含まれているかどうかを確認できます。

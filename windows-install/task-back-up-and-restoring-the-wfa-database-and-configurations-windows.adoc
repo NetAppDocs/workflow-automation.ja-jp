@@ -1,0 +1,32 @@
+---
+permalink: windows-install/task-back-up-and-restore-the-wfa-database-and-configurations-windows.html 
+sidebar: sidebar 
+keywords: back up, restore, oncommand, workflow, automation, database, configurations windows 
+summary: 災害発生時にデータをリカバリできるように、 OnCommand Workflow Automation （ WFA ）データベースとサポートされている設定をバックアップおよびリストアできます。サポートされる構成には、データアクセス、 HTTP タイムアウト、 SSL 証明書があります。 
+---
+= Windows で OnCommand Workflow Automation データベースおよび設定をバックアップおよびリストアする
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+災害発生時にデータをリカバリできるように、 OnCommand Workflow Automation （ WFA ）データベースとサポートされている設定をバックアップおよびリストアできます。サポートされる構成には、データアクセス、 HTTP タイムアウト、 SSL 証明書があります。
+
+admin 権限または Architect のクレデンシャルが必要です。
+
+バックアップをリストアすると WFA がアクセスするすべてのストレージシステムにアクセスできるようになるため、安全な場所にバックアップを作成する必要があります。
+
+
+NOTE: ディザスタリカバリ時の包括的なバックアップおよびリストア処理に使用できるのは、 CLI コマンドまたは REST API のみです。ハイアベイラビリティ環境では、ディザスタリカバリ時に Web UI を使用してバックアップを作成することはできません。
+
+.手順
+. 既存のデータベースと設定をバックアップします。
++
+link:reference-backing-up-of-the-oncommand-workflow-automation-database.html["OnCommand Workflow Automation データベースをバックアップしています"]
+
+. データベースおよび設定の以前のバックアップをリストアする。
++
+link:concept-restoring-the-wfa-database.html["OnCommand Workflow Automation データベースのリストア"]
+
+

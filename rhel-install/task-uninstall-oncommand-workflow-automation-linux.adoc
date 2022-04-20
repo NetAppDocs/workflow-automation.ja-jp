@@ -1,0 +1,27 @@
+---
+permalink: rhel-install/task-uninstall-oncommand-workflow-automation-linux.html 
+sidebar: sidebar 
+keywords: uninstall, oncommand, workflow, automation 
+summary: OnCommand Workflow Automation （ WFA ）は、 1 つのコマンドで Red Hat Enterprise Linux マシンからアンインストールできます。 
+---
+= OnCommand Workflow Automation をアンインストールします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation （ WFA ）は、 1 つのコマンドで Red Hat Enterprise Linux マシンからアンインストールできます。
+
+WFA をアンインストールする Red Hat Enterprise Linux マシンへの root ユーザアクセスが必要です。
+
+.手順
+. WFA をアンインストールする Red Hat Enterprise Linux マシンに root ユーザとしてログインします。
+. シェルプロンプトで、次のコマンドを入力します。
++
+「 rpm -e wfa 」のように指定します
+
++
+デフォルトのインストール場所が変更された場合、 WFA をアンインストールしても MySQL のデータディレクトリは削除されません。ディレクトリを手動で削除する必要があります。
+
+

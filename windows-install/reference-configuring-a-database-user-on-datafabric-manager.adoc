@@ -1,0 +1,14 @@
+---
+permalink: windows-install/reference-configuring-a-database-user-on-datafabric-manager.html 
+sidebar: sidebar 
+keywords: configure, database, user, datafabric manager 
+summary: DataFabric Manager 5.x データベースの OnCommand Workflow Automation への読み取り専用アクセスを設定するには、データベースユーザを DataFabric Manager 5.x で作成する必要があります。 
+---
+= DataFabric Manager でデータベースユーザを設定する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+DataFabric Manager 5.x データベースの OnCommand Workflow Automation への読み取り専用アクセスを設定するには、データベースユーザを DataFabric Manager 5.x で作成する必要があります。

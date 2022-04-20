@@ -1,0 +1,19 @@
+---
+permalink: rhel-install/task-set-up-wfa-in-vcs.html 
+sidebar: sidebar 
+keywords: set up, workflow, automation, vcs, high availability 
+summary: ハイアベイラビリティ構成でフェイルオーバーを実現するには、 Veritas Cluster Server （ VCS ）環境で Workflow Automation （ WFA ）をインストールして設定する必要があります。WFA をインストールする前に、必要なすべてのコンポーネントが正しく設定されていることを確認する必要があります。 
+---
+= ハイアベイラビリティを実現するために VCS で Workflow Automation をセットアップする
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ハイアベイラビリティ構成でフェイルオーバーを実現するには、 Veritas Cluster Server （ VCS ）環境で Workflow Automation （ WFA ）をインストールして設定する必要があります。WFA をインストールする前に、必要なすべてのコンポーネントが正しく設定されていることを確認する必要があります。
+
+ハイアベイラビリティ構成では、アプリケーションの運用が常にサポートされます。いずれかのコンポーネントに障害が発生すると、セットアップ内のミラーリングされたコンポーネントが処理を引き継ぎ、中断のないネットワークリソースを提供します。
+
+
+NOTE: Linux 上の WFA でサポートされているクラスタリング解決策 は VCS のみです。

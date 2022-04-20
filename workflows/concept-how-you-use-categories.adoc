@@ -1,0 +1,18 @@
+---
+permalink: workflows/concept-how-you-use-categories.html 
+sidebar: sidebar 
+keywords: categorize, workflows, better, organize, apply, access, control, capability 
+summary: ワークフローを分類して、ワークフローをよりよく整理したり、ワークフローにアクセス制御機能を適用したりできます。 
+---
+= カテゴリの使用方法
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ワークフローを分類して、ワークフローをよりよく整理したり、ワークフローにアクセス制御機能を適用したりできます。
+
+WFA ポータルの特定のグループに表示されるようにワークフローを分類できます。ワークフローカテゴリにアクセス制御機能を適用することもできます。たとえば、一部のストレージオペレータや承認者のみがワークフローの特定のカテゴリを表示できます。ストレージのオペレータや承認者は、アクセス権が付与されているカテゴリ内のワークフローのみを実行できます。
+
+Active Directory グループは、カテゴリへのアクセス制御にも使用できます。
