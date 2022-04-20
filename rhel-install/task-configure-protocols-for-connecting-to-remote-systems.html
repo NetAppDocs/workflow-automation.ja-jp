@@ -1,0 +1,4179 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head class="at-element-marker">
+  <title>リモートシステムに接続するためのプロトコルを設定します</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="リモートシステムに接続するためのプロトコルを設定します" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/ja-jp/workflow-automation/rhel-install/task-configure-protocols-for-connecting-to-remote-systems.html" />
+	<meta property="og:description" content="リモートシステムへの接続に OnCommand Workflow Automation （ WFA ）で使用するプロトコルを設定できます。プロトコルは、組織のセキュリティ要件およびリモートシステムでサポートされるプロトコルに基づいて設定できます。" />
+  <meta property="og:image" content="https://docs.netapp.com/ja-jp/workflow-automation/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="リモートシステムへの接続に OnCommand Workflow Automation （ WFA ）で使用するプロトコルを設定できます。プロトコルは、組織のセキュリティ要件およびリモートシステムでサポートされるプロトコルに基づいて設定できます。">
+  <meta name="keywords" content=" configure, protocols, connect, remote systems"><!-- Icons -->
+  <link rel="icon" href="/ja-jp/workflow-automation/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Controls AsciiDoctor Admonition Blocks -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/workflow-automation/css/font-awesome.min.css">
+
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/ja-jp/workflow-automation/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/workflow-automation/css/netapp.css">
+
+  <!-- WWW CSS Content -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/workflow-automation/css/www-luci-dotcom.min.css">
+  <link rel="stylesheet" type="text/css" href="/ja-jp/workflow-automation/css/www-netapp-dotcom.css">
+  <link rel="stylesheet" href="/ja-jp/workflow-automation/css/www-netapp-library-critical.min.css" media="all" >
+  <link rel="stylesheet" href="/ja-jp/workflow-automation/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="/ja-jp/workflow-automation/css/www-netapp-library-global-header-footer.min.css">
+
+  <!-- NetApp IE Customizations -->
+  <link rel="stylesheet" href='/ja-jp/workflow-automation/css/na-utility.css' type='text/css'>
+  <link rel="stylesheet" href='/ja-jp/workflow-automation/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/ja-jp/workflow-automation/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/ja-jp/workflow-automation/css/custom-dropdown.css' type='text/css'>
+  <link rel='stylesheet' href='/ja-jp/workflow-automation/css/na-pagenav.css' type='text/css'>
+
+  
+  <link rel="stylesheet" href="/ja-jp/workflow-automation/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/ja-jp/workflow-automation/css/tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel='stylesheet' href='/ja-jp/workflow-automation/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
+    if (document.location.hostname === "docs.netapp.com") {
+      var head = document.getElementsByTagName('head')[0];
+      var onetrustConsent = document.createElement("script");
+      onetrustConsent.type = "text/javascript";
+      onetrustConsent.src = "https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js";
+      head.appendChild(onetrustConsent);
+
+      var onetrustScript = document.createElement("script");
+      onetrustScript.type = "text/javascript";
+      onetrustScript.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
+      onetrustScript.charset = "UTF-8";
+      onetrustScript.dataset.documentLanguage = "true";
+      onetrustScript.dataset.domainScript = "72570c5c-fe30-465f-b0e0-b77f7fb4ae34";
+      head.appendChild(onetrustScript);
+    }
+
+    function OptanonWrapper() { }
+
+    if (document.location.hostname === "docs.netapp.com") {
+      var adobe = document.createElement("script");
+      adobe.type = "text/plain";
+      adobe.className = "optanon-category-C0002";
+      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+      head.appendChild(adobe);
+
+      var google = document.createElement("script");
+      google.type = "text/plain";
+      google.className = "optanon-category-C0002";
+      google.src = "https://www.googletagmanager.com/gtag/js?id=UA-81697994-3";
+      head.appendChild(google);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-81697994-3');
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/ja-jp/workflow-automation/js/na-search.js'></script><script src='/ja-jp/workflow-automation/js/na-pagenav.js'></script><link rel='stylesheet' href='/ja-jp/workflow-automation/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/ja-jp/workflow-automation/css/prism-netapp.css' type='text/css'>
+
+
+  <script src='/ja-jp/workflow-automation/js/na-utility.js'></script>
+  <script src='/ja-jp/workflow-automation/js/clouddocs.js'></script>
+  <script src='/ja-jp/workflow-automation/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/ja-jp/workflow-automation/js/toc.js'></script>
+  <script src='/ja-jp/workflow-automation/js/customscripts.js'></script><script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script>
+  <script src='/ja-jp/workflow-automation/js/custom-dropdown.js'></script>
+  <script src='/ja-jp/workflow-automation/js/FileSaver.min.js'></script>
+  <script src='/ja-jp/workflow-automation/js/jszip-utils.min.js'></script>
+  <script src='/ja-jp/workflow-automation/js/jszip.min.js'></script>
+  <script src='/ja-jp/workflow-automation/js/pdf-ux.js'></script>
+</head>
+
+
+  <body class role="document" data-flavor="">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/workflow-automation/issues/new?body=Page%3A%20[リモートシステムに接続するためのプロトコルを設定します](https://docs.netapp.com/ja-jp/workflow-automation/rhel-install/task-configure-protocols-for-connecting-to-remote-systems.html)" class="page-nav-contribute-link" role="button"><img src="/ja-jp/workflow-automation/images/discuss-sm.svg" class="github-icon" />ドキュメントの変更をリクエスト</a><a target="_blank" href="https://github.com/NetAppDocs/workflow-automation/blob/main/rhel-install/task-configure-protocols-for-connecting-to-remote-systems.adoc" class="page-nav-contribute-link" role="button"><img src="/ja-jp/workflow-automation/images/edit-sm.svg" class="github-icon" />GitHub で編集</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ja-jp/workflow-automation/images/article-sm.svg" class="github-icon" />寄稿者向けガイド</a></div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">このページ</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">製品とソリューション</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">サポートとトレーニング</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">コミュニティ</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">ブログ</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">ユーザ事例</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">お問い合わせ</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">お問い合わせ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/ja-jp/workflow-automation/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/ja-jp/workflow-automation/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/ja-jp/workflow-automation/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/ja-jp/workflow-automation/search.html"
+          data-type="widget" 
+          data-placeholder="ドキュメントを検索" 
+          data-no-results-found="{query}に該当する結果はありません" 
+          data-did-you-mean="{suggestion} を検索" 
+          data-no-results-found-did-you-mean="{query} に該当する結果はありません。{suggestion} の間違いではありませんか?" 
+          data-results-found="{hitCount} 件見つかりました"  
+          data-sk-es-pf-indexes=""
+          data-flavor=""></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/workflow-automation/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
+      <div id="ie-i18n-menu">
+      <span class="ie-i18n-lang">日本語</span>
+        <button class="ie-i18n-icon-container" type="button">
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/workflow-automation/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
+        <div class="n-language-selector-menu">
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ja-jp/workflow-automation/rhel-install/task-configure-protocols-for-connecting-to-remote-systems.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/us-en/workflow-automation/rhel-install/task-configure-protocols-for-connecting-to-remote-systems.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/workflow-automation/rhel-install/task-configure-protocols-for-connecting-to-remote-systems.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ko-kr/workflow-automation/rhel-install/task-configure-protocols-for-connecting-to-remote-systems.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li></ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" id="sidebar-height">
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+    <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>利用可能なPDF<span>
+    </span>
+  </a>
+</div>
+<div class="n-pdf-body-container">
+  <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        
+        
+        
+        <a target="_blank" href="/ja-jp/workflow-automation/pdfs/fullsite-sidebar/OnCommand_Workflow_Automation_のドキュメント.pdf" >
+          <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>このドキュメントサイトのPDF</a>
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/Linux_のインストールとセットアップ.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            Linux のインストールとセットアップ
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/OnCommand_Workflow_Automation_の概要.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation の概要
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/OnCommand_Workflow_Automation_をインストールするためのシステム要件.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation をインストールするためのシステム要件
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/Workflow_Automation_をインストールするための前提条件.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            Workflow Automation をインストールするための前提条件
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/高可用性の管理.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            高可用性の管理
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/ハイアベイラビリティを実現するために_VCS_で_Workflow_Automation_をセットアップする.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            ハイアベイラビリティを実現するために VCS で Workflow Automation をセットアップする
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/OnCommand_Workflow_Automation_をセットアップしています.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation をセットアップしています
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/OnCommand_Workflow_Automation_データソース.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation データソース
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/DataFabric_Manager_でデータベースユーザを設定する.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            DataFabric Manager でデータベースユーザを設定する
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/OnCommand_Workflow_Automation_を設定しています.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation を設定しています
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/ja-jp/workflow-automation/pdfs/pages/rhel-install/task-configure-protocols-for-connecting-to-remote-systems.pdf" >
+    <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/OnCommand_Workflow_Automation_3_1_以降からアップグレードします.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation 3.1 以降からアップグレードします
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/サードパーティ製品のアップグレード.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            サードパーティ製品のアップグレード
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/OnCommand_Workflow_Automation_データベースをバックアップしています.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation データベースをバックアップしています
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/CLI_を使用した_WFA_データベースのバックアップ.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            CLI を使用した WFA データベースのバックアップ
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/REST_API_を使用した_WFA_データベースのバックアップ.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            REST API を使用した WFA データベースのバックアップ
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/OnCommand_Workflow_Automation_データベースのリストア.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation データベースのリストア
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/CLI_を使用した_WFA_データベースのリストア.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            CLI を使用した WFA データベースのリストア
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/REST_API_を使用した_WFA_データベースのリストア.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            REST API を使用した WFA データベースのリストア
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/OnCommand_Workflow_Automation_コンテンツをインポートします.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation コンテンツをインポートします
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/OnCommand_Workflow_Automation_SSL_証明書の管理.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation SSL 証明書の管理
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/Perl_モジュールと_Perl_モジュールの管理.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            Perl モジュールと Perl モジュールの管理
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/インストールと設定に関する問題のトラブルシューティング.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            インストールと設定に関する問題のトラブルシューティング
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/Windows_のインストールとセットアップ.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            Windows のインストールとセットアップ
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/OnCommand_Workflow_Automation_の概要.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation の概要
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/OnCommand_Workflow_Automation_をインストールするためのシステム要件.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation をインストールするためのシステム要件
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/高可用性の管理.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            高可用性の管理
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/MSCS_で_Workflow_Automation_をセットアップして高可用性を実現します.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            MSCS で Workflow Automation をセットアップして高可用性を実現します
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/OnCommand_Workflow_Automation_をセットアップしています.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation をセットアップしています
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/OnCommand_Workflow_Automation_データソース.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation データソース
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/DataFabric_Manager_でデータベースユーザを設定する.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            DataFabric Manager でデータベースユーザを設定する
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/OnCommand_Workflow_Automation_を設定しています.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation を設定しています
+          </a>
+          
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/SNMP_を設定する.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            SNMP を設定する
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/OnCommand_Workflow_Automation_をアップグレードします.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation をアップグレードします
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/OnCommand_Workflow_Automation_3_1_以降のバージョンからアップグレードします.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation 3.1 以降のバージョンからアップグレードします
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/サードパーティ製品のアップグレード.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            サードパーティ製品のアップグレード
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/OnCommand_Workflow_Automation_データベースをバックアップしています.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation データベースをバックアップしています
+          </a>
+          
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/CLI_を使用した_WFA_データベースのバックアップ.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            CLI を使用した WFA データベースのバックアップ
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/REST_API_を使用した_WFA_データベースのバックアップ.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            REST API を使用した WFA データベースのバックアップ
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/OnCommand_Workflow_Automation_データベースのリストア.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation データベースのリストア
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/CLI_を使用した_WFA_データベースのリストア.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            CLI を使用した WFA データベースのリストア
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/REST_API_を使用した_WFA_データベースのリストア.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            REST API を使用した WFA データベースのリストア
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/OnCommand_Workflow_Automation_コンテンツをインポートします.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation コンテンツをインポートします
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/OnCommand_Workflow_Automation_SSL_証明書の管理.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation SSL 証明書の管理
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/Perl_モジュールと_Perl_モジュールの管理.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            Perl モジュールと Perl モジュールの管理
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/インストールと設定に関する問題のトラブルシューティング.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            インストールと設定に関する問題のトラブルシューティング
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/ワークフロー.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            ワークフロー
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/Workflow_Automation_Designer_の概要を参照してください.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            Workflow Automation Designer の概要を参照してください
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/OnCommand_Workflow_Automation_でのビルディングブロックの操作.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation でのビルディングブロックの操作
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/ワークフローの管理.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            ワークフローの管理
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/定義済みのワークフローをカスタマイズする.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            定義済みのワークフローをカスタマイズする
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/ワークフローの作成.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            ワークフローの作成
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/ワークフローを作成します.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            ワークフローを作成します
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/WFA_ワークフローパックを作成します.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            WFA ワークフローパックを作成します
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/WFA_ワークフローパックを_SCM_リポジトリと統合する.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            WFA ワークフローパックを SCM リポジトリと統合する
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/ワークフローのビルディングブロックの作成.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            ワークフローのビルディングブロックの作成
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/コマンドを作成します.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            コマンドを作成します
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/WFA_のコーディングガイドライン.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            WFA のコーディングガイドライン
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/WFA_での_PowerShell_と_Perl_の一般的な規則.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            WFA での PowerShell と Perl の一般的な規則
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/WFA_のビルディングブロックに関するガイドライン.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            WFA のビルディングブロックに関するガイドライン
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/オンラインヘルプ.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            オンラインヘルプ
+          </a>
+          
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/OnCommand_Workflow_Automation_を設定しています.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation を設定しています
+          </a>
+          
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/SNMP_を設定する.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            SNMP を設定する
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/OnCommand_Workflow_Automation_デザイナの機能.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation デザイナの機能
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/データソースを設定.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            データソースを設定
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/MVEL_に関する情報の参照先.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            MVEL に関する情報の参照先
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/_ユーザー_ウィンドウ.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            「ユーザー」ウィンドウ
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/Active_Directory_グループウィンドウ.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            Active Directory グループウィンドウ
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/__データソース___ウィンドウ.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            [ データソース ] ウィンドウ
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/クレデンシャルウィンドウ.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            クレデンシャルウィンドウ
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/スケジュールウィンドウ.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            スケジュールウィンドウ
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/ワークフローウィンドウ.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            ワークフローウィンドウ
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/__ワークフローの新規作成___ウィンドウ.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            [ ワークフローの新規作成 ] ウィンドウ
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/ファインダウィンドウ.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            ファインダウィンドウ
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/__フィルタ___ウィンドウ.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            [ フィルタ ] ウィンドウ
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/コマンドウィンドウ.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            コマンドウィンドウ
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/テンプレートウィンドウ.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            テンプレートウィンドウ
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/__辞書___ウィンドウ.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            [ 辞書 ] ウィンドウ
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/Remote_System_Types_ウィンドウ.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            Remote System Types ウィンドウ
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/__キャッシュクエリ___ウィンドウ.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            [ キャッシュクエリ ] ウィンドウ
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/パックウィンドウ.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            パックウィンドウ
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ja-jp/workflow-automation/pdfs/sidebar/__カテゴリ___ウィンドウ.pdf" 
+            
+          >
+            <img src="/ja-jp/workflow-automation/images/pdf.png" width="16" height="16"/>
+            [ カテゴリ ] ウィンドウ
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+</li></ul>
+  <div class="zip-pdf-link-container" style="display: none;">   
+    <a href="#" id="zipPdf">
+      <img src="/ja-jp/workflow-automation/images/pdf-zip.png" width="16" height="16"/>
+      <pre>個別のPDFドキュメントのコレクション<span class="zip-size"></span></pre>
+    </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+</div>
+<script>
+  $("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+  });
+</script><div class="sidebar-nav-container">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/index.html">
+        OnCommand Workflow Automation 5.1 のドキュメント
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/reference-releasenotes.html">
+        リリースノート
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Linux のインストールとセットアップ</div>
+      </a>
+      <ul><li class="subfolders "><a href="/ja-jp/workflow-automation/rhel-install/concept-overview-of-oncommand-workflow-automation.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation の概要</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/concept-oncommand-workflow-automation-deployment-architecture.html">
+        OnCommand Workflow Automation の導入アーキテクチャ
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/concept-oncommand-workflow-automation-installation-and-configuration-instructions.html">
+        OnCommand Workflow Automation のインストールとセットアップの概要
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/concept-unsupported-features-for-wfa-on-linux.html">
+        OnCommand Workflow Automation の既知の制限事項
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/rhel-install/reference-system-requirements-for-oncommand-workflow-automation-linux.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation をインストールするためのシステム要件</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/reference-ports-required-for-oncommand-workflow-automation.html">
+        Workflow Automation に必要なポート
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/rhel-install/reference-prerequisites-for-installing-workflow-automation.html">
+        <div class="na-navbar-padding"> Workflow Automation をインストールするための前提条件</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-install-perl-module-on-centos-and-rhel.html">
+        CentOS および RHEL に Perl モジュールをインストールします
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/rhel-install/concept-managing-high-availability.html">
+        <div class="na-navbar-padding"> 高可用性の管理</div>
+      </a>
+      <ul><li class="subfolders "><a href="/ja-jp/workflow-automation/rhel-install/task-set-up-wfa-in-vcs.html">
+        <div class="na-navbar-padding"> ハイアベイラビリティを実現するために VCS で Workflow Automation をセットアップする</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-configure-vcs-to-install-wfa.html">
+        OnCommand Workflow Automation をインストールするように VCS を設定します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-install-oncommand-workflow-automation.html">
+        Linux に OnCommand Workflow Automation をインストールします
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-configure-wfa-with-vcs-using-configuration-scripts-linux.html">
+        VCS で Workflow Automation を設定します
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-configure-an-earlier-version-of-wfa-to-high-availability.html">
+        以前のバージョンの OnCommand Workflow Automation をハイアベイラビリティ用に設定する
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-uninstall-wfa-in-a-vcs-environment.html">
+        VCS 環境で Workflow Automation をアンインストールします
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-back-up-the-wfa-database-and-configurations-linux.html">
+        Linux での OnCommand Workflow Automation データベースと設定のバックアップとリストア
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/rhel-install/concept-setting-up-oncommand-workflow-automation.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation をセットアップしています</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-access-oncommand-workflow-automation.html">
+        OnCommand Workflow Automation にアクセスします
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/rhel-install/concept-wfa-data-sources.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation データソース</div>
+      </a>
+      <ul><li class="subfolders "><a href="/ja-jp/workflow-automation/rhel-install/reference-configuring-a-database-user-on-datafabric-manager.html">
+        <div class="na-navbar-padding"> DataFabric Manager でデータベースユーザを設定する</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-configure-a-database-user-by-running-ocsetup-on-windows.html">
+        Windows で ocsetup を実行して、データベースユーザを設定します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-configure-a-database-user-by-running-ocsetup-on-linux.html">
+        Linux で ocsetup を実行してデータベースユーザを設定します
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-set-up-a-data-source.html">
+        データソースを設定
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-add-an-upgraded-unified-manager-server-data-source.html">
+        アップグレードした Unified Manager サーバをデータソースとして追加します
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-create-local-users.html">
+        ローカルユーザを作成する
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-configure-the-credentials-of-a-target-system.html">
+        ターゲットシステムのクレデンシャルを設定します
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/rhel-install/concept-advanced-configuring-oncommand-workflow-automation.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation を設定しています</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-configure-autosupport.html">
+        AutoSupport を設定します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-configure-authentication-settings.html">
+        認証を設定
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-add-active-directory-group-names.html">
+        Active Directory グループを追加します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-configure-mail.html">
+        E メール通知を設定
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-configure-snmp.html">
+        SNMP を設定する
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-configure-syslog.html">
+        syslog を設定します
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-configure-protocols-for-connecting-to-remote-systems.html">
+        リモートシステムに接続するためのプロトコルを設定します
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-disable-the-default-password-policy-linux.html">
+        デフォルトのパスワードポリシーを無効にします
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-modify-the-default-password-policy-linux.html">
+        デフォルトのパスワードポリシーを変更します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-enable-remote-access-to-the-oncommand-workflow-automation-database-linux.html">
+        OnCommand Workflow Automation データベースへのリモートアクセスを有効または無効にします
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-modify-the-transaction-timeout-setting-of-oncommand-workflow-automation-linux.html">
+        OnCommand Workflow Automation のトランザクションタイムアウト設定を変更します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-configure-the-timeout-value-for-linux.html">
+        Workflow Automation のタイムアウト値を設定します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/concept-enabling-ciphers-and-adding-new-ciphers.html">
+        暗号を有効にして新しい暗号を追加する
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/rhel-install/task-upgrade-from-wfa-4-2.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation 3.1 以降からアップグレードします</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/reference-pack-identification-during-upgrade.html">
+        アップグレード中のパック ID
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/rhel-install/concept-upgrading-third-party-products-in-linux.html">
+        <div class="na-navbar-padding"> サードパーティ製品のアップグレード</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-upgrade-openjdk-on-linux-wfa.html">
+        OpenJDK をアップグレードします
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-upgrade-mysql-on-linux.html">
+        Linux で MySQL をアップグレードします
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/rhel-install/reference-backing-up-of-the-oncommand-workflow-automation-database.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation データベースをバックアップしています</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-back-up-oncommand-workflow-automation-database-using-the-web-portal.html">
+        Web ポータルから WFA データベースをバックアップします
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/rhel-install/concept-backing-up-the-wfa-database-using-the-command-line-interface.html">
+        <div class="na-navbar-padding"> CLI を使用した WFA データベースのバックアップ</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-back-up-full-the-wfa-database-using-perl-script-linux.html">
+        CLI を使用して WFA データベースをバックアップ（フル）します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-back-up-regular-the-wfa-database-using-perl-script-linux.html">
+        CLI を使用して WFA データベースを（通常の）バックアップします
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/rhel-install/concept-backing-up-the-wfa-database-using-rest-apis.html">
+        <div class="na-navbar-padding"> REST API を使用した WFA データベースのバックアップ</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-back-up-full-oncommand-workflow-automation-database-using-rest-api.html">
+        REST API を使用して WFA データベースのフルバックアップを実行します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-back-up-regular-oncommand-workflow-automation-database-using-rest-api.html">
+        REST API を使用して WFA データベースの定期的なバックアップを実行します
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/rhel-install/concept-restoring-the-wfa-database.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation データベースのリストア</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-restore-oncommand-workflow-automation-database-using-web-portal.html">
+        WFA データベースをリストアします
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/rhel-install/concept-restoring-the-oncommand-workflow-automation-database-using-cli.html">
+        <div class="na-navbar-padding"> CLI を使用した WFA データベースのリストア</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-restore-full-the-oncommand-workflow-automation-database-and-configurations-linux.html">
+        CLI を使用して WFA データベースを（完全に）リストアします
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-restore-regular-the-oncommand-workflow-automation-database-and-configurations-linux.html">
+        CLI を使用して WFA データベースを（通常の）リストアします
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/rhel-install/concept-restoring-the-oncommand-workflow-automation-database-using-rest-api.html">
+        <div class="na-navbar-padding"> REST API を使用した WFA データベースのリストア</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-restore-full-the-oncommand-workflow-automation-database-using-rest-apis.html">
+        REST API を使用して WFA データベースをリストア（フル）します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-restore-regular-the-oncommand-workflow-automation-database-using-rest-apis.html">
+        REST API を使用して WFA データベースを（通常の）リストアします
+      </a></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-reset-the-admin-password-created-during-installation-linux.html">
+        インストール時に作成した admin パスワードをリセットします
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/rhel-install/task-import-oncommand-workflow-automation-content.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation コンテンツをインポートします</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/reference-considerations-of-importing-wfa-content.html">
+        OnCommand Workflow Automation コンテンツをインポートする際の考慮事項
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-migrate-the-oncommand-workflow-automation-installation-linux.html">
+        OnCommand Workflow Automation インストールを移行します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-uninstall-oncommand-workflow-automation-linux.html">
+        OnCommand Workflow Automation をアンインストールします
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/rhel-install/reference-managing-oncommand-workflow-automation-ssl-certificates.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation SSL 証明書の管理</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-replace-the-default-workflow-automation-ssl-certificate-linux.html">
+        Workflow Automation のデフォルトの SSL 証明書を置き換えます
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-create-a-certificate-signing-request-for-workflow-automation-linux.html">
+        Workflow Automation の証明書署名要求を作成します
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/rhel-install/concept-managing-perl-and-perl-modules.html">
+        <div class="na-navbar-padding"> Perl モジュールと Perl モジュールの管理</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/task-configure-your-preferred-perl-distribution-linux.html">
+        任意の Perl 配信を設定します
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/rhel-install/reference-troubleshooting.html">
+        <div class="na-navbar-padding"> インストールと設定に関する問題のトラブルシューティング</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/reference-cannot-view-performance-advisor-data-in-wfa.html">
+        WFA で Performance Advisor のデータを表示できません
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/rhel-install/reference-related-documentation-for-oncommand-workflow-automation.html">
+        OnCommand Workflow Automation の関連ドキュメント
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Windows のインストールとセットアップ</div>
+      </a>
+      <ul><li class="subfolders "><a href="/ja-jp/workflow-automation/windows-install/concept-overview-of-oncommand-workflow-automation.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation の概要</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/concept-oncommand-workflow-automation-deployment-architecture.html">
+        OnCommand Workflow Automation の導入アーキテクチャ
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/concept-oncommand-workflow-automation-installation-and-configuration-instructions.html">
+        OnCommand Workflow Automation のインストールとセットアップの概要
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/concept-known-limitations-and-enhancements.html">
+        既知の制限事項と拡張機能
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/windows-install/reference-system-requirements-for-oncommand-workflow-automation-windows.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation をインストールするためのシステム要件</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/reference-ports-required-for-oncommand-workflow-automation.html">
+        Workflow Automation に必要なポート
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/reference-prerequisites-for-installing-workflow-automation.html">
+        Workflow Automation をインストールするための前提条件
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/windows-install/concept-managing-high-availability.html">
+        <div class="na-navbar-padding"> 高可用性の管理</div>
+      </a>
+      <ul><li class="subfolders "><a href="/ja-jp/workflow-automation/windows-install/task-set-up-wfa-in-mscs.html">
+        <div class="na-navbar-padding"> MSCS で Workflow Automation をセットアップして高可用性を実現します</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-configure-mscs-to-install-wfa.html">
+        Workflow Automation をインストールするように MSCS を設定します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-install-workflow-automation-on-windows.html">
+        Windows に OnCommand Workflow Automation をインストールします
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-configure-wfa-with-mscs-using-configuration-scripts.html">
+        MSCS で Workflow Automation を設定します
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-configure-an-earlier-version-of-wfa-foir-high-availability-windows.html">
+        以前のバージョンの OnCommand Workflow Automation をハイアベイラビリティ構成に設定する
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-uninstall-wfa-in-an-mscs-environment.html">
+        MSCS 環境で Workflow Automation をアンインストールします
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-back-up-and-restore-the-wfa-database-and-configurations-windows.html">
+        Windows で OnCommand Workflow Automation データベースおよび設定をバックアップおよびリストアする
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/windows-install/concept-setting-up-oncommand-workflow-automation.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation をセットアップしています</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-access-oncommand-workflow-automation.html">
+        OnCommand Workflow Automation にアクセスします
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/windows-install/concept-wfa-data-sources.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation データソース</div>
+      </a>
+      <ul><li class="subfolders "><a href="/ja-jp/workflow-automation/windows-install/reference-configuring-a-database-user-on-datafabric-manager.html">
+        <div class="na-navbar-padding"> DataFabric Manager でデータベースユーザを設定する</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-configure-a-database-user-by-running-ocsetup-on-windows.html">
+        Windows で ocsetup を実行して、データベースユーザを設定します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-configure-a-database-user-by-running-ocsetup-on-linux.html">
+        Linux で ocsetup を実行してデータベースユーザを設定します
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-configure-a-database-user-on-active-iq-unified-manager.html">
+        Active IQ Unified Manager でデータベースユーザを設定します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-set-up-a-data-source.html">
+        データソースを設定
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-add-an-upgraded-unified-manager-server-data-source.html">
+        アップグレードした Unified Manager サーバをデータソースとして追加します
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-create-local-users.html">
+        ローカルユーザを作成する
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-configure-the-credentials-of-a-target-system.html">
+        ターゲットシステムのクレデンシャルを設定します
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/windows-install/concept-advanced-configuring-oncommand-workflow-automation.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation を設定しています</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-configure-autosupport.html">
+        AutoSupport を設定します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-configure-authentication-settings.html">
+        認証を設定
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-add-active-directory-group-names.html">
+        Active Directory グループを追加します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-configure-mail.html">
+        E メール通知を設定
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/windows-install/task-configure-snmp.html">
+        <div class="na-navbar-padding"> SNMP を設定する</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-configure-snmp-version-1.html">
+        SNMP バージョン 1 を設定します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-configure-snmp-version-3.html">
+        SNMP バージョン 3 を設定します
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-configure-syslog.html">
+        syslog を設定します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-configure-protocols-for-connecting-to-remote-systems.html">
+        リモートシステムに接続するためのプロトコルを設定します
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-disable-the-default-password-policy.html">
+        デフォルトのパスワードポリシーを無効にします
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-modify-the-default-password-policy-windows.html">
+        Windows のデフォルトパスワードポリシーを変更します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-enable-remote-access-to-the-oncommand-workflow-automation-database.html">
+        Windows で OnCommand Workflow Automation データベースへのリモートアクセスを有効にします
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-restrict-access-rights-of-oncommand-workflow-automation-on-the-host.html">
+        ホスト上の OnCommand Workflow Automation のアクセス権を制限します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-modify-the-transaction-timeout-setting-of-oncommand-workflow-automation.html">
+        OnCommand Workflow Automation のトランザクションタイムアウト設定を変更します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-configure-the-timeout-value-for-windows.html">
+        Workflow Automation のタイムアウト値を設定します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/concept-enabling-ciphers-and-adding-new-ciphers.html">
+        暗号を有効にして新しい暗号を追加する
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/windows-install/task-upgrade-oncommand-workflow-automation.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation をアップグレードします</div>
+      </a>
+      <ul><li class="subfolders "><a href="/ja-jp/workflow-automation/windows-install/task-upgrade-from-oncommand-workflow-automation-3-1-or-later-on-windows.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation 3.1 以降のバージョンからアップグレードします</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/reference-pack-identification-during-upgrade.html">
+        アップグレード中のパック ID
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/windows-install/concept-upgrading-third-party-products-in-windows.html">
+        <div class="na-navbar-padding"> サードパーティ製品のアップグレード</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-upgrade-openjdk-on-windows-wfa.html">
+        OpenJDK をアップグレードします
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-upgrade-mysql-on-windows-wfa.html">
+        MySQL をアップグレードします
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-upgrade-active-state-perl-on-windows.html">
+        ActiveState Perl をアップグレードします
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/windows-install/reference-backing-up-of-the-oncommand-workflow-automation-database.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation データベースをバックアップしています</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-back-up-oncommand-workflow-automation-database-using-the-web-portal.html">
+        Web ポータルから WFA データベースをバックアップします
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-back-up-oncommand-workflow-automation-using-powershell-script.html">
+        PowerShell スクリプトを使用して WFA データベースをバックアップします
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/windows-install/concept-backing-up-the-wfa-database-using-the-command-line-interface.html">
+        <div class="na-navbar-padding"> CLI を使用した WFA データベースのバックアップ</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-back-up-full-the-wfa-database-using-perl-script-linux.html">
+        CLI を使用して WFA データベースをバックアップ（フル）します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-back-up-regular-the-wfa-database-using-perl-script-linux.html">
+        CLI を使用して WFA データベースを（通常の）バックアップします
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/windows-install/concept-backing-up-the-wfa-database-using-rest-apis.html">
+        <div class="na-navbar-padding"> REST API を使用した WFA データベースのバックアップ</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-back-up-full-oncommand-workflow-automation-database-using-rest-api.html">
+        REST API を使用して WFA データベースのフルバックアップを実行します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-back-up-regular-oncommand-workflow-automation-database-using-rest-api.html">
+        REST API を使用して WFA データベースの定期的なバックアップを実行します
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/windows-install/concept-restoring-the-wfa-database.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation データベースのリストア</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-restore-oncommand-workflow-automation-database-using-web-portal.html">
+        WFA データベースをリストアします
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/windows-install/concept-restoring-the-oncommand-workflow-automation-database-using-cli.html">
+        <div class="na-navbar-padding"> CLI を使用した WFA データベースのリストア</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-fully-restore-the-oncommand-workflow-automation-database-using-clis-windows.html">
+        CLI を使用して WFA データベースをリストア（フル）します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-regular-restore-of-the-oncommand-workflow-automation-database-using-clis-windows.html">
+        CLI を使用して WFA データベースを（通常の）リストアします
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/windows-install/concept-restoring-the-oncommand-workflow-automation-database-using-rest-api.html">
+        <div class="na-navbar-padding"> REST API を使用した WFA データベースのリストア</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-restore-full-the-oncommand-workflow-automation-database-using-rest-apis.html">
+        REST API を使用して WFA データベースをリストア（フル）します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-restore-regular-the-oncommand-workflow-automation-database-using-rest-apis.html">
+        REST API を使用して WFA データベースを（通常の）リストアします
+      </a></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-reset-the-admin-password-created-during-installation.html">
+        インストール時に作成した admin パスワードをリセットします
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/windows-install/task-import-oncommand-workflow-automation-content.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation コンテンツをインポートします</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/reference-considerations-of-importing-wfa-content.html">
+        OnCommand Workflow Automation コンテンツをインポートする際の考慮事項
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-migrate-oncommand-workflow-automation.html">
+        OnCommand Workflow Automation インストールを移行します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-uninstall-oncommand-workflow-automation.html">
+        OnCommand Workflow Automation をアンインストールします
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/windows-install/reference-managing-oncommand-workflow-automation-ssl-certificates.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation SSL 証明書の管理</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-replace-the-default-workflow-automation-ssl-certificate.html">
+        Workflow Automation のデフォルトの SSL 証明書を置き換えます
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-create-a-certificate-signing-request-for-workflow-automation-windows.html">
+        Workflow Automation の証明書署名要求を作成します
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/windows-install/reference-managing-perl-and-perl-modules.html">
+        <div class="na-navbar-padding"> Perl モジュールと Perl モジュールの管理</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-configure-your-preferred-perl-interpreter.html">
+        任意の Perl 配信を設定します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-manage-site-specific-perl-modules.html">
+        サイト固有の Perl モジュールを管理します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/task-repair-the-activeperl-installation.html">
+        ActivePerl のインストールを修復します
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/windows-install/reference-troubleshooting.html">
+        <div class="na-navbar-padding"> インストールと設定に関する問題のトラブルシューティング</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/reference-cannot-open-the-oncommand-workflow-automation-login-page.html">
+        OnCommand Workflow Automation のログインページを開けません
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/reference-cannot-view-performance-advisor-data-in-wfa.html">
+        WFA で Performance Advisor のデータを表示できません
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/reference-wfa-displays-a-blank-page-on-windows-2012.html">
+        OnCommand Workflow Automation （ WFA ）では、 Windows 2012 の空白ページが表示されます
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/windows-install/reference-related-documentation-for-oncommand-workflow-automation.html">
+        OnCommand Workflow Automation の関連ドキュメント
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> ワークフロー</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-overview-of-oncommand-workflow-automation.html">
+        OnCommand Workflow Automation の概要
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/workflows/concept-understanding-workflow-automation-designer.html">
+        <div class="na-navbar-padding"> Workflow Automation Designer の概要を参照してください</div>
+      </a>
+      <ul><li class="subfolders "><a href="/ja-jp/workflow-automation/workflows/concept-working-with-the-building-blocks-in-oncommand-workflow-automation.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation でのビルディングブロックの操作</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-what-data-sources-are.html">
+        データソースとは
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-what-dictionary-entries-are.html">
+        ディクショナリエントリとは
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-how-commands-work.html">
+        コマンドの仕組み
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-what-filters-are.html">
+        フィルタとは
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-what-finders-are.html">
+        ファインダとは
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-what-functions-are.html">
+        機能とは
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-what-schemes-are.html">
+        方式は何ですか
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-what-remote-system-types-are.html">
+        リモートシステムの種類
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-how-you-use-templates.html">
+        テンプレートの使用方法
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-how-you-use-categories.html">
+        カテゴリの使用方法
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-how-entity-versioning-works.html">
+        エンティティのバージョン管理の仕組み
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-what-a-playground-database-is.html">
+        プレイグラウンドデータベースとは
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/workflows/concept-managing-workflows.html">
+        <div class="na-navbar-padding"> ワークフローの管理</div>
+      </a>
+      <ul><li class="subfolders "><a href="/ja-jp/workflow-automation/workflows/task-customize-predefined-workflows.html">
+        <div class="na-navbar-padding"> 定義済みのワークフローをカスタマイズする</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/task-customize-the-create-volume-and-create-cifs-share-workflow.html">
+        ボリュームの作成ワークフローと CIFS 共有ワークフローをカスタマイズします
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/workflows/concept-creating-workflows.html">
+        <div class="na-navbar-padding"> ワークフローの作成</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-tasks-involved-in-creating-workflows.html">
+        ワークフローの作成に関連するタスク
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-how-you-define-workflows.html">
+        ワークフローを定義する方法
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-how-you-define-user-input.html">
+        ユーザ入力の定義方法
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-how-you-map-command-parameters.html">
+        コマンドパラメータのマッピング方法
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-how-you-define-constants.html">
+        定数の定義方法
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-how-repeat-row-works.html">
+        行の繰り返しの仕組み
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-how-resource-selection-works.html">
+        リソース選択の仕組み
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-how-reservation-works.html">
+        予約の仕組み
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-what-incremental-naming-is.html">
+        増分命名とは何ですか
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-what-conditional-execution-is.html">
+        条件付き実行とは
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-what-return-parameters-are.html">
+        戻りパラメータの仕組み
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-what-approval-points-are.html">
+        どの承認ポイントがあるか
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-how-you-execute-custom-rest-end-points.html">
+        カスタム REST エンドポイントの実行方法
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-what-continue-on-failure-is.html">
+        障害発生時の続行方法
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/reference-workflow-requirements-checklist.html">
+        ワークフロー要件チェックリストの例
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/workflows/task-create-a-workflow.html">
+        <div class="na-navbar-padding"> ワークフローを作成します</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/task-create-workflow-help-content.html">
+        ワークフローヘルプコンテンツを作成します
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/workflows/task-create-a-workflow-automation-pack.html">
+        <div class="na-navbar-padding"> WFA ワークフローパックを作成します</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/task-add-entity-to-a-workflow-automation-pack.html">
+        WFA ワークフローパックにエンティティを追加します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/task-delete-wfa-packs.html">
+        OnCommand Workflow Automation パックを削除します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/task-export-oncommand-workflow-automation-content.html">
+        OnCommand Workflow Automation コンテンツをエクスポートします
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/task-import-oncommand-workflow-automation-content.html">
+        OnCommand Workflow Automation コンテンツをインポートします
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/task-import-an-oncommand-workflow-automation-pack.html">
+        WFA ワークフローパックをインポート
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/reference-considerations-of-importing-wfa-content.html">
+        OnCommand Workflow Automation コンテンツをインポートする際の考慮事項
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/reference-pack-identification-during-upgrade.html">
+        アップグレード中のパック ID
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/workflows/concept-integrating-the-wfa-pack-with-scm-repository.html">
+        <div class="na-navbar-padding"> WFA ワークフローパックを SCM リポジトリと統合する</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/task-check-in-a-new-pack-to-scm.html">
+        SCM に新しいワークフローパックをチェックインします
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/task-check-in-a-new-version-of-a-pack-to-a-new-location-in-scm.html">
+        新しいバージョンの WFA ワークフローパックをチェックインします
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/task-update-the-pack-from-scm.html">
+        SCM サーバから WFA ワークフローパックを更新します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/task-check-in-an-already-existing-pack-into-scm.html">
+        既存の WFA ワークフローパックを SCM サーバにチェックインします
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/task-remove-entities-from-a-pack.html">
+        WFA ワークフローパックをエンティティから削除します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/task-rollback-pack-to-a-previous-version-in-scm.html">
+        WFA ワークフローパックを SCM 内の以前のバージョンにロールバックします
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/workflows/concept-creating-building-blocks-for-workflows.html">
+        <div class="na-navbar-padding"> ワークフローのビルディングブロックの作成</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/task-create-a-data-source-type.html">
+        データソースタイプを作成します
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/workflows/task-create-a-command.html">
+        <div class="na-navbar-padding"> コマンドを作成します</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/task-test-the-wfa-reservation-script-for-commands.html">
+        予約スクリプトでコマンドをテストします
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/task-create-a-finder.html">
+        Finder を作成します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/task-create-a-filter.html">
+        フィルタを作成します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/task-create-a-dictionary-entry.html">
+        ディクショナリエントリを作成します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/task-create-a-function.html">
+        関数を作成します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/task-create-a-template.html">
+        テンプレートを作成します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/task-create-a-cache-query.html">
+        キャッシュクエリを作成します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/task-create-recurring-schedules.html">
+        定期的なスケジュールを作成
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/task-define-filter-rules.html">
+        フィルタルールを定義します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/task-add-approval-points.html">
+        承認ポイントを追加します
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/workflows/concept-coding-guidelines-for-wfa.html">
+        <div class="na-navbar-padding"> WFA のコーディングガイドライン</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/reference-guidelines-for-variables.html">
+        変数のガイドライン
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/reference-guidelines-for-indentation.html">
+        インデントのガイドライン
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/reference-guidelines-for-comments.html">
+        コメントのガイドライン
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/reference-guidelines-for-logging.html">
+        ロギングのガイドライン
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/reference-guidelines-for-error-handling.html">
+        エラー処理のガイドライン
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/workflows/reference-general-powershell-conventions-for-wfa.html">
+        <div class="na-navbar-padding"> WFA での PowerShell と Perl の一般的な規則</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/reference-perl-database-modules-bundled-with-windows.html">
+        Windows にバンドルされている Perl モジュール
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/reference-guidelines-for-adding-custom-powershell-modules-to-wfa.html">
+        カスタムの PowerShell モジュールと Perl モジュールを追加する場合の考慮事項
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/reference-wfa-powershell-functions.html">
+        WFA のコマンドレットと機能
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/reference-powershell-and-perl-wfa-modules.html">
+        PowerShell および Perl WFA モジュール
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/reference-guidelines-for-other-programming-aspects.html">
+        PowerShell コマンドを Perl に変換する際の考慮事項
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/workflows/reference-guidelines-for-wfa-building-blocks.html">
+        <div class="na-navbar-padding"> WFA のビルディングブロックに関するガイドライン</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/reference-guidelines-for-sql-in-wfa.html">
+        WFA の SQL に関するガイドライン
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/reference-guidelines-for-wfa-functions.html">
+        WFA の機能に関するガイドラインを参照してください
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/reference-guidelines-for-wfa-dictionary-entry.html">
+        WFA ディクショナリエントリのガイドライン
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/reference-guidelines-for-commands.html">
+        コマンドのガイドライン
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/reference-guidelines-for-workflows.html">
+        ワークフローのガイドライン
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/reference-guidelines-for-creating-a-validation-script-for-remote-system-type.html">
+        リモートシステムタイプの検証スクリプトを作成する際のガイドライン
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/reference-guidelines-for-data-source-type.html">
+        データソースタイプの作成に関するガイドライン
+      </a></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/reference-reserved-words.html">
+        予約語
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/concept-how-you-use-the-rest-api.html">
+        REST API の使用方法
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/reference-references-to-learning-material.html">
+        学習資料への参照
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/workflows/reference-related-documentation-for-oncommand-workflow-automation.html">
+        OnCommand Workflow Automation の関連ドキュメント
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> オンラインヘルプ</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/concept-overview-of-oncommand-workflow-automation.html">
+        OnCommand Workflow Automation の概要
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/task-create-local-users.html">
+        ローカルユーザを作成する
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/help/concept-advanced-configuring-oncommand-workflow-automation.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation を設定しています</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/task-configure-authentication-settings.html">
+        認証を設定
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/task-configure-mail.html">
+        E メール通知を設定
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/help/task-configure-snmp.html">
+        <div class="na-navbar-padding"> SNMP を設定する</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/task-configure-snmp-version-1.html">
+        SNMP バージョン 1 を設定します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/task-configure-snmp-version-3.html">
+        SNMP バージョン 3 を設定します
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/task-configure-syslog.html">
+        syslog を設定します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/task-configure-autosupport.html">
+        AutoSupport を設定します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/task-configure-email-notifications-for-data-source-acquisition-failures.html">
+        データソースの取得に失敗した場合の E メール通知を設定します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/task-configure-resource-reservation-for-workflows.html">
+        ワークフローのリソースリザベーションを設定する
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/task-configure-the-credentials-of-a-target-system.html">
+        ターゲットシステムのクレデンシャルを設定します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/task-configure-protocols-for-connecting-to-remote-systems.html">
+        リモートシステムに接続するためのプロトコルを設定します
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/help/reference-oncommand-workflow-automation-designer-features.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation デザイナの機能</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/concept-how-repeat-row-works.html">
+        行の繰り返しの仕組み
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/concept-what-approval-points-are.html">
+        どの承認ポイントがあるか
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/concept-what-continue-on-failure-is.html">
+        障害発生時の続行方法
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/concept-how-resource-selection-works.html">
+        リソース選択の仕組み
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/concept-how-reservation-works.html">
+        予約の仕組み
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/concept-what-incremental-naming-is.html">
+        増分命名とは何ですか
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/concept-what-conditional-execution-is.html">
+        条件付き実行とは
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/concept-what-return-parameters-are.html">
+        戻りパラメータの仕組み
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/concept-what-schemes-are.html">
+        方式は何ですか
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/concept-what-remote-system-types-are.html">
+        リモートシステムの種類
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/concept-how-entity-versioning-works.html">
+        エンティティのバージョン管理の仕組み
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/concept-how-you-define-workflows.html">
+        ワークフローを定義する方法
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/concept-how-you-map-command-parameters.html">
+        コマンドパラメータのマッピング方法
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/concept-how-you-define-user-input.html">
+        ユーザ入力の定義方法
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/concept-how-you-define-constants.html">
+        定数の定義方法
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/concept-how-you-use-the-rest-api.html">
+        REST API の使用方法
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/help/task-set-up-a-data-source.html">
+        <div class="na-navbar-padding"> データソースを設定</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/task-configure-a-database-user-by-running-ocsetup-on-windows.html">
+        Windows で ocsetup を実行して、データベースユーザを設定します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/task-configure-a-database-user-by-running-ocsetup-on-linux.html">
+        Linux で ocsetup を実行してデータベースユーザを設定します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/task-configure-a-database-user-on-active-iq-unified-manager.html">
+        Active IQ Unified Manager でデータベースユーザを設定します
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/task-create-workflow-help-content.html">
+        ワークフローヘルプコンテンツを作成します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-reserved-words.html">
+        予約語
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/help/reference-mvel-learning-material-reference.html">
+        <div class="na-navbar-padding"> MVEL に関する情報の参照先</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-mvel-enabled-fields-in-wfa.html">
+        OnCommand Workflow Automation の MVEL 対応フィールド
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-mvel-examples.html">
+        MVEL 構文の例
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-references-to-learning-material.html">
+        学習資料への参照
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-supported-workflows-in-clustered-data-ontap.html">
+        ONTAP でサポートされるワークフロー
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/task-import-oncommand-workflow-automation-content.html">
+        OnCommand Workflow Automation コンテンツをインポートします
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-considerations-of-importing-wfa-content.html">
+        OnCommand Workflow Automation コンテンツをインポートする際の考慮事項
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/task-export-oncommand-workflow-automation-content.html">
+        OnCommand Workflow Automation コンテンツをエクスポートします
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/task-disable-cache-acquisition-for-dictionary-entries.html">
+        ディクショナリエントリのキャッシュ取得を無効にします
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/task-create-a-workflow-automation-pack.html">
+        WFA ワークフローパックを作成します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/task-delete-wfa-packs.html">
+        OnCommand Workflow Automation パックを削除します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/task-add-approval-points.html">
+        承認ポイントを追加します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/task-define-filter-rules.html">
+        フィルタルールを定義します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/task-create-a-scheme.html">
+        スキームを作成します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/task-edit-a-scheme.html">
+        スキームを編集します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/task-delete-a-scheme.html">
+        スキームを削除します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/task-add-a-new-remote-system-type.html">
+        新しいリモートシステムタイプを追加します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-log-viewer-directory-window.html">
+        ログビューアウィンドウ
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-backup-restore-window.html">
+        [ バックアップと復元 ] ウィンドウ
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/help/reference-user-window.html">
+        <div class="na-navbar-padding"> 「ユーザー」ウィンドウ</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-new-user-dialog-box.html">
+        New User ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-edit-user-dialog-box.html">
+        Edit User ダイアログボックス
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-client-preferences-dialog-box.html">
+        [ 環境設定 ] ウィンドウ
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/help/reference-active-directory-groups-window.html">
+        <div class="na-navbar-padding"> Active Directory グループウィンドウ</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-new-active-directory-group-dialog-box.html">
+        [ 新しい Active Directory グループ ] ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-edit-active-directory-group-dialog-box.html">
+        Edit Active Directory Group ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-approval-portal.html">
+        [ 承認ポータル ] ウィンドウ
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/help/reference-data-sources-window.html">
+        <div class="na-navbar-padding"> [ データソース ] ウィンドウ</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-new-data-source-dialog-box.html">
+        [ 新しいデータソース ] ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-edit-data-source-dialog-box.html">
+        [ データソースの編集 ] ダイアログボックス
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/help/reference-credentials-window.html">
+        <div class="na-navbar-padding"> クレデンシャルウィンドウ</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-test-connectivity-dialog-box.html">
+        [ 接続のテスト ] ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-new-credentials-dialog-box.html">
+        [ 新しい資格情報 ] ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-edit-credentials-dialog-box.html">
+        Edit Credentials ダイアログボックス
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-about-dialog-box.html">
+        [ バージョン情報 ] ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-portal-workflow-window.html">
+        [ ワークフロー ] ウィンドウ
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-execution-status-window.html">
+        [ 実行 ] ウィンドウ
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-recurring-executions-window.html">
+        [ 繰り返し実行 ] ウィンドウ
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-reservations-window.html">
+        リザベーションウィンドウ
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/help/reference-schedules-window.html">
+        <div class="na-navbar-padding"> スケジュールウィンドウ</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-new-schedule-dialog-box.html">
+        [ 新しいスケジュール ] ダイアログボックス
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/help/reference-workflows-window.html">
+        <div class="na-navbar-padding"> ワークフローウィンドウ</div>
+      </a>
+      <ul><li class="subfolders "><a href="/ja-jp/workflow-automation/help/reference-new-workflow-window.html">
+        <div class="na-navbar-padding"> [ ワークフローの新規作成 ] ウィンドウ</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-parameters-for-commands-dialog-box.html">
+        コマンドダイアログボックスのパラメータ
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-resource-selection-dialog-box.html">
+        [ リソースを選択（ Resource Selection ） ] ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-incremental-naming-wizard.html">
+        増分命名ウィザード
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-row-repetition-details-dialog-box.html">
+        [ 行の繰り返しの詳細 ] ダイアログボックス
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-edit-workflow-window.html">
+        Workflow < ワークフロー名 > ウィンドウ
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-execute-workflow-dialog-box.html">
+        [ ワークフローの実行 ] ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-edit-variable-dialog-box.html">
+        変数の編集（ Edit Variable ）ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-preview-workflow-dialog-box.html">
+        ワークフローのプレビューダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-monitoring-window.html">
+        モニタリングウィンドウ
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-new-approval-point-dialog-box.html">
+        [ 新しい承認ポイント ] ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-edit-approval-point-dialog-box.html">
+        [ 承認ポイントの編集 ] ダイアログボックス
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/help/reference-finders-window.html">
+        <div class="na-navbar-padding"> ファインダウィンドウ</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-new-finder-dialog-box.html">
+        新規 Finder ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-edit-finder-dialog-box.html">
+        Finder の編集ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-clone-finder-dialog-box.html">
+        [ クローンファインダ ] ダイアログボックス
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/help/reference-filters-window.html">
+        <div class="na-navbar-padding"> [ フィルタ ] ウィンドウ</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-new-filter-dialog-box.html">
+        [ 新しいフィルタ（ New Filter ） ] ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-edit-filter-dialog-box.html">
+        [ フィルタを編集（ Edit Filter ） ] ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-clone-filter-dialog-box.html">
+        Clone Filter ダイアログボックス
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/help/reference-commands-window.html">
+        <div class="na-navbar-padding"> コマンドウィンドウ</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-new-command-definition-dialog-box.html">
+        [ 新規コマンドを定義（ New Command Definition ） ] ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-edit-command-definition-dialog-box.html">
+        [ コマンド定義を編集（ Edit Command Definition ） ] ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-clone-command-definition-dialog-box.html">
+        [ クローンコマンド定義（ Clone Command Definition ） ] ダイアログボックス
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-functions-window.html">
+        [ 機能 ] ウィンドウ
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/help/reference-templates-window.html">
+        <div class="na-navbar-padding"> テンプレートウィンドウ</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-new-template-dialog-box.html">
+        [ 新しいテンプレート ] ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-edit-template-dialog-box.html">
+        [ テンプレートの編集 ] ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-clone-template-dialog-box.html">
+        Clone Template ダイアログボックス
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-schemes-window.html">
+        スキームウィンドウ
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/help/reference-dictionary-window.html">
+        <div class="na-navbar-padding"> [ 辞書 ] ウィンドウ</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-new-dictionary-entry-dialog-box.html">
+        [ 新しい辞書エントリ ] ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-edit-dictionary-entry-dialog-box.html">
+        [ 辞書エントリの編集 ] ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-clone-dictionary-entry-dialog-box.html">
+        [ 辞書エントリの複製 ] ダイアログボックス
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-data-source-types-window.html">
+        [ データソースの種類 ] ウィンドウ
+      </a></li><li class="subfolders "><a href="/ja-jp/workflow-automation/help/reference-remote-system-types-window.html">
+        <div class="na-navbar-padding"> Remote System Types ウィンドウ</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-new-remote-system-type-dialog-box.html">
+        [ 新しいリモートシステムタイプ ] ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-edit-remote-system-type-dialog-box.html">
+        Edit Remote System Type （リモートシステムタイプの編集）ダイアログボックス
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/help/reference-cache-queries-window.html">
+        <div class="na-navbar-padding"> [ キャッシュクエリ ] ウィンドウ</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-add-cache-query-dialog-box.html">
+        Add Cache Query ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-edit-cache-query-dialog-box.html">
+        Edit Cache Query ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-clone-cache-query-dialog-box.html">
+        Clone Cache Query ダイアログボックス
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/help/reference-packs-window.html">
+        <div class="na-navbar-padding"> パックウィンドウ</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-new-pack-dialog-box.html">
+        [ 新しいパック（ New Pack ） ] ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-edit-pack-dialog-box.html">
+        パックの編集ダイアログボックス
+      </a></li></ul></li><li class="subfolders "><a href="/ja-jp/workflow-automation/help/reference-categories-window.html">
+        <div class="na-navbar-padding"> [ カテゴリ ] ウィンドウ</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-new-category-dialog-box.html">
+        [ 新しいカテゴリ ] ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-edit-category-dialog-box.html">
+        [ カテゴリの編集 ] ダイアログボックス
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-clone-category-dialog-box.html">
+        [ 複製カテゴリ ] ダイアログボックス
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/help/reference-wfa-store-window.html">
+        Storage Automation Store のウィンドウが開きます
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/workflow-automation/reference-legal-notices.html">
+        法的通知
+      </a></li></ul>
+</div>
+<script>
+  window.onscroll = () => {
+    const value = -40 - (document.body.scrollHeight - (window.innerHeight + document.scrollingElement.scrollTop));
+    
+    document.getElementById("sidebar-height").style.bottom = Math.max(0,value) + "px";
+};
+</script>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content">
+      <div class="ie-utility">
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
+        </li>
+        
+
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/ja-jp/workflow-automation/">OnCommand&nbsp;Workflow&nbsp;Automation&nbsp;5.1</a>
+        </li>
+
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="ie-nmt-disclaimer">
+  <span>
+    <div class="ie-nmt-disclaimer-container">
+      <div class="ie-nmt-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/ja-jp/workflow-automation/common/svg/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-nmt-disclaimer-content">
+        <span> 日本語は機械翻訳による参考訳です。内容に矛盾や不一致があった場合には、英語の内容が優先されます。 </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">リモートシステムに接続するためのプロトコルを設定します</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2022-04-20 21:31:57 +0000">04/20/2022</time>
+    
+  
+
+
+</p>
+
+<div class="paragraph lead">
+<p>リモートシステムへの接続に OnCommand Workflow Automation （ WFA ）で使用するプロトコルを設定できます。プロトコルは、組織のセキュリティ要件とリモートシステムでサポートされるプロトコルに基づいて設定できます。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>Web ブラウザから admin として WFA にログインします。</p>
+</li>
+<li>
+<p>[ * データソースデザイン <strong>&gt;</strong> リモートシステムタイプ * ] をクリックします。</p>
+</li>
+<li>
+<p>次のいずれかを実行します。</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">状況</th>
+<th class="tableblock halign-left valign-top">手順</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>新しいリモートシステムのプロトコルを設定します</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>をクリックします <span class="image"><img src="../media/new_wfa_icon.gif" alt="新しいアイコン"></span>。</p>
+</li>
+<li>
+<p>[ 新しいリモートシステムタイプ ] ダイアログボックスで、名前、概要 、バージョンなどの詳細を指定します。</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>既存のリモートシステムのプロトコル設定を変更する</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>変更するリモートシステムを選択してダブルクリックします。</p>
+</li>
+<li>
+<p>をクリックします <span class="image"><img src="../media/edit_wfa_icon.gif" alt="編集アイコン"></span>。</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>[ 接続プロトコル ] リストから、次のいずれかを選択します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>HTTPS を HTTP にフォールバック（デフォルト）</p>
+</li>
+<li>
+<p>HTTPS のみ</p>
+</li>
+<li>
+<p>HTTP のみ</p>
+</li>
+<li>
+<p>カスタム</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>プロトコル、デフォルトポート、およびデフォルトタイムアウトの詳細を指定します。</p>
+</li>
+<li>
+<p>[ 保存（ Save ） ] をクリックします。</p>
+</li>
+</ol>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">利用条件</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">プライバシー ポリシー</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">クッキー ポリシー</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">クッキーの設定</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="n-footer__bottom-right">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <span class="n-footer__fine-print">Web サイトについてのフィードバックを</span>
+              <a target="_self" href="javascript:netapp_mailto()">お寄せください</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://docs.netapp.com/ja-jp/announcements/">お知らせ</a>
+            </li>
+          </ul>
+        </div>
+        <div class="n-footer__social-links">
+          <ul class="n-footer__social-link-list">
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com"
+                target="_blank" title="blog" alt="blog">
+                <span class="n-footer__social-link-text">blog</span>
+                <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                  <title>blog@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ja-jp/workflow-automation/common/svg/sprite.svg#blog"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/"
+                target="_blank" title="community" alt="community">
+                <span class="n-footer__social-link-text">community</span>
+                <svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+                  <title>community@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ja-jp/workflow-automation/common/svg/sprite.svg#comments"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp"
+                target="_blank" title="twitter" alt="twitter">
+                <span class="n-footer__social-link-text">twitter</span>
+                <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                  <title>twitter@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ja-jp/workflow-automation/common/svg/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp"
+                target="_blank" title="facebook" alt="facebook">
+                <span class="n-footer__social-link-text">facebook</span>
+                <svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+                  <title>facebook@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ja-jp/workflow-automation/common/svg/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-linkedin"
+                href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+                <span class="n-footer__social-link-text">linkedin</span>
+                <svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+                  <title>linkedin@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ja-jp/workflow-automation/common/svg/sprite.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-youtube"
+                href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+                <span class="n-footer__social-link-text">youtube</span>
+                <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                  <title>youtube@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ja-jp/workflow-automation/common/svg/sprite.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-slideshare"
+                href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+                <span class="n-footer__social-link-text">slideshare</span>
+                <svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+                  <title>slideshare@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ja-jp/workflow-automation/common/svg/sprite.svg#slideshare"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/ja-jp/workflow-automation/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/ja-jp/workflow-automation/js/prism.js'></script>
+      <script type="text/javascript" src='/ja-jp/workflow-automation/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/ja-jp/workflow-automation/js/www-ntap.js'></script>
+    <script src='/ja-jp/workflow-automation/js/tabbed-blocks.js'></script>
+  </body></html>
