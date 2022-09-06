@@ -31,30 +31,34 @@ file_name は CSR ファイル名です。
 
 . プロンプトが表示されたら、パスワードを入力します（デフォルトまたは新規）。
 +
-changeit はデフォルトのパスワードです。デフォルトのパスワードを使用しない場合は、 standalone-full.xml ファイル内の SSL 要素のパスワード属性を wfa_install_location /wfa/jboss/standalone/configuration の場所から変更する必要があります。
+デフォルトのパスワードは、ランダムに生成された暗号化パスワードです。
 
 +
-[listing]
-----
-<ssl name="ssl" password="new_password" certificate-key-file="${jboss.server.config.dir}/keystore/wfa.keystore"
-----
+デフォルトのパスワードを取得して復号化するには、ナレッジベースの記事の手順を使用します link:https://kb.netapp.com/?title=Advice_and_Troubleshooting%2FData_Infrastructure_Management%2FOnCommand_Suite%2FHow_to_renew_the_self-signed_certificate_on_WFA_5.1.1.0.4%253F["WFA 5.1.1.0.4の自己署名証明書を更新する方法"^]
+
 . file_name .CSR ファイルを CA に送信して署名済み証明書を取得します。
 +
 詳細については、 CA の Web サイトを参照してください。
 
-. CA からチェーン証明書をダウンロードし、キーストアにチェーン証明書をインポートします。 keytool -import -alias "SSL keystore CA certificate" -keystore wfa_install_location /wfs/standalone/configuration /keystore.keystore "-trustcacerts -file C ： \chain_cert.cer.cer
+. CA からチェーン証明書をダウンロードし、チェーン証明書をキーストアにインポートします。
 +
-C:\chain_cert.cer は、 CA から受信したチェーン証明書ファイルです。ファイルは X.509 形式である必要があります。
+keytool -import -alias "ssl keystore wfa_install_location /wfa/standalone/configuration /keystore.keystore"-trustcacerts -file chain_cert.cer
+
++
+「chain_cert.cer」は、CAから受信したチェーン証明書ファイルです。ファイルは X.509 形式である必要があります。
 
 . CA から受け取った署名済み証明書をインポートします。
 +
-keytool -import -alias "ssl keystore" -keystore wfa_install_location /wfa/standalone/configuration /keystore.keystore "-trustcacerts-file C:\certificate.cer
+keytool -import -alias "ssl keystore"-keystore wfa_install_location /wfa/standalone/configuration /keystore.keystore "-trustcacerts-file certificate.cer
 
 +
-C ： \certificate.cer は、 CA から受信したチェーン証明書ファイルです。
+「certificate.cer」は、CAから受信したチェーン証明書ファイルです。
 
 . WFA のサービスを開始します。
 +
-`./wfa --start=DB`./wfa -- start=wfa
+`./wfa -- start=db`
+
++
+`./wfa -- start=wfa
 
 

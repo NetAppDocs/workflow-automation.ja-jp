@@ -39,13 +39,11 @@ xxxx は、新しい証明書の有効期間を示す日数です。
 
 . プロンプトが表示されたら、パスワードを入力します（デフォルトまたは新規）。
 +
-changeit はデフォルトのパスワードです。デフォルトのパスワードを使用しない場合は、 standalone-full.xml ファイル内の SSL 要素のパスワード属性を <wfa_install_location >\WFA\JBoss\server\standalone\configuration\ から変更する必要があります
+デフォルトのパスワードは、ランダムに生成された暗号化パスワードです。
 
 +
-[listing]
-----
-<ssl name="ssl" password="new_password" certificate-key-file="${jboss.server.config.dir}/keystore/wfa.keystore"
-----
+デフォルトのパスワードを取得して復号化するには、ナレッジベースの記事の手順を使用します link:https://kb.netapp.com/?title=Advice_and_Troubleshooting%2FData_Infrastructure_Management%2FOnCommand_Suite%2FHow_to_renew_the_self-signed_certificate_on_WFA_5.1.1.0.4%253F["WFA 5.1.1.0.4の自己署名証明書を更新する方法"^]
+
 . 証明書に必要な詳細情報を入力します。
 . 表示された情報を確認し、「 Yes 」と入力します。
 . 次のメッセージが表示されたら、 * Enter * を押します。 Enter key password for <SSL keystore><return if same as keystore password>
