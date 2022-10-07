@@ -1,12 +1,13 @@
 ---
 section: help
-title: オンラインヘルプ
+title: 管理と設定
 entries:
 - title: OnCommand Workflow Automation の概要
   url: "/help/concept-overview-of-oncommand-workflow-automation.html"
 - title: ローカルユーザを作成する
   url: "/help/task-create-local-users.html"
 - title: OnCommand Workflow Automation を設定しています
+  pdf-filename: OnCommand Workflow Automation ヘルプの設定
   url: "/help/concept-advanced-configuring-oncommand-workflow-automation.html"
   entries:
   - title: 認証を設定
@@ -14,6 +15,7 @@ entries:
   - title: E メール通知を設定
     url: "/help/task-configure-mail.html"
   - title: SNMP を設定する
+    pdf-filename: SNMPヘルプを設定します
     url: "/help/task-configure-snmp.html"
     entries:
     - title: SNMP バージョン 1 を設定します

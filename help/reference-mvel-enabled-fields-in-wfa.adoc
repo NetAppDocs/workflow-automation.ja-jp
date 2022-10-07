@@ -2,10 +2,11 @@
 permalink: help/reference-mvel-enabled-fields-in-wfa.html 
 sidebar: sidebar 
 keywords: field, oncommand, workflow, automation, enable, expression, language, syntax, design 
-summary: OnCommand Workflow Automation \ （ WFA \ ）のいくつかのフィールドは、 MVEL\ （ MVEL\ ）で有効になっています。ワークフローの設計時に、これらのフィールドで MVEL 構文を使用できます。 
+summary: OnCommand Workflow Automation （ WFA ）のいくつかのフィールドは、 MVEL （ MVEL ）で有効になっています。ワークフローの設計時に、これらのフィールドで MVEL 構文を使用できます。 
 ---
 = OnCommand Workflow Automation の MVEL 対応フィールド
 :allow-uri-read: 
+:experimental: 
 :icons: font
 :imagesdir: ../media/
 
@@ -23,8 +24,8 @@ OnCommand Workflow Automation （ WFA ）のいくつかのフィールドは、
  a| 
 ワークフローの作成または編集
  a| 
-* *_Workflow_*>* Details *>* Return Parameters *>* Parameter Value *
-* *_Workflow_*>* Details *>* 定数 *>* 値 *
+* _MENU：ワークフロー_[詳細>戻りパラメータ>パラメータ値]
+* _MENU:ワークフロー_[詳細>定数>値]
 
 
 
@@ -32,11 +33,11 @@ OnCommand Workflow Automation （ WFA ）のいくつかのフィールドは、
  a| 
 ワークフローでコマンドの詳細を作成または編集する
  a| 
-* * コマンド * > * parameter_name * > * 検索条件を入力 * > * リソース選択 * > * Finder * > * パラメーター *
-* * コマンド * > * Parameters for _parameter_name_*>* 検索条件を入力 * > * リソース選択 * > * 詳細 * > * 次の式が TRUE * と評価された場合のみ、検索を実行します
-* * 次の式が TRUE * の場合、 * コマンド * > * パラメータ for _parameter_name_* > * 拡張 * > *
-* * コマンド * > * パラメータ for _parameter_name_* > * その他のパラメータ *
-* * コマンド * > * _parameter_name_* > * 属性 *
+* メニュー：コマンド[Parameters for _parameter_name_>Enter search criteria > Resource Selection > Finder > Parameters ]
+* メニュー:コマンド[Parameters for _parameter_name_>Enter search criteria > Resource Selection > Advanced > Execute search only when the following expression evaluates to true]
+* メニュー:コマンド[Parameters for _parameter_name_>Advanced> if the following expression is true]
+* メニュー：コマンド[Parameters for _parameter_name_> Other Parameters]
+* メニュー:コマンド[_parameter_name_>Attributes]
 
 
 
@@ -44,7 +45,7 @@ OnCommand Workflow Automation （ WFA ）のいくつかのフィールドは、
  a| 
 コマンドを作成または編集する
  a| 
-* * コマンド * > * コマンド定義 _ コマンド _ 名前 _ * > * プロパティ * > * 文字列表現 *
+* メニュー：コマンド[コマンド定義_コマンド_名前_>プロパティ>文字列表現]
 
 
 
@@ -52,7 +53,7 @@ OnCommand Workflow Automation （ WFA ）のいくつかのフィールドは、
  a| 
 関数の作成または編集
  a| 
-* * 関数 *>* function_function_name _*>* 関数定義 *
+* メニュー:関数[FUNCTION_FUNCTION_NAME_>関数定義]
 
 
 
@@ -60,7 +61,7 @@ OnCommand Workflow Automation （ WFA ）のいくつかのフィールドは、
  a| 
 テンプレートを作成または編集する
  a| 
-* * テンプレート *>* パラメータ for _parameter_name_*>* Template_template_name_*>* 属性 *>* 値 *
+* メニュー:テンプレート[パラメータfor _parameter_name_>Template_template_name_>属性>値]
 
 
 
@@ -68,10 +69,10 @@ OnCommand Workflow Automation （ WFA ）のいくつかのフィールドは、
  a| 
 行の編集
  a| 
-* * _ ワークフロー _ * > * ワークフロー * > * リピート行 * > * リピート * > * 回数 *
-* *_Workflow_*>* Workflow*>* Repeat row*>* Variables*>* initial_value および expression* の変数
-* * ワークフロー * > * ワークフロー * > * 行の繰り返し * > * リピート * > * グループ内のすべてのリソース * > * リソース検索条件 * > * フィルタリングするパラメータ *
-* * _ ワークフロー _ * > * ワークフロー * > * 条件の追加 * > * 次の式が TRUE * の場合
+* メニュー:ワークフロー_[ワークフロー>行の繰り返し>繰り返し回数]
+* メニュー:ワークフロー_[ワークフロー>行の繰り返し>変数>_initial_value_or_expression_の変数]
+* メニュー:ワークフロー_[ワークフロー>行の繰り返し>繰り返し>グループ内のすべてのリソース>リソース検索条件>フィルタするパラメータ]
+* _MENU:ワークフロー_[ワークフロー>条件の追加>次の式がTRUEの場合]
 
 
 |===
