@@ -34,7 +34,10 @@ file_name は CSR ファイル名です。
 デフォルトのパスワードは、ランダムに生成された暗号化パスワードです。
 
 +
-デフォルトのパスワードを取得して復号化するには、ナレッジベースの記事の手順を使用します link:https://kb.netapp.com/?title=Advice_and_Troubleshooting%2FData_Infrastructure_Management%2FOnCommand_Suite%2FHow_to_renew_the_self-signed_certificate_on_WFA_5.1.1.0.4%253F["WFA 5.1.1.0.4の自己署名証明書を更新する方法"^]
+デフォルトのパスワードを取得して復号化するには、ナレッジベースの記事の手順に従います link:https://kb.netapp.com/?title=Advice_and_Troubleshooting%2FData_Infrastructure_Management%2FOnCommand_Suite%2FHow_to_renew_the_self-signed_certificate_on_WFA_5.1.1.0.4%253F["WFA 5.1.1.0.4の自己署名証明書を更新する方法"^]
+
++
+新しいパスワードを使用するには、Knowledge Base記事の手順に従います link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/OnCommand_Suite/How_to_update_a_new_password_for_the_keystore_in_WFA["WFAでキーストアの新しいパスワードを更新する方法"^]
 
 . file_name .CSR ファイルを CA に送信して署名済み証明書を取得します。
 +
