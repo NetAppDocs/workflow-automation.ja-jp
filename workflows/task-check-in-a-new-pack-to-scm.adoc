@@ -13,6 +13,7 @@ summary: OnCommand Workflow Automation （ WFA ）を使用して新しいワー
 [role="lead"]
 OnCommand Workflow Automation （ WFA ）を使用して新しいワークフローパックを作成し、ソース管理（ SCM ）にチェックインできます。
 
+.必要なもの
 SCM をセットアップする必要があり、管理者またはアーキテクトのクレデンシャルが必要です。
 
 .手順

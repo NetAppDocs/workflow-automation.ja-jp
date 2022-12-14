@@ -13,6 +13,7 @@ summary: パックは、 Source Control Management （ SCM ；ソース管理管
 [role="lead"]
 パックは、 Source Control Management （ SCM ；ソース管理管理）で以前のバージョンにロールバックして、 OnCommand Workflow Automation （ WFA ）にインポートできます。
 
+.必要なもの
 SCM をセットアップする必要があり、管理者またはアーキテクトのクレデンシャルが必要です。
 
 .手順

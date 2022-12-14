@@ -13,6 +13,7 @@ summary: 既存のパックは OnCommand Workflow Automation （ WFA ）から�
 [role="lead"]
 既存のパックは OnCommand Workflow Automation （ WFA ）からソース管理管理（ SCM ）サーバにチェックインできます。
 
+.必要なもの
 SCM をセットアップする必要があり、管理者またはアーキテクトのクレデンシャルが必要です。
 
 .手順

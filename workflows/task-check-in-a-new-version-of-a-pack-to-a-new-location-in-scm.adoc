@@ -13,6 +13,7 @@ summary: OnCommand Workflow Automation （ WFA ）でパックのバージョン
 [role="lead"]
 OnCommand Workflow Automation （ WFA ）でパックのバージョンを更新し、ソース管理管理（ SCM ）サーバの新しい場所に更新したパックをチェックインできます。
 
+.必要なもの
 SCM をセットアップする必要があり、管理者またはアーキテクトのクレデンシャルが必要です。
 
 .手順

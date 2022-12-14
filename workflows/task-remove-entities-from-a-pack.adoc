@@ -13,8 +13,10 @@ summary: OnCommand Workflow Automation （ WFA ）のエンティティからパ
 [role="lead"]
 OnCommand Workflow Automation （ WFA ）のエンティティからパックを削除し、更新されたパックをソース管理（ SCM ）サーバにチェックインできます。
 
+.必要なもの
 SCM をセットアップする必要があり、管理者またはアーキテクトのクレデンシャルが必要です。
 
+.このタスクについて
 次のエンティティからパックを削除できます。
 
 * ワークフロー

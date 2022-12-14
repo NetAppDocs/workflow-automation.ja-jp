@@ -13,6 +13,7 @@ summary: ワークフロー処理のステータスに関する簡易ネット�
 [role="lead"]
 ワークフロー処理のステータスに関する簡易ネットワーク管理プロトコル（ SNMP ）トラップを送信するように OnCommand Workflow Automation （ WFA ）を設定できます。
 
+.このタスクについて
 WFA では現在、 SNMP v1 および SNMP v3 プロトコルがサポートされています。SNMP v3 は、追加のセキュリティ機能を提供します。
 
 wfa 「 .mib 」ファイルには、 WFA サーバから送信されるトラップに関する情報が記載されています。「 .mib 」ファイルは WFA サーバの「 <wfa_install_location >\WFA\bin\wfa_mib 」ディレクトリにあります。
