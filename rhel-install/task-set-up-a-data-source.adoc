@@ -13,7 +13,6 @@ summary: データソースからデータを取得するには、 OnCommand Wor
 [role="lead"]
 データソースからデータを取得するには、 OnCommand Workflow Automation （ WFA ）でデータソースとの接続をセットアップする必要があります。
 
-* 6.0 より前のバージョンの Active IQ Unified Manager では、データベースへの読み取り専用のリモートアクセスを有効にして設定するために、 Unified Manager サーバで最新バージョンの ocsetup ツールを実行しておく必要があります。
 * Active IQ Unified Manager 6.0 以降では、 Unified Manager サーバでデータベースユーザアカウントを作成しておく必要があります。
 +
 詳細については、 OnCommand Unified Manager オンラインヘルプを参照してください。
@@ -29,15 +28,6 @@ summary: データソースからデータを取得するには、 OnCommand Wor
 [cols="3*"]
 |===
 | TCP ポート番号 | Unified Manager サーバのバージョン | 説明 
-
-
- a| 
-2638
- a| 
-5.x
- a| 
-Sybase SQL Anywhere データベース・サーバ
-
 
 
  a| 
@@ -105,23 +95,9 @@ Unified Manager サーバのデータソースを WFA に追加してから Unif
 
 
  a| 
-Active IQ Unified Manager 6.0 より前のバージョン
- a| 
-ocsetup ツールの実行時にデフォルトのクレデンシャルを上書きするために使用したユーザ名とパスワードを入力します。
-
-
-
- a| 
 Active IQ Unified Manager 6.3 以降
  a| 
 Unified Manager サーバで作成したデータベースユーザアカウントのクレデンシャルを入力します。データベースユーザアカウントの作成の詳細については、 OnCommand Unified Manager オンラインヘルプを参照してください。
-
-
-
- a| 
-Performance Advisor （ 6.0 より前の Active IQ Unified Manager バージョン）
- a| 
-GlobalRead の最小ロールを持つ Active IQ Unified Manager ユーザーの資格情報を入力します。
 
 
 NOTE: コマンドラインインターフェイスまたは ocsetup ツールを使用して作成された Active IQ Unified Manager データベースユーザアカウントのクレデンシャルは指定しないでください。

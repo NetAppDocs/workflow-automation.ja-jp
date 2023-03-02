@@ -41,7 +41,6 @@ SQL>
  a| 
 [ ドライバの種類 *] リストから、データソースに適した次のいずれかのドライバを選択します。
 
-** *Sybase jConnect3*
 ** * MySQL Connector/J * を使用します
 ** * MySQL Server JDBC ドライバ 3.0*
 ** * Oracle JDBC ドライバ 11.2.0.3*

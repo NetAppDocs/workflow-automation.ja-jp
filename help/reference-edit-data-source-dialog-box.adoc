@@ -52,7 +52,6 @@ NOTE: Active IQ Unified Manager データソースタイプでは、 IPv6 アド
 デフォルトのユーザ名を上書きするには、このデータソースに適切なユーザ名を指定する必要があります。
 
 +
-** Unified Manager 6.0 より前のバージョンでは、 ocsetup の実行時にデフォルトクレデンシャルの上書きに使用したユーザ名を入力する必要があります。
 ** Unified Manager 6.0 以降では、 Unified Manager サーバで作成したデータベースユーザアカウントのユーザ名を入力する必要があります。
 ** Performance Advisor の場合は、 GlobalRead の最小ロールを持つ Active IQ Unified Manager ユーザのユーザ名を入力する必要があります。
 
@@ -65,7 +64,6 @@ NOTE: Active IQ Unified Manager データソースタイプでは、 IPv6 アド
 このデータソースのユーザ名のデフォルトのパスワードを上書きするには、パスワードを指定する必要があります。
 
 +
-** Unified Manager 6.0 より前のバージョンでは、 ocsetup の実行時にデフォルトクレデンシャルの上書きに使用したパスワードを入力する必要があります。
 ** Unified Manager 6.0 以降では、サーバで作成したデータベースユーザアカウントのパスワードを入力する必要があります。
 ** Performance Advisor の場合、 GlobalRead の最小ロールを持つ Unified Manager ユーザのパスワードを入力する必要があります。
 

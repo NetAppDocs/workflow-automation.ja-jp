@@ -117,17 +117,6 @@ syslog サーバにログを送信しています
 
 
  a| 
-2638
- a| 
-Sybase の場合
- a| 
-受信
- a| 
-6.0 より前の Active IQ Unified Manager からデータをキャッシュしています
-
-
-
- a| 
 3306
  a| 
 MySQL
@@ -135,17 +124,6 @@ MySQL
 受信
  a| 
 Active IQ Unified Manager 6.0 以降のデータのキャッシュ
-
-
-
- a| 
-8088 、 8488
- a| 
-HTTP 、 HTTPS
- a| 
-受信
- a| 
-6.0 より前の Active IQ Unified Manager に含まれている Performance Advisor からデータをキャッシュしています
 
 |===
 次の表に、 VMware vCenter で開いているデフォルトのポートを示します。
