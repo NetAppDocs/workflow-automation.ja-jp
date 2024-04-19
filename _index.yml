@@ -1,0 +1,54 @@
+---
+indexpage:
+  title: OnCommand Workflow Automation のドキュメント
+  summary: OnCommand Workflow Automation 5.1情報ライブラリへようこそ。
+  keywords: oncommand, workflow automation, installation, system requirements, linux,
+    windows,uninstall.
+  lead: OnCommand Workflow Automation 5.1情報ライブラリへようこそ。
+  tiles:
+  - title: はじめに
+    links:
+    - title: リリースノート
+      url: reference-releasenotes.html
+  - title: Linuxシステムにインストールしてセットアップ
+    links:
+    - title: OnCommand Workflow Automation をインストールするためのシステム要件
+      url: rhel-install/reference-system-requirements-for-oncommand-workflow-automation-linux.html
+    - title: 高可用性を管理します
+      url: rhel-install/concept-managing-high-availability.html
+    - title: OnCommand Workflow Automation をセットアップする
+      url: rhel-install/concept-setting-up-oncommand-workflow-automation.html
+    - title: OnCommand Workflow Automation データベースをバックアップします
+      url: rhel-install/reference-backing-up-of-the-oncommand-workflow-automation-database.html
+    - title: OnCommand Workflow Automation データベースをリストアします
+      url: rhel-install/concept-restoring-the-wfa-database.html
+    - title: OnCommand Workflow Automation をアンインストールします
+      url: rhel-install/task-uninstall-oncommand-workflow-automation-linux.html
+    - title: インストールと設定に関する問題のトラブルシューティング
+      url: rhel-install/reference-troubleshooting.html
+  - title: Windowsシステムにをインストールしてセットアップします
+    links:
+    - title: OnCommand Workflow Automation をインストールするためのシステム要件
+      url: windows-install/reference-system-requirements-for-oncommand-workflow-automation-windows.html
+    - title: Windows に OnCommand Workflow Automation をインストールします
+      url: windows-install/task-install-workflow-automation-on-windows.html
+    - title: OnCommand Workflow Automation をセットアップする
+      url: windows-install/concept-setting-up-oncommand-workflow-automation.html
+    - title: OnCommand Workflow Automation データベースをバックアップします
+      url: windows-install/reference-backing-up-of-the-oncommand-workflow-automation-database.html
+    - title: OnCommand Workflow Automation データベースをリストアします
+      url: windows-install/concept-restoring-the-wfa-database.html
+    - title: OnCommand Workflow Automation をアンインストールします
+      url: windows-install/task-uninstall-oncommand-workflow-automation.html
+    - title: インストールと設定に関する問題のトラブルシューティング
+      url: windows-install/reference-troubleshooting.html
+  - title: ワークフローの構築と管理
+    links:
+    - title: ワークフローの管理
+      url: workflows/concept-managing-workflows.html
+  - title: 詳細情報
+    links:
+    - title: ネットアップコミュニティ
+      url: http://community.netapp.com/t5/OnCommand-Storage-Management-Software-Articles-and-Resources/tkb-p/oncommand-storage-management-software-articles-and-resources/label-name/workflow%20automation%20%28wfa%29?labels=workflow+automation+%28wfa%29
+    - title: 互換性マトリックス
+      url: http://mysupport.netapp.com/matrix/
