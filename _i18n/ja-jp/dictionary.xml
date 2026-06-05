@@ -1091,8 +1091,6 @@
   <block id="344fd3d08b8a753bb79336ff586a35bf" category="paragraph"><block ref="344fd3d08b8a753bb79336ff586a35bf" category="inline-link-rx"></block></block>
   <block id="66c9c3348ac5b112ffe4b7b49623cc8d" category="paragraph">_.NET フレームワークの命名ガイドライン _</block>
   <block id="91b02b940dd07cc66de00d6a764f898d" category="paragraph"><block ref="91b02b940dd07cc66de00d6a764f898d" category="inline-link-rx"></block></block>
-  <block id="0a5e35cd941b62c63e913a9f92c3687d" category="paragraph">PowerShell コード形式</block>
-  <block id="5d338dfe4d3ddf51bc90dec3ee99b477" category="paragraph"><block ref="5d338dfe4d3ddf51bc90dec3ee99b477" category="inline-link-rx"></block></block>
   <block id="8afa48e351f3a31c1fa8007756fd80a3" category="paragraph">PowerShell の try/catch が最後に行われました</block>
   <block id="8d1c69b97d5a89835f2b05eabd27ceb4" category="paragraph"><block ref="8d1c69b97d5a89835f2b05eabd27ceb4" category="inline-link-rx"></block></block>
   <block id="8a6937456d987ab411de106bbfe44717" category="paragraph">PowerShell の自動変数</block>
@@ -1111,7 +1109,6 @@
   <block id="93df2ca84c946db99163b3148e95e9ae" category="paragraph"><block ref="93df2ca84c946db99163b3148e95e9ae" category="inline-link-rx"></block></block>
   <block id="c897da42b0f175bc57bbeacb4bea82b1" category="paragraph">WFA では、ワークフロー処理用の Perl コマンドがサポートされます。WFA をインストールすると、必要な Perl モジュールと Perl モジュールが WFA サーバにインストールされます。</block>
   <block id="b61229c78dccf475da69f2cac6d600c0" category="inline-link">ActivePerl ユーザガイド</block>
-  <block id="2b145b62478784ba1e7fd97785e8a3e8" category="paragraph"><block ref="2b145b62478784ba1e7fd97785e8a3e8" category="inline-link-rx"></block></block>
   <block id="efb2bc95007f6681acbc99549e71a915" category="paragraph">_ActivePerl User Guide_に は、「 wfa_install_location \WFA\Perl64\HTML\index.html」 からもアクセスできます</block>
   <block id="a840cd16314687a519be4b506df20df5" category="paragraph">「 _wfa_install_location _ 」は WFA のインストールディレクトリ、「 C:\Program Files\NetApp 」はデフォルトのインストールディレクトリです WFA では ' ワークフローの操作に Perl スクリプトを使用します次の表に、 Perl の学習資料の参照先を示します。</block>
   <block id="6c6471c226957740be8fc6faa4c49add" category="paragraph">最新の Perl ： 2014</block>
@@ -4329,10 +4326,6 @@
   <block id="293b4c794aaf1a57b21a0903e0cd77fe" category="paragraph">Active Directory グループによってトリガーされるワークフローの実行中に、 Active Directory グループに E メールで通知するタイミングを選択できます。次のオプションを任意に組み合わせて選択できます。</block>
   <block id="05e018a0747e487380fd08d1c97915f1" category="list-text">ワークフローの実行に失敗した / 部分的に成功した：ワークフローの実行に失敗した場合、または 1 つ以上のステップが失敗した場合でもワークフローが正常に実行された場合に、ユーザーに通知します。</block>
   <block id="8eaab5b9163b6be0153cb0eb18796169" category="list-text">[ 新規ユーザー * （ New User * ） ] ダイアログボックスに必要な情報を入力します。</block>
-  <block id="7f708cbf579cfb33720a3dee4b01d12a" category="summary">Storage Automation Store で、 OnCommand Workflow Automation （ WFA ）用に開発されたネットアップ認定のストレージワークフロー自動化パックを提供しています。パックをダウンロードし、 WFA にインポートして実行できます。</block>
-  <block id="8d4a01616f98e4ae340eaff4fe4e8ee5" category="doc">Storage Automation Store のウィンドウが開きます</block>
-  <block id="0479c8cefca250b39d519545313f1b42" category="inline-link">Storage Automation Store の略</block>
-  <block id="0a972f757d015f7e2a7d235f796edff5" category="paragraph">自動化されたワークフローは、で使用できます<block ref="f6a0eb706f83f492c2c35b6ee06cdf08" category="inline-link-rx"></block></block>
   <block id="f27d638870e3d54e35d81e657ed4189e" category="summary">[ リソースを選択（ Resource Selection ） ] ダイアログボックスでは、リソースを検索してコマンドにマッピングできます。</block>
   <block id="70551d07e3318e0f266cd8799a91b66f" category="doc">[ リソースを選択（ Resource Selection ） ] ダイアログボックス</block>
   <block id="a23494eb8a399b3a23c14c165c65a774" category="list-text">&lt;dictionary object&gt; By タブを選択します</block>
@@ -4895,4 +4888,7 @@
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
   <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">オープンソース</block>
+  <block id="941fd7ae4cd08576b1633f32f28cc5a7" category="paragraph">PowerShellの学習</block>
+  <block id="6e53aee4223f5f2fcc8de117d4eb8ee1" category="paragraph"><block ref="6e53aee4223f5f2fcc8de117d4eb8ee1" category="inline-link-rx"></block></block>
+  <block id="02d4497b4f8a4d93145ea6baefd3c796" category="paragraph"><block ref="02d4497b4f8a4d93145ea6baefd3c796" category="inline-link-rx"></block></block>
 </blocks>
